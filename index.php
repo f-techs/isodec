@@ -83,11 +83,14 @@
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
+    <div class="text-center">
+      <h3>Our Work</h3>
+    </div>
 
     <div class="row featurette">
 
       <div class="col-4">
-        <div class="card border-light text-left p-1 p-md-4 mb-4">
+        <div class="card text-left p-1 p-md-4 mb-4 mt-4 card-border">
           <div class="card-body">
             <div class="d-flex px-1 px-md-3">
               <div>
@@ -104,7 +107,7 @@
       </div>
 
       <div class="col-4">
-        <div class="card border-light text-left p-1 p-md-4 mb-4">
+        <div class="card  text-left p-1 p-md-4 mb-4 mt-4 card-border">
           <div class="card-body">
             <div class="d-flex px-1 px-md-3">
               <div>
@@ -121,7 +124,7 @@
       </div>
 
       <div class="col-4">
-        <div class="card border-light text-left p-1 p-md-4 mb-4">
+        <div class="card text-left p-1 p-md-4 mb-4 mt-4 card-border">
           <div class="card-body">
             <div class="d-flex px-1 px-md-3">
               <div>
@@ -141,31 +144,72 @@
     </div>
 
     <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-      </div>
+    <div class="text-center">
+      <h3>Latest Event</h3>
     </div>
+    <div class="row featurette2">
 
-    <hr class="featurette-divider">
+      <div class="col-3">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment Special</h5>
+            <div class="card-content">
+              <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <div class="col-3">
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment Special</h5>
+          <div class="card-content">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
       </div>
+
+      <div class="col-3">
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment Special</h5>
+          <div class="card-content">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-3">
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment Special</h5>
+          <div class="card-content">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
     </div>
-
-    <hr class="featurette-divider">
-
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->

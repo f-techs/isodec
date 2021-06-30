@@ -93,10 +93,106 @@ width:auto;
 
 /* Featurettes
 ------------------------- */
+.featurette{
+background-color:#F4F7F8;
+margin-top: px;
+}
+.featurette .card-border{
+  border-top: 5px solid black;
+}
+
+.featurette .card-border:hover{
+  border-top: 5px solid #39A8E8;
+  box-shadow: 2px 2px 2px 3px #ccc;
+}
+/* card hover*/
+.featurette2 .card-wrapper {
+  margin-bottom: 30px;
+}
+.featurette2 .card-image .card .card-img-wrapper {
+  height: 100%;
+}
+.featurette2 .card-image .card .card-body {
+  display: none;
+}
+.featurette2 .card-image-title-description .card .card-img-wrapper {
+  max-height: 160px;
+}
+.featurette2 .card-image-title-description .card {
+  position: relative;
+  min-height: 300px;
+}
+.featurette2 .card-image-title-description .card .card-body {
+  height: auto;
+  position: relative;
+  top: 0;
+  margin-bottom: -70px;
+}
+.featurette2 .card-image-title-description .card:hover .card-body {
+  top: -70px;
+}
+.featurette2 .card-image-title-description .card .card-body .card-title {
+  margin-bottom: .75rem;
+}
+.featurette2 .card {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  height: 100%;
+}
+.featurette2 .card:hover {
+  box-shadow: 8px 12px 31px -10px #ab98ab;
+}
+.featurette2 .card-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  overflow: hidden;
+}
+.featurette2 .card-img-wrapper img {
+  transition: 1.5s ease;
+}
+.featurette2 .card:hover .card-img-wrapper img {
+  transform: scale(1.15);
+}
+.featurette2 .card-body .card-title {
+  margin-bottom: calc(50% + 20px);
+  transition: 1.5s ease;
+}
+.featurette2 .card:hover .card-body .card-title {
+  margin-bottom: .75rem;
+}
+
+.featurette2 .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background-color: #fff;
+  transition: 1.5s ease;
+}
+.featurette2 .card-content {
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  transition: 1.5s ease;
+}
+.featurette2 .card:hover .card-body {
+  height: 80%;
+}
+.featurette2 .card:hover .card-content {
+  bottom: 0;
+}
+
 
 .featurette-divider {
   margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-  background-color: #F4F7F8;
+ 
 }
 
 /* Thin out the marketing headings */
