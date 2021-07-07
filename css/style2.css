@@ -1,0 +1,295 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+/* NAVBAR STYLES
+-------------------------------------------------- */
+.navbar{
+  background-color: #FFFFFF !important;
+}
+
+nav {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.navbar .nav-item a{
+  color:black !important;
+  font-size: 1.3em;
+  margin: 5px;
+}
+.navbar-nav > .active > a {
+  color: #39A8E8 !important;
+}
+.navbar .dropdown-menu{
+  background-color: #FFFFFF;
+  margin:auto;
+}
+.navbar .dropdown-menu:hover{
+  background-color: #FFFFFF
+}
+.navbar .dropdown-menu .dropdown-item:hover {
+width:auto;
+}
+.navbar .navbar-right .nav-item a{
+  color: #39A8E8 !important;
+}
+/* END OF NAVBAR
+-------------------------------------------------- */
+
+/*SECTIONS SHOWCASE
+-------------------------------------------------- */
+#showcase{
+  position: relative;
+  height:100vh;
+}
+.showcase-items{
+  margin-top:50px;
+}
+.showcase-items .lead_btn{
+  background-color: #F8A826;
+  border: 2px solid white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.showcase-items .lead_btn:hover{
+  background-color: #F86D70;
+  border: 2px solid white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* END OF SECTION SHOWCASE
+-------------------------------------------------- */
+
+/* MISSION 
+-------------------------------------------------- */
+#mision_vision{
+  position: relative;
+  z-index: 1;
+  margin-top: -150px;
+  margin-left: 5px;
+  margin-right: 5px;
+  }
+  .mision_vision_details{
+    background-color: #000080;
+  
+  }
+  .details{
+    color:white;
+  }
+  /* END OF  MISSION_VISION 
+-------------------------------------------------- */
+
+ /* SECTION OUR_WORK
+-------------------------------------------------- */
+#our-work{
+background-color: #F5F5F5;
+}
+
+/* CARD BOXES 
+-------------------------------------------------- */
+span{
+  font-size:18px;
+}
+
+.box{
+  padding:60px 0px;
+}
+
+.box-part{
+  border-top:5px solid black;
+  background:#FFF;
+  border-radius:0;
+  padding:60px 10px;
+  margin:30px 0px;
+}
+.box-part:hover{
+  border-top:5px solid #17A2B8;
+  background:#FFF;
+  border-radius:0;
+  padding:60px 10px;
+  margin:30px 0px;
+  box-shadow: 2px 2px 2px 1px #ccc;
+}
+.text{
+  margin:20px 0px;
+}
+
+.card-link{
+  background-color: #F8A826;
+  border: 2px solid #17A2B8;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.card-link:hover{
+  background-color: #17A2B8;
+  border: 2px solid #17A2B8;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Events Article */
+
+
+.cardcontainer {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.3s
+}
+
+.cardcontainer:hover {
+  box-shadow: 0 0 45px gray
+}
+
+.photo {
+  height: 300px;
+  width: 100%
+}
+
+.photo img {
+  height: 100%;
+  width: 100%
+}
+
+.txt1 {
+  margin: auto;
+  text-align: center;
+  font-size: 17px
+}
+
+.content {
+  width: 80%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -33px
+}
+
+.photos {
+  width: 90px;
+  height: 30px;
+  background-color: #E74C3C;
+  color: white;
+  position: relative;
+  top: -30px;
+  padding-left: 10px;
+  font-size: 20px
+}
+
+.txt4 {
+  font-size: 27px;
+  position: relative;
+  top: 33px
+}
+
+.txt5 {
+  position: relative;
+  top: 18px;
+  color: #E74C3C;
+  font-size: 23px
+}
+
+.txt2 {
+  position: relative;
+  top: 10px
+}
+
+.cardcontainer:hover>.photo {
+  height: 200px;
+  animation: move1 0.5s ease both
+}
+
+@keyframes move1 {
+  0% {
+      height: 300px
+  }
+
+  100% {
+      height: 200px
+  }
+}
+
+.cardcontainer:hover>.content {
+  height: 200px
+}
+
+.footer {
+  width: 80%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  position: relative;
+  top: -15px
+}
+
+.btn {
+  position: relative;
+  top: 20px
+}
+
+#heart {
+  cursor: pointer
+}
+
+.like {
+  float: right;
+  font-size: 22px;
+  position: relative;
+  top: 20px;
+  color: #333333
+}
+
+.fa-gratipay {
+  margin-right: 10px;
+  transition: 0.5s
+}
+
+.fa-gratipay:hover {
+  color: #E74C3C
+}
+
+.txt3 {
+  color: gray;
+  position: relative;
+  top: 18px;
+  font-size: 14px
+}
+
+.comments {
+  float: right;
+  cursor: pointer
+}
+
+.fa-clock,
+.fa-comments {
+  margin-right: 7px
+}

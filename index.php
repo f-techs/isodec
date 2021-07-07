@@ -1,221 +1,111 @@
-<?php include_once('includes/header.php'); ?>
-
+<?php include_once('includes/header2.php'); ?>
 <main role="main">
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="first-slide" src="images/aboutIsodec1.jpg" alt="First slide">
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Event.</h1>
-            <p>ISODEC works in solidarity with those striving for social justice towards a life of dignity by promoting rights and accountability.</p>
-            <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>-->
+  <!-- Showcase -->
+  <section id="showcase" class="bg-info text-light p-5 p-lg-0 pt-lg-5  text-center text-sm-start">
+    <div class="container showcase-items">
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div class="col-md-6 text-left">
+          <div class="lead mb-5">
+            <p class="font-weight-bold">
+            <h1>Promoting of Human Rights and Social Justice for all.</h1>
+            </p>
+          </div>
+          <div>
+            <button class="lead_btn  btn-lg btn-flat">
+              Read More >>>
+            </button>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img class="second-slide" src="images/aboutIsodecCollaboration.jpg" alt="Second slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Collaboration</h1>
-            <p>We work with Third World Network (TWN), the Northern Network for Development (The Network), SEND Foundation, Institute of Policy Alternatives (IPA) and ISSER in Ghana. Our Centre for Budget Advocacy (CBA) also works closely with the Institute of Democracy in South Africa (IDASA) and the International Budget Project (IBP) in Washington both of whom we have jointly carried out research work on Budget Management and Fiscal Transparency and PRSPs and Civil Society as well as Save the Children–UK.</p>
-            <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="third-slide" src="images/aboutIsodecHistoryGray.jpg" alt="Third slide">
-        <div class="container">
-          <div class="carousel-caption text-right">
-            <h1>History</h1>
-            <p>Formed in 1987, ISODEC has a long history of support to grassroots groups in Ghana. From a peri-urban health and sanitation, basic education base, it grew into a formidable force in rural water and sanitation delivery. ISODEC also provides services in the areas of Girl Child Education, Family Reproductive Health and national budget analysis. ISODEC works in an integrated and multidisciplinary manner linking the grassroots to the national and global to effectively implement its programme.</p>
-            <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
-          </div>
+        <div class="col-md-6">
+          <img class="img-fluid w-100 d-none d-sm-block" src="images/freedom.png" alt="" />
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+  </section>
+
+  <!--mission vision-->
+  <section id="mision_vision">
+    <div class="container mision_vision_details ">
+      <div class="row details">
+        <div class="col-lg-4 border-right animate-header p-5">
+          <h2 class="h2">Our Mission</h2>
+          <p class="animate__animated animate__fadeInLeft">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        </div>
+        <div class="col-lg-4 border-right animate-header p-5">
+          <h2 class="h2">Our Vision</h2>
+          <p class="animate__animated animate__fadeInUp">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        </div>
+        <div class="col-lg-4 animate-header p-5">
+          <h2 class="h2">Our Values</h2>
+          <p class="animate__animated animate__fadeInRight">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="m-3 text-center">
+    <h4>Our Work</h4>
   </div>
-
-
-  <!-- Marketing messaging and featurettes
-      ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row message">
-      <div class="col-lg-4 border-right animate-header">
-        <!-- <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">-->
-        <h2 class="h2">Our Mission</h2>
-        <p class="animate__animated animate__fadeInLeft">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4 border-right animate-header">
-        <!-- <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">-->
-        <h2 class="h2">Our Vision</h2>
-        <p class="animate__animated animate__fadeInUp">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4 animate-header">
-        <!--<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">-->
-        <h2 class="h2">Our Values</h2>
-        <p class="animate__animated animate__fadeInRight">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-    <div class="text-center">
-      <h3>Our Work</h3>
+  <!-- our work-->
+  <section id="our-work">
+    <div class="row m-5">
+      <div class="col-lg-4">
+        <div class="box-part text-center">
+          <div class="title">
+            <h4>Main Component Title</h4>
+          </div>
+          <div class="text">
+            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+          </div>
+          <a href="#" class="card-link btn">Read More</a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="box-part text-center">
+          <div class="title">
+            <h4>Main Component Title</h4>
+          </div>
+          <div class="text">
+            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+          </div>
+          <a href="#" class="card-link btn">Read More</a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="box-part text-center">
+          <div class="title">
+            <h4>Main Component Title</h4>
+          </div>
+          <div class="text">
+            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. AssumLorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum deco decore te sed. Elitr scripta ocurreret qui ad.</span>
+          </div>
+          <a href="#" class="card-link btn">Read More</a>
+        </div>
+      </div>
     </div>
-
-    <div class="row featurette">
-
-      <div class="col-4">
-        <div class="card text-left p-1 p-md-4 mb-4 mt-4 card-border">
-          <div class="card-body">
-            <div class="d-flex px-1 px-md-3">
-              <div>
-                <div class="icon icon-primary"><span class="far fa-grin-stars"></span></div>
-              </div>
-              <div class="pl-2 pl-md-3">
-                <h5>100% Satisfaction</h5>
-                <p>Designed with the latest design trends in mind. Our product feels modern, creative, and beautiful.</p>
-                <a href="#" class="btn btn-sm btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card  text-left p-1 p-md-4 mb-4 mt-4 card-border">
-          <div class="card-body">
-            <div class="d-flex px-1 px-md-3">
-              <div>
-                <div class="icon icon-primary"><span class="far fa-grin-stars"></span></div>
-              </div>
-              <div class="pl-2 pl-md-3">
-                <h5>100% Satisfaction</h5>
-                <p>Designed with the latest design trends in mind. Our product feels modern, creative, and beautiful.</p>
-                <a href="#" class="btn btn-sm btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card text-left p-1 p-md-4 mb-4 mt-4 card-border">
-          <div class="card-body">
-            <div class="d-flex px-1 px-md-3">
-              <div>
-                <div class="icon icon-primary"><span class="far fa-grin-stars"></span></div>
-              </div>
-              <div class="icon_bg"><i class="fas fa-sitemap"></i></div>
-              <div class="pl-2 pl-md-3">
-                <h5>100% Satisfaction</h5>
-                <p>Designed with the latest design trends in mind. Our product feels modern, creative, and beautiful.</p>
-                <a href="#" class="btn btn-sm btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="featurette-divider">
-    <div class="text-center">
-      <h3>Latest Event</h3>
-    </div>
-    <div class="row featurette2">
-
-      <div class="col-3">
-        <div class="card">
-          <div class="card-img-wrapper">
-            <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment Special</h5>
-            <div class="card-content">
-              <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-      <div class="card">
-        <div class="card-img-wrapper">
-          <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment Special</h5>
-          <div class="card-content">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="col-3">
-      <div class="card">
-        <div class="card-img-wrapper">
-          <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment Special</h5>
-          <div class="card-content">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="col-3">
-      <div class="card">
-        <div class="card-img-wrapper">
-          <img class="card-img-top" src="https://www.fortech.ro/wp-content/uploads/2018/12/DigitalCommerceSoftwarePlatform-e1554472385425.jpg" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment Special</h5>
-          <div class="card-content">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content. With supporting text below as a natural</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      </div>
-
-    </div>
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
-
-
-  <!-- FOOTER -->
-  <?php include_once('includes/footnote.php'); ?>
+  </section>
+  <div class="m-3 text-center">
+    <h4>Latest Events</h4>
+  </div>
+  <!-- Events-->
+  <section id="events-cards">
+   <div class="row m-5">
+     <div class="col-lg-4">
+     <div class="cardcontainer">
+             <div class="photo"> <img src="https://images.pexels.com/photos/2346006/pexels-photo-2346006.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500">
+                 <div class="photos">Photos</div>
+             </div>
+             <div class="content">
+                 <p class="txt4">City Lights In Newyork</p>
+                 <p class="txt5">A city that never sleeps</p>
+                 <p class="txt2">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+             </div>
+             <div class="footer">
+                 <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
+                 <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
+             </div>
+         </div>
+     </div>
+   </div>
+  </section>
 </main>
-<?php include_once('includes/footer.php'); ?>
+<?php include_once('includes/footer2.php'); ?>

@@ -21,17 +21,20 @@
 
   <!-- animate styles for this template -->
   <link href="css/plugins/animate.css" rel="stylesheet">
+
+  <!-- animate styles for this template -->
+  <link href="css/plugins/media_queries.css" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-      <a class="navbar-brand" href="#"><img src="images/brand_logo.png" /><span style="color:#39A8E8;"> I S O D E C</span></a>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light" style="box-shadow: 10px;">
+      <a class="navbar-brand" href="#"><img src="images/brand_logo.png" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse mt-5" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home </a>
