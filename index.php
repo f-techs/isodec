@@ -89,22 +89,72 @@
   <!-- Events-->
   <section id="events-cards">
    <div class="row m-5">
-     <div class="col-lg-4">
-     <div class="cardcontainer">
-             <div class="photo"> <img src="https://images.pexels.com/photos/2346006/pexels-photo-2346006.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500">
-                 <div class="photos">Photos</div>
-             </div>
-             <div class="content">
-                 <p class="txt4">City Lights In Newyork</p>
-                 <p class="txt5">A city that never sleeps</p>
-                 <p class="txt2">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
-             </div>
-             <div class="footer">
-                 <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
-                 <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
-             </div>
-         </div>
-     </div>
+     <div class="col-lg-4 mb-5">
+     <div class="card">
+        <div class="card-header">
+          <img src="https://s.aolcdn.com/images/dims?client=fh7w6q744eiognjk&signature=d59d0cf6af1d779a3dca451e0ba259c33bbc6115&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fos%2Fab%2F_cms%2F2019%2F08%2F30142658%2F2020-jeep-wrangler-16.jpg&thumbnail=750%2C422&quality=80" alt="" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-teal">Technology</span>
+          <h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+            tenetur distinctio neque?
+          </p>
+          <div class="user">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />
+            <div class="user-info">
+              <h5>Jerome Walton</h5>
+              <small>2h ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div><!---->
+     <div class="col-lg-4 mb-5">
+     <div class="card">
+        <div class="card-header">
+          <img src="https://s.aolcdn.com/images/dims?client=fh7w6q744eiognjk&signature=d59d0cf6af1d779a3dca451e0ba259c33bbc6115&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fos%2Fab%2F_cms%2F2019%2F08%2F30142658%2F2020-jeep-wrangler-16.jpg&thumbnail=750%2C422&quality=80" alt="" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-teal">Technology</span>
+          <h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+            tenetur distinctio neque?
+          </p>
+          <div class="user">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />
+            <div class="user-info">
+              <h5>Jerome Walton</h5>
+              <small>2h ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div><!---->
+     <div class="col-lg-4 mb-5">
+     <div class="card">
+        <div class="card-header">
+          <img src="https://s.aolcdn.com/images/dims?client=fh7w6q744eiognjk&signature=d59d0cf6af1d779a3dca451e0ba259c33bbc6115&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fos%2Fab%2F_cms%2F2019%2F08%2F30142658%2F2020-jeep-wrangler-16.jpg&thumbnail=750%2C422&quality=80" alt="" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-teal">Technology</span>
+          <h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+            tenetur distinctio neque?
+          </p>
+          <div class="user">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />
+            <div class="user-info">
+              <h5>Jerome Walton</h5>
+              <small>2h ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div><!---->
    </div>
   </section>
 </main>
