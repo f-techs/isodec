@@ -182,7 +182,10 @@ span{
   text-transform: uppercase;
 }
 .tag-teal {
-  background-color: #92d4e4;
+  background-color: #F8A826;
+}
+.tag-link {
+  color: #F8A826;
 }
 .tag-purple {
   background-color: #3d1d94;
@@ -195,7 +198,7 @@ span{
 }
 .card-body p {
   font-size: 14px;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
   font-weight: 500;
   color: rgb(70, 68, 68);
 }
@@ -215,4 +218,29 @@ span{
 }
 .user-info small {
   color: #888785;
+}
+
+/*Blogs and Events Tabs*/
+#tab-menus {
+  padding: 20px 0px;
+}
+#tab-menus .nav-tabs {
+  background-color: #f3f3f3;
+  box-shadow: 0px 0px 33px -15px #000;
+}
+#tab-menus .tab-content {
+  background-color: #f3f3f3;
+  padding: 5px 15px;
+}
+#tab-menus .nav-link {
+  font-size: 18px;
+  color: #17A2B8;
+}
+#tab-menus .nav-tabs {
+  border-bottom: 1px solid #17A2B8;
+}
+#tab-menus .nav-tabs .nav-link.active {
+  border-color: #17A2B8 #17A2B8 #fff;
+  color: white;
+  background-color: #17A2B8;
 }
