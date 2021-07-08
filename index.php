@@ -169,10 +169,10 @@
               <!-- Tabs navs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#firstMenu"><i class="fab fa-html5"></i> LATEST BLOGS</a>
+                  <a class="nav-link active" data-toggle="tab" href="#firstMenu"> LATEST BLOGS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#secondmenu"><i class="fab fa-wordpress"></i> ALL BLOGS</a>
+                  <a class="nav-link" data-toggle="tab" href="#secondmenu"> ALL BLOGS</a>
                 </li>
               </ul>
               <!-- Tabs Content -->
@@ -198,13 +198,13 @@
               <!-- Tabs navs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#firstMenu"><i class="fa fa-html5"></i> ALL EVENTS</a>
+                  <a class="nav-link active" data-toggle="tab" href="#firstMenu"> ALL EVENTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#secondmenu"><i class="fa fa-wordpress"></i> RECENTS EVENTS</a>
+                  <a class="nav-link" data-toggle="tab" href="#secondmenu"> RECENTS EVENTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#thirdmenu"><i class="fa fa-bootstrap"></i> UPCOMING EVENTS</a>
+                  <a class="nav-link" data-toggle="tab" href="#thirdmenu"> UPCOMING EVENTS</a>
                 </li>
                 
               </ul>
