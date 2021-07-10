@@ -1,4 +1,4 @@
-<?php include_once('includes/header2.php'); ?>
+<?php include_once('includes/header.php'); ?>
 <main role="main">
   <!-- Showcase -->
   <section id="showcase" class="bg-info text-light p-5 p-lg-0 pt-lg-5  text-center text-sm-start">
@@ -229,5 +229,9 @@
       </div>
     </div>
   </section>
+  <section class="footer">
+
+  </section>
+    <!-- FOOTER -->
 </main>
 <?php include_once('includes/footer2.php'); ?>

@@ -36,9 +36,10 @@ nav {
 .navbar .dropdown-menu .dropdown-item:hover {
 width:auto;
 }
-.navbar .navbar-right .nav-item a{
+.navbar .navbar-right .nav-item i{
   color: #39A8E8 !important;
 }
+
 /* END OF NAVBAR
 -------------------------------------------------- */
 
@@ -243,4 +244,35 @@ span{
   border-color: #17A2B8 #17A2B8 #fff;
   color: white;
   background-color: #17A2B8;
+}
+
+/* Footer */
+.myfooter{
+  background-color:#000080;
+}
+.list-unstyled a{
+  color:white;
+}
+.list-unstyled a:hover{
+  color: #F8A826;
+}
+#button-addon1 {
+  color: #F8A826;
+}
+
+i {
+  color: #F8A826;
+}
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.form-control.shadow-0:focus {
+  box-shadow: none;
+}
+.footer-main-heading{
+  color: #F8A826;
 }

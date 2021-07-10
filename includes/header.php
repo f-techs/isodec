@@ -16,6 +16,9 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- Custom styles for this template -->
+  <link href="css/style2.css" rel="stylesheet">
+
   <!-- icons-->
   <link href="css/css-icons/icons.css" rel="stylesheet">
 
@@ -81,6 +84,8 @@
               <a class="dropdown-item" href="#">Documents</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Videos</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Pictures</a>
             </div>
           </li>
           <li class="nav-item">

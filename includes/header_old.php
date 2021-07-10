@@ -16,9 +16,6 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/style2.css" rel="stylesheet">
-
   <!-- icons-->
   <link href="css/css-icons/icons.css" rel="stylesheet">
 
@@ -83,6 +80,8 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Documents</a>
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Pictures</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Videos</a>
             </div>
           </li>
@@ -91,8 +90,8 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right mr-auto">
-          <li class="nav-item"><a href="#"> <i class="mdi mdi-facebook-box"></i></a></li>
-          <li class="nav-item"><a href="#"><i class="mdi mdi-twitter-box"></i></a></li>
+          <li class="nav-item "><a href="#"> <i class="mdi mdi-facebook-box social-media"></i></a></li>
+          <li class="nav-item "><a href="#"><i class="mdi mdi-twitter-box social-media"></i></a></li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
