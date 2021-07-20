@@ -1,8 +1,9 @@
-      <?php include('includes/header.php'); ?>
+     <?php require_once('../config.php'); ?>
+	 <?php include(APPROOT.'/includes/admin/header.php'); ?>
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Page-->
 			<div class="d-flex flex-row flex-column-fluid page">
-				<?php include('includes/side-menu.php');?>
+				<?php include(APPROOT.'/includes/admin/side-menu.php');?>
 				<!--begin::Wrapper-->
 				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
 					<!--begin::Header-->
@@ -63,4 +64,4 @@
 			<!--end::Page-->
 		</div>
 		<!--end::Main-->
-<?php include('includes/footer.php'); ?>
+<?php include(APPROOT.'/includes/admin/footer.php'); ?>

@@ -1,4 +1,7 @@
-<?php include_once('includes/header.php'); ?>
+<?php require_once('config.php')?>
+
+<?php 
+include(APPROOT.'/includes/public/header.php'); ?>
 <main role="main">
   <!-- Showcase -->
   <section id="showcase" class="bg-info text-light p-5 p-lg-0 pt-lg-5  text-center text-sm-start">
@@ -6,8 +9,8 @@
       <div class="d-sm-flex align-items-center justify-content-between">
         <div class="col-md-6 text-left">
           <div class="lead mb-5">
-            <p class="font-weight-bold">
-            <h1>Promoting of Human Rights and Social Justice for all.</h1>
+            <p>
+            <h1 class="font-weight-bold">Promoting of Human Rights and Social Justice for all.</h1>
             </p>
           </div>
           <div>
@@ -17,7 +20,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img class="img-fluid w-100 d-none d-sm-block" src="images/freedom.png" alt="" />
+          <img class="img-fluid w-100 d-none d-sm-block" src="<?php echo URLROOT?>/assets/public/images/freedom.png" alt="" />
         </div>
       </div>
     </div>
@@ -234,4 +237,4 @@
   </section>
     <!-- FOOTER -->
 </main>
-<?php include_once('includes/footer2.php'); ?>
+<?php include(APPROOT.'/includes/public/footer.php'); ?>
