@@ -117,7 +117,7 @@
                         <ul class="menu-subnav">
 
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT?>/admin/pages/programmes-economic-justice" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -125,7 +125,7 @@
                                 </a>
                             </li>
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT?>/admin/pages/essential-services" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -133,7 +133,7 @@
                                 </a>
                             </li>
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT?>/admin/pages/policy-support" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

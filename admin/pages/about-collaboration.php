@@ -189,6 +189,7 @@
 						if (response === 'success') {
 							$('#img-remove-action').click();
 							$('#img_remove').hide();
+							$('#view_image').hide();
 							$('#img_file').prop('required', true);
 							Swal.fire("Note!", "Image deleted", "success");
 						}

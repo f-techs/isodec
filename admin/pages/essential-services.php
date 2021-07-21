@@ -51,43 +51,46 @@
 							<div class="card card-custom">
 								<div class="card-header">
 									<h3 class="card-title">
-										Describe Vision Page:
+										Describe Essential Services Page:
 									</h3>
 								</div>
 								<!--begin::Form-->
-								<form id="frmVision" method="Post" enctype="multipart/form-data">
+								<form id="frm" method="Post" enctype="multipart/form-data">
 									<div class="card-body">
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Type Content Here:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
-												<textarea id="vision_content" name="vision_content" class="form-control" <?php echo (!empty($visionID)) ? '' : 'required'; ?>><?php echo (!empty($visionID)) ? $visionDetails : ''; ?></textarea>
+												<textarea id="details" name="details" class="form-control" <?php echo (!empty($essentialsID)) ? '' : 'required'; ?>><?php echo (!empty($essentialsID)) ? $essentialsDetails : ''; ?></textarea>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Upload Image Here:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
 												<div class="image-input image-input-outline" id="img" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
-													<div class="image-input-wrapper" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo (!empty($visionID)) ? $visionImg : ''; ?>)"></div>
+													<div class="image-input-wrapper" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo (!empty($essentialsID)) ? $essentialsImg : ''; ?>)"></div>
 
 													<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
 														<i class="fa fa-pen icon-sm text-muted"></i>
-														<input type="file" name="img_file" id="img_file" accept=".png, .jpg, .jpeg" <?php echo (!empty($visionID)  && !empty($visionImg)) ? '' : 'required'; ?> />
-														<input type="hidden" id="image_remove_name" value="<?php echo (!empty($visionID)) ? $visionImg : ''; ?>" name="profile_avatar_remove" />
+														<div id="file_wrapper">
+														<input type="file" name="img_file" id="img_file" accept=".png, .jpg, .jpeg" <?php echo (!empty($essentialsID)  && !empty($essentialsImg)) ? '' : 'required'; ?> />
+														</div>
+														<input type="hidden" id="image_remove_name" value="<?php echo (!empty($essentialsID)) ? $essentialsImg : ''; ?>" name="profile_avatar_remove" />
 													</label>
 													<!--
 													<span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel image">
 														<i class="ki ki-bold-close icon-xs text-muted"></i>
-													</span>-->
+													</span>
+-->
 													<span style="display:none;" class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" id="img-remove-action" data-action="remove" data-toggle="tooltip" title="Remove image">
 														<i class="ki ki-bold-close icon-xs text-muted"></i>
 													</span>
 												</div>
-												<!--remove image-->
-												<span style="display:<?php echo (!empty($visionID)  && !empty($visionImg)) ? 'inline-block' : 'none'; ?>;" class="btn btn-xs btn-icon btn-circle btn-danger btn-hover-text-primary btn-shadow" id="img_remove" data-toggle="tooltip" title="Remove image">
+												<!--remove image -->
+												<span style="display:<?php echo (!empty($essentialsID)  && !empty($essentialsImg)) ? 'inline-block' : 'none'; ?>;" class="btn btn-xs btn-icon btn-circle btn-danger btn-hover-text-primary btn-shadow" id="img_remove" data-toggle="tooltip" title="Remove image">
 													<i class="ki ki-bold-close icon-xs"></i>
 												</span>
 												<!--view image-->
-												<span style="display:<?php echo (!empty($visionImg)  && !empty($visionImg)) ? 'inline-block' : 'none'; ?>;" class="btn btn-xs btn-icon btn-circle btn-success btn-hover-text-primary btn-shadow" id="view_image" data-toggle="tooltip" title="View image">
+												<span style="display:<?php echo (!empty($essentialsID)  && !empty($essentialsImg)) ? 'inline-block' : 'none'; ?>;" class="btn btn-xs btn-icon btn-circle btn-success btn-hover-text-primary btn-shadow" id="view_image" data-toggle="tooltip" title="View image">
 													<i class="far fa-eye icon-xs"></i>
 												</span>
 											</div>
@@ -95,7 +98,7 @@
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Image Caption:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
-												<textarea id="img_caption" name="img_caption" class="form-control" <?php echo (!empty($visionID)) ? '' : 'required'; ?>><?php echo (!empty($visionID)) ? $visionImgCaption : ''; ?></textarea>
+												<textarea id="img_caption" name="img_caption" class="form-control" <?php echo (!empty($essentialsID)) ? '' : 'required'; ?>><?php echo (!empty($essentialsID)) ? $essentialsImgCaption : ''; ?></textarea>
 											</div>
 										</div>
 									</div>
@@ -116,13 +119,13 @@
 									<div class="modal-dialog" role="document">
 										<div class="modal-content">
 											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalLabel">Vision Image</h5>
+												<h5 class="modal-title" id="exampleModalLabel">Economic Justice Image</h5>
 												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 													<i aria-hidden="true" class="ki ki-close"></i>
 												</button>
 											</div>
 											<div class="modal-body">
-												<img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo (!empty($visionID)) ? $visionImg : ''; ?>" style="width:100%;height:100%; display:block;" />
+												<img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo (!empty($essentialsID)) ? $essentialsImg : ''; ?>" style="width:100%;height:100%; display:block;" />
 											</div>
 										</div>
 									</div>
@@ -181,8 +184,10 @@
 				reverseButtons: true
 			}).then(function(result) {
 				if (result.value) {
-					$.post('<?php echo URLROOT ?>/admin/scripts/about_image_delete_script.php',{imgname_vision:imgname},function(response){
-						if(response==='success'){
+					$.post('<?php echo URLROOT ?>/admin/scripts/programme_image_delete_script.php', {
+						imgname_essential: imgname
+					}, function(response) {
+						if (response === 'success') {
 							$('#img-remove-action').click();
 							$('#img_remove').hide();
 							$('#view_image').hide();
@@ -191,22 +196,22 @@
 						}
 					})
 				} else if (result.dismiss === "cancel") {
-					
+                    Swal.fire("Note!", "Image deleted", "danger");
 				}
 			});
 		}
 
-           });
+	});
 
-     //event to remove image from display
-	imgUpload.on('remove', function(imageInput){});
+	//event to remove image from display
+	imgUpload.on('remove', function(imageInput) {});
 
 
 	// Text Editor Intialization
-	var VisionNote = function() {
+	var DetailsNote = function() {
 		// Private functions
-		var visionEditor = function() {
-			$('#vision_content').summernote({
+		var detailsEditor = function() {
+			$('#details').summernote({
 				height: 150
 			});
 		}
@@ -214,7 +219,7 @@
 		return {
 			// public functions
 			init: function() {
-				visionEditor();
+				detailsEditor();
 			}
 		};
 	}();
@@ -222,29 +227,29 @@
 	//check summernote content
 	$('#btn_submit').on('click', function() {
 		// get summernote details and make textarea required
-		let vision_content = '';
-		if ($('#vision_content').summernote('isEmpty')) {
-			vision_content = $('#vision_content').val('');
-			$('#vision_content').prop('require', true);
-			Swal.fire("Note!", "Mission Description cannot be empty", "warning");
+		let details = '';
+		if ($('#details').summernote('isEmpty')) {
+			details = $('#details').val('');
+			$('#details').prop('require', true);
+			Swal.fire("Note!", "details cannot be empty", "warning");
 		} else {
-			vision_content = $('#vision_content').val();
-			$('#vision_content').prop('require', false);
+			details = $('#details').val();
+			$('#details').prop('require', false);
 		}
 	})
 
-//view image
-$('#view_image').on('click', function() {
+	//view image
+	$('#view_image').on('click', function() {
 		$('#imgShow').modal('show');
 	});
 
 	//Submit form
-	$('#frmVision').on('submit', function(e) {
+	$('#frm').on('submit', function(e) {
 		e.preventDefault();
 		//get summernote details befor post
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo URLROOT ?>/admin/scripts/add_vision_script.php',
+			url: '<?php echo URLROOT ?>/admin/scripts/add_essential_services.php',
 			data: new FormData(this),
 			contentType: false,
 			cache: false,
@@ -276,6 +281,6 @@ $('#view_image').on('click', function() {
 
 	// Initialization
 	jQuery(document).ready(function() {
-		VisionNote.init();
+		DetailsNote.init();
 	});
 </script>

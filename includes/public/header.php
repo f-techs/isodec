@@ -13,9 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="<?php echo URLROOT?>/assets/public/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="<?php echo URLROOT?>/assets/public/css/style.css" rel="stylesheet">
-
+  
   <!-- Custom styles for this template -->
   <link href="<?php echo URLROOT?>/assets/public/css/style2.css" rel="stylesheet">
 
@@ -26,13 +24,14 @@
   <link href="<?php echo URLROOT?>/assets/public/css/plugins/animate.css" rel="stylesheet">
 
   <!-- animate styles for this template -->
-  <link href="<?php echo URLROOT?>/assets/public/css/plugins/media_queries.css" rel="stylesheet">
+  <link href="<?php echo URLROOT?>/assets/public/css/media_queries.css" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light" style="box-shadow: 10px;">
+    <div class="container container-fluid" style="width:100%">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 10px;">
       <a class="navbar-brand" href="<?php echo URLROOT?>/index"><img src="<?php echo URLROOT?>/assets/public/images/brand_logo.png" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -102,4 +101,5 @@
         </form>
       </div>
     </nav>
+</div>
   </header>
