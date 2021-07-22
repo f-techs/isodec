@@ -60,7 +60,29 @@ foreach($policyResults as $policy){
     $policyDetails=$policy->details;
 }
 
+//fetch blog list table
+$sqlbloglist=DB::getInstance()->select_query("SELECT * FROM tbl_blogs ORDER BY blog_id DESC");
+$blogListResults=$sqlbloglist->results();
 
+//fetch news list table
+$sqlNewslist=DB::getInstance()->select_query("SELECT * FROM tbl_news ORDER BY news_id DESC");
+$newsListResults=$sqlNewslist->results();
+
+//fetch blog details
+if(isset($_SESSION['blogID'])){
+    $blogID=$_SESSION['blogID'];
+    $sqlBlog=DB::getInstance()->select_query("SELECT * FROM tbl_blogs WHERE blog_id='$blogID'");
+    $sqlBlogResults=$sqlBlog->results();
+    foreach($sqlBlogResults as $blogData){
+        $blogCode=$blogData->blog_code;
+        $blogImg=$blogData->blog_img;
+        $blogImgCaption=$blogData->img_description;
+        $blogTitle=$blogData->blog_title;
+        $blogDetails=$blogData->blog_details;
+    }
+
+}
+//unset($_SESSION['blogID']);
 /**end for website contents */
 
 

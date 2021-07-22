@@ -23,9 +23,10 @@ spl_autoload_register(function($classname) {
 //App Root
 define('APPROOT',dirname(__FILE__));
 //URL Root
-define('URLROOT', 'http://192.168.8.128:8080/isodec');
+define('URLROOT', 'http://localhost:8080/isodec');
 //sITE Name
 define('SITENAME', 'ISODEC - GHANA');
 
 //other requires
 require_once(APPROOT.'/helpers/fetchs.php');
+require_once(APPROOT.'/helpers/functions.php');

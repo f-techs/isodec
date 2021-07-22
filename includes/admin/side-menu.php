@@ -163,7 +163,7 @@
                         <ul class="menu-subnav">
 
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT?>/admin/pages/blogs-list" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -171,7 +171,7 @@
                                 </a>
                             </li>
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT?>/admin/pages/news-list" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

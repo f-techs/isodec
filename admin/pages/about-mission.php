@@ -225,12 +225,13 @@
 	}();
 
 	//check summernote content
-	$('#btn_submit').on('click', function() {
+	$('#btn_submit').on('click', function(e) {
 		// get summernote details and make textarea required
 		let mission_content = '';
 		if ($('#mission_content').summernote('isEmpty')) {
 			mission_content = $('#mission_content').val('');
 			$('#mission_content').prop('require', true);
+			e.preventDefault();
 			Swal.fire("Note!", "Mission Description cannot be empty", "warning");
 		} else {
 			mission_content = $('#mission_content').val();
