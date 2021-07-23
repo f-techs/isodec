@@ -46,11 +46,11 @@
               About Us
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="<?php echo URLROOT?>/about-mission">Our Mission</a>
+              <a class="dropdown-item" href="<?php echo URLROOT?>/mission">Our Mission</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="<?php echo URLROOT?>/about-history">History</a>
+              <a class="dropdown-item" href="<?php echo URLROOT?>/history">History</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="<?php echo URLROOT?>/about-collaboration">Collaboration</a>
+              <a class="dropdown-item" href="<?php echo URLROOT?>/collaboration">Collaboration</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -58,7 +58,7 @@
               Programmes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Economic Justice</a>
+              <a class="dropdown-item" href="<?php echo URLROOT?>/economic-justice.php">Economic Justice</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Essential Services</a>
               <div class="dropdown-divider"></div>

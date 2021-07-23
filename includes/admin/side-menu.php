@@ -124,14 +124,44 @@
                                     <span class="menu-text">Economic Justice</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo URLROOT?>/admin/pages/essential-services" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Essential Services</span>
-                                </a>
-                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+												<a href="javascript:;" class="menu-link menu-toggle">
+													<i class="menu-bullet menu-bullet-line">
+														<span></span>
+													</i>
+													<span class="menu-text">Essential Services</span>
+													<i class="menu-arrow"></i>
+												</a>
+												<div class="menu-submenu">
+													<i class="menu-arrow"></i>
+													<ul class="menu-subnav">
+														<li class="menu-item" aria-haspopup="true">
+															<a href="custom/apps/support-center/home-1.html" class="menu-link">
+																<i class="menu-bullet menu-bullet-dot">
+																	<span></span>
+																</i>
+																<span class="menu-text">Education</span>
+															</a>
+														</li>
+														<li class="menu-item" aria-haspopup="true">
+															<a href="custom/apps/support-center/home-2.html" class="menu-link">
+																<i class="menu-bullet menu-bullet-dot">
+																	<span></span>
+																</i>
+																<span class="menu-text">Health</span>
+															</a>
+														</li>
+														<li class="menu-item" aria-haspopup="true">
+															<a href="custom/apps/support-center/faq-1.html" class="menu-link">
+																<i class="menu-bullet menu-bullet-dot">
+																	<span></span>
+																</i>
+																<span class="menu-text">Water</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</li>
                             <li class="menu-item" aria-haspopup="true">
                                 <a href="<?php echo URLROOT?>/admin/pages/policy-support" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
