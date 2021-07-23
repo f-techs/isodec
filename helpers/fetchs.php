@@ -12,13 +12,13 @@ foreach($missionResults as $mission){
 }
 
 //fetch mission
-$sqlVision=DB::getInstance()->select_query("call pro_selectAbout(2)");
-$visionResults=$sqlVision->results();
-foreach($visionResults as $vision){
-    $visionID=$vision->about_type;
-    $visionImg=$vision->img;
-    $visionImgCaption=$vision->img_description;
-    $visionDetails=$vision->details;
+$sqlhistory=DB::getInstance()->select_query("call pro_selectAbout(2)");
+$historyResults=$sqlhistory->results();
+foreach($historyResults as $history){
+    $historyID=$history->about_type;
+    $historyImg=$history->img;
+    $historyImgCaption=$history->img_description;
+    $historyDetails=$history->details;
 }
 
 //fetch collaboration
@@ -81,6 +81,18 @@ if(isset($_SESSION['blogID'])){
         $blogDetails=$blogData->blog_details;
     }
 
+}
+if(isset($_SESSION['newsID'])){
+    $newsID=$_SESSION['newsID'];
+    $sqlNews=DB::getInstance()->select_query("SELECT * FROM tbl_news WHERE news_id='$newsID'");
+    $sqlNewsResults=$sqlNews->results();
+    foreach($sqlNewsResults as $newsData){
+        $newsCode=$newsData->news_code;
+        $newsImg=$newsData->news_img;
+        $newsImgCaption=$newsData->img_description;
+        $newsTitle=$newsData->news_title;
+        $newsDetails=$newsData->news_details;
+    }
 }
 //unset($_SESSION['blogID']);
 /**end for website contents */

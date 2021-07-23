@@ -48,7 +48,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="<?php echo URLROOT?>/about-mission">Our Mission</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">History</a>
+              <a class="dropdown-item" href="<?php echo URLROOT?>/about-history">History</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Collaboration</a>
             </div>

@@ -206,8 +206,8 @@
                 reverseButtons: true
             }).then(function(result) {
                 if (result.value) {
-                    $.post('<?php echo URLROOT ?>/admin/scripts/blog_image_delete_script.php', {
-                        imgname_db: imgname,
+                    $.post('<?php echo URLROOT ?>/admin/scripts/blog_news_image_delete_script.php', {
+                        blog_image: imgname,
                         blogCode: blogCode
                     }, function(response) {
                         //if (response === 'success') {

@@ -9,7 +9,7 @@ if(isset($_FILES['img_file']) && isset($_POST['news_content']) && isset($_POST['
     $imgcaption=$_POST['img_caption'];
     //set img name if already exist
     if(isset($_POST['news_code']) && !empty($_POST['news_code'])){
-      $code=$blogCode;
+      $code=$newsCode;
     }else{
         $code=random_code(10);
     }

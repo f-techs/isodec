@@ -19,6 +19,7 @@
     <?php if(!empty($missionID)): ?>
       <div class="col-lg-12 col-md-6 col-xs-4">
         <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo $missionImg ?>" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;" height="70%" width="70%"/>
+        <p style="color:#39A8E8"><?php echo $missionImgCaption;?></p>
       </div>
       <div class="col-lg-12 col-md-6 col-xs-4">
       <p> <?php echo $missionDetails;?></p>

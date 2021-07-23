@@ -203,9 +203,10 @@
 	})();
 	//# sourceMappingURL=html-table.js.map
 	$(document).on('click', '.edit', function (event) {
-         var blogID = $(this).attr('id');
-		$.post('<?php echo URLROOT ?>/admin/scripts/set_sessions_script.php',{blogID:blogID},function(data){
-			window.location.href="<?php echo URLROOT ?>/admin/pages/view-edit-blog";
+         var newsID = $(this).attr('id');
+		$.post('<?php echo URLROOT ?>/admin/scripts/set_sessions_script.php',{newsID:newsID},function(data){
+			//alert(data);
+			window.location.href="<?php echo URLROOT ?>/admin/pages/view-edit-news";
 		})
 	});
 	$(document).on('click', '.delete', function (event) {
