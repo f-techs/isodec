@@ -23,7 +23,7 @@ if($_FILES['img_file'] && isset($_POST['mission_content']) && isset($_POST['img_
     if(isset($sql)){
         //$response['error']=0;
         $response['status']='success';
-        $response['message']='Mission Details saved successfully';
+        $response['message']='Details saved successfully';
     }else{
        // $response['error']=1;
         $response['status']='error';

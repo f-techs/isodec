@@ -50,7 +50,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="<?php echo URLROOT?>/about-history">History</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Collaboration</a>
+              <a class="dropdown-item" href="<?php echo URLROOT?>/about-collaboration">Collaboration</a>
             </div>
           </li>
           <li class="nav-item dropdown">

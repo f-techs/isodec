@@ -23,7 +23,7 @@ if($_FILES['img_file'] && isset($_POST['collaboration_content']) && isset($_POST
     if(isset($sql)){
         //$response['error']=0;
         $response['status']='success';
-        $response['message']='Mission Details saved successfully';
+        $response['message']='Details saved successfully';
     }else{
        // $response['error']=1;
         $response['status']='error';
