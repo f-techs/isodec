@@ -26,4 +26,17 @@ if(isset($_POST['blog_image'])){
     } else {
         echo 'fail';
     }  
+}elseif(isset($_POST['event_image'])){
+    $imgname = $_POST['event_image'];
+    $eventCode = $_POST['eventCode'];
+    $imgpath = APPROOT . '/assets/admin/media/uploadImages/events/' . $imgname;
+    if (isset($imgname)) {
+        $sql = DB::getInstance()->gen_query("UPDATE tbl_events set event_img='' WHERE event_code='$eventCode'");
+    }
+    if (isset($sql)) {
+        unlink($imgpath);
+        echo 'success';
+    } else {
+        echo 'fail';
+    }  
 }

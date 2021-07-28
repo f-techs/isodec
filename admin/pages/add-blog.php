@@ -78,21 +78,20 @@
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Blog Title:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
-												<textarea id="blog_title" required name="blog_title" class="form-control" ></textarea>
+												<textarea id="blog_title" required name="blog_title" class="form-control"></textarea>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Type Content Here:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
-												<textarea id="blog_content" name="blog_content" class="form-control" ></textarea>
+												<textarea id="blog_content" name="blog_content" class="form-control"></textarea>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Upload Image Here:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
 												<div class="image-input image-input-outline" id="img" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
-													<div class="image-input-wrapper" ></div>
-
+													<div class="image-input-wrapper"></div>
 													<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
 														<i class="fa fa-pen icon-sm text-muted"></i>
 														<div id="file_wrapper">
@@ -103,8 +102,7 @@
 													<!--
 													<span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel image">
 														<i class="ki ki-bold-close icon-xs text-muted"></i>
-													</span>
--->
+													</span>-->
 													<span style="display:none;" class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" id="img-remove-action" data-action="remove" data-toggle="tooltip" title="Remove image">
 														<i class="ki ki-bold-close icon-xs text-muted"></i>
 													</span>
@@ -114,7 +112,7 @@
 										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Image Caption:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
-												<textarea id="img_caption" name="img_caption" class="form-control" ></textarea>
+												<textarea id="img_caption" name="img_caption" class="form-control"></textarea>
 											</div>
 										</div>
 									</div>
@@ -128,8 +126,6 @@
 									</div>
 								</form>
 								<!--end::Form-->
-
-								
 							</div>
 						</div>
 						<!--end::mission_col-->
@@ -170,7 +166,7 @@
 	});
 
 
-	
+
 
 
 	// Text Editor Intialization

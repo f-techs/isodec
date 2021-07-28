@@ -165,9 +165,7 @@
 	var imgUpload = new KTImageInput('img');
 
 
-	imgUpload.on('change', function(imageInput) {
-
-	});
+	imgUpload.on('change', function(imageInput) {});
 
 
 	

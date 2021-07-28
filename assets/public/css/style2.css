@@ -41,7 +41,36 @@ width:auto;
 .navbar .navbar-right .nav-item i{
   color: #39A8E8 !important;
 }
+.dropright:hover>.dropdown-menu{
+display: block;
+ position: absolute;
+ transform: translate3d(150px, -5px, 0px);
+ top: 0px;
+ left: 0px;
+ will-change: transform;
+} 
+.dropright>.dropdown-toggle:active {
+ pointer-events: none;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.main-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .main-menu{
+  display: block;
+}
 /* END OF NAVBAR
 -------------------------------------------------- */
 

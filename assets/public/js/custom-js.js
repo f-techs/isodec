@@ -1,5 +1,6 @@
 
 //menu toggle
+/*
 function toggleDropdown (e) {
     const _d = $(e.target).closest('.dropdown'),
       _m = $('.dropdown-menu', _d);
@@ -13,7 +14,9 @@ function toggleDropdown (e) {
   $('body')
     .on('mouseenter mouseleave','.dropdown',toggleDropdown)
     .on('click', '.dropdown-menu a', toggleDropdown);
+*/
 
+   
     //animate on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

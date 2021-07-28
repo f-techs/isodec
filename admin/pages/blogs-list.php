@@ -93,7 +93,7 @@
 								<thead>
 									<tr>
 										<th title="Field #1">Blog Title</th>
-										<th title="Field #2">Blog Img</th>
+										<th title="Field #2">Blog Image</th>
 										<th title="Field #3">Blog Details</th>
 										<th title="Field #4">Post Date</th>
 										<th title="Field #4">Action</th>
@@ -220,7 +220,7 @@
                 reverseButtons: true
             }).then(function(result) {
                 if (result.value) {
-					$.post('<?php echo URLROOT ?>/admin/scripts/delete_blog_news_script.php',{blogID:blogID},function(data){
+					$.post('<?php echo URLROOT ?>/admin/scripts/delete_entry_script.php',{blogID:blogID},function(data){
 			         if(data === 'success'){
 						 location.reload();
 					 }

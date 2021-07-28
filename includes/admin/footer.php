@@ -12,6 +12,7 @@
 		<!--end::Page Vendors-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="<?php echo URLROOT?>/assets/admin/js/pages/widgets.js"></script>
+		<script src="<?php echo URLROOT?>assets/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js"></script>
 		<!--begin::Page Scripts(used by this page)-->
 		
 		<!--end::Page Scripts-->

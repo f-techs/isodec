@@ -64,9 +64,24 @@ foreach($policyResults as $policy){
 $sqlbloglist=DB::getInstance()->select_query("SELECT * FROM tbl_blogs ORDER BY blog_id DESC");
 $blogListResults=$sqlbloglist->results();
 
+//fetch event list table
+$sqleventlist=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id DESC");
+$eventListResults=$sqleventlist->results();
+
 //fetch news list table
 $sqlNewslist=DB::getInstance()->select_query("SELECT * FROM tbl_news ORDER BY news_id DESC");
 $newsListResults=$sqlNewslist->results();
+
+
+//fetch services list table
+$sqlEssential=DB::getInstance()->select_query("SELECT * FROM view_essentialservices ORDER BY post_id DESC");
+$sqlEssentialResults=$sqlEssential->results();
+
+//fetch media list table
+$sqlMedia=DB::getInstance()->select_query("SELECT * FROM view_media ORDER BY media_id DESC");
+$sqlMediaResults=$sqlMedia->results();
+
+
 
 //fetch blog details
 if(isset($_SESSION['blogID'])){
@@ -82,6 +97,7 @@ if(isset($_SESSION['blogID'])){
     }
 
 }
+//fetch new details
 if(isset($_SESSION['newsID'])){
     $newsID=$_SESSION['newsID'];
     $sqlNews=DB::getInstance()->select_query("SELECT * FROM tbl_news WHERE news_id='$newsID'");
@@ -94,9 +110,60 @@ if(isset($_SESSION['newsID'])){
         $newsDetails=$newsData->news_details;
     }
 }
-//unset($_SESSION['blogID']);
+//fetch pictures
+$sqlGallery=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=1 ORDER BY media_id");
+$galleryResults=$sqlGallery->results();
+
+//fetch vidoeos
+$sqlVideo=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=2 ORDER BY media_id");
+$videoResults=$sqlVideo->results();
+
+
+
+//fetch events details
+if(isset($_SESSION['eventID'])){
+    $eventID=$_SESSION['eventID'];
+    $sqlEvent=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_id='$eventID'");
+    $sqlEventResults=$sqlEvent->results();
+    foreach($sqlEventResults as $eventData){
+        $eventCode=$eventData->event_code;
+        $eventImg=$eventData->event_img;
+        $eventTitle=$eventData->event_title;
+        $eventType=$eventData->event_type;
+        $eventTypeName=$eventData->event_type_name;
+        $eventDetails=$eventData->event_details;
+        $eventDate=$eventData->event_date;
+        $eventTime=$eventData->event_time;
+        $eventWebinar=$eventData->webinar_url;
+    }
+
+}
+
+//fetch social media
+$sqlSocial=DB::getInstance()->select_query("SELECT * FROM tbl_social_media");
+$socialResults=$sqlSocial->results();
+foreach($socialResults as $data){
+    $facebook=$data->facebook_url;
+    $twitter=$data->twitter_url;
+    $instagram=$data->instagram_url;
+    $skype=$data->skype_url;
+    $linkedIn=$data->linkedIn_url;
+    $entryCode=$data->entry_code;
+}
 /**end for website contents */
 
+/**select box fetch */
+//essential service
+$sqlSelect=DB::getInstance()->select_query("SELECT * FROM tbl_essential_types");
+$sqlSelectResults=$sqlSelect->results();
+
+//media
+$sqlSelMedia=DB::getInstance()->select_query("SELECT * FROM media_types");
+$mediaResults=$sqlSelMedia->results();
+
+//events
+$sqlEvents=DB::getInstance()->select_query("SELECT * FROM event_types");
+$eventResults=$sqlEvents->results();
 
 
 

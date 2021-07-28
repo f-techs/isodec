@@ -14,7 +14,7 @@ if(isset($_FILES['img_file']) && isset($_POST['blog_content']) && isset($_POST['
         $code=random_code(10);
     }
     if($_FILES['img_file']['error']==4){
-        $imgname=$missionImg;
+        $imgname=$blogImg;
     }else{
         $Img = $_FILES['img_file']['name'];
         $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));

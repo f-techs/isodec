@@ -93,7 +93,7 @@
 								<thead>
 									<tr>
 										<th title="Field #1">News Title</th>
-										<th title="Field #2">News Img</th>
+										<th title="Field #2">News Image</th>
 										<th title="Field #3">News Details</th>
 										<th title="Field #4">Post Date</th>
 										<th title="Field #4">Action</th>
@@ -129,6 +129,7 @@
 		<!--end::Container-->
 	</div>
 	<!--end::Content-->
+	
 	<!--begin::Footer-->
 	<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
 		<!--begin::Container-->
@@ -210,7 +211,7 @@
 		})
 	});
 	$(document).on('click', '.delete', function (event) {
-         var blogID = $(this).attr('id');
+         var newsID = $(this).attr('id');
 		 Swal.fire({
                 title: "Are you sure?",
                 text: "This Blog post will be deleted.",
@@ -221,7 +222,7 @@
                 reverseButtons: true
             }).then(function(result) {
                 if (result.value) {
-					$.post('<?php echo URLROOT ?>/admin/scripts/delete_blog_news_script.php',{blogID:blogID},function(data){
+					$.post('<?php echo URLROOT ?>/admin/scripts/delete_entry_script.php',{newsID:newsID},function(data){
 			         if(data === 'success'){
 						 location.reload();
 					 }

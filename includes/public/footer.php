@@ -72,13 +72,16 @@
   </div>
 </footer>
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>
-  window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')
-</script>
+<script src="<?php echo URLROOT?>/assets/public/js/jquery.js"></script>
+
+<!--<script src="<?php echo URLROOT?>/assets/public/js/plugin/lightbox.js"></script>-->
+<script src="<?php echo URLROOT?>/assets/public/js/plugin/jquery.fancybox.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/popper.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/bootstrap.min.js"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="<?php echo URLROOT?>/assets/public/js/bootstrap.bundle.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line!
+bootstrap.bundle.min.js
+-->
 <script src="<?php echo URLROOT?>/assets/public/js/holder.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/custom-js.js"></script>
 </body>

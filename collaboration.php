@@ -14,7 +14,7 @@
   </section>
 
   <!--mission vision-->
-  <section id="about-content">
+  <section id="page-content">
     <div class="row container mx-auto my-3">
     <?php if(!empty($collaboID)): ?>
       <div class="col-lg-12 col-md-6 col-xs-4">
