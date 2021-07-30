@@ -261,8 +261,18 @@
                   <?php endforeach; ?>
                 </div>
                 <div id="allEvents" class="tab-pane">
-                  <h3 class="mt-4">What do you think about Bootstrap?</h3>
-                  <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites</p>
+                <?php foreach ($sqlAeResults as $e) : ?>
+                    <div class="card my-3" style="width:100%;">
+                      <div class="row ">
+                        <div class="col-md-12 m-3 ">
+                          <div class="card-block px-3 my-3">
+                            <h5 class="card-title"><?= $e->event_title; ?></h5>
+                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
               </div>
             </div>

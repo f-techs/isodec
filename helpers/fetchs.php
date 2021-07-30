@@ -100,9 +100,9 @@ $sqlUeResults=$sqlUe->results();
 $sqlLe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
 $sqlLeResults=$sqlLe->results();
 
-//fetch recent events
-$sqlAe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
-$sqlLeResults=$sqlAe->results();
+//fetch all events
+$sqlAe=DB::getInstance()->select_query("SELECT * FROM tbl_events");
+$sqlAeResults=$sqlAe->results();
 
 
 
