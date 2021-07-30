@@ -23,11 +23,7 @@ spl_autoload_register(function($classname) {
 //App Root
 define('APPROOT',dirname(__FILE__));
 //URL Root
-<<<<<<< Updated upstream
 define('URLROOT', 'http://localhost:8080/isodec');
-=======
-define('URLROOT', 'http://Localhost/isodec');
->>>>>>> Stashed changes
 //sITE Name
 define('SITENAME', 'ISODEC - GHANA');
 

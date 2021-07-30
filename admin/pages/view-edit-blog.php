@@ -129,6 +129,8 @@
                                             <div class="row">
                                                 <div class="col-lg-12 text-right">
                                                     <button type="submit" id="btn_submit" class="btn btn-primary mr-2">Update</button>
+                                                    <input type="hidden" name="blog_id" id="blog_id" value="<?php echo (!empty($blogID)) ? $blogID : ''; ?>"/>
+                                                    <input type="hidden" name="action" id="action" value="update"/>
                                                     <div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
                                                 </div>
                                             </div>

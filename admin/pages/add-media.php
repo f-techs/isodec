@@ -184,11 +184,29 @@
 														<input class="form-control" name="video_url" type="url" value="" id="videoUrl" />
 													</div>
 												</div>
+												<div class="form-group row" id="videoThumbnail" style="display:none;">
+													<label class="col-form-label text-right col-lg-2 col-sm-12">Video Thumbnail:</label>
+													<div class="col-lg-10 col-md-10 col-sm-12">
+													<div class="image-input image-input-outline" id="img-vid" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
+															<div class="image-input-wrapper"></div>
+															<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
+																<i class="fa fa-pen icon-sm text-muted"></i>
+																<div id="file_wrapper">
+																	<input type="file"  name="vid_file" id="vid_file" accept=".png, .jpg, .jpeg" />
+																</div>
+																<input type="hidden" id="image_remove_name" value=" " />
+															</label>
+															<span style="display:none;" class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" id="img-remove-action" data-action="remove" data-toggle="tooltip" title="Remove image">
+																<i class="ki ki-bold-close icon-xs text-muted"></i>
+															</span>
+														</div>
+													</div>
+												</div>
 
 												<div class="form-group row" id="picUpload" style="display:none;">
 													<label class="col-form-label text-right col-lg-2 col-sm-12">Upload Picture:</label>
 													<div class="col-lg-10 col-md-10 col-sm-12">
-														<div class="image-input image-input-outline" id="img" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
+														<div class="image-input image-input-outline" id="img-pic" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
 															<div class="image-input-wrapper"></div>
 															<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
 																<i class="fa fa-pen icon-sm text-muted"></i>
@@ -222,6 +240,7 @@
 														<input type="hidden" name="action" id="action"/>
 														<input type="hidden" name="media_id" id="media_id"/>
 														<input type="hidden" name="file_name" id="file_name"/>
+														<input type="hidden" name="video_thumbnail" id="video_thumbnail"/>
 														<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 													</div>
 												</div>
@@ -328,12 +347,14 @@
 			if (html.media_type==1) {
 				$('#picUpload').show();
 				$('#videoUpload').hide();
+				$('#videoThumbnail').hide();
 		        $('#documentUpload').hide();
 				$('#videoUrl').prop('required', false);
 		        $('#document_file').prop('required', false);
 				$('#videoUrl').val('');
 			}else if(html.media_type==2){
 				$('#videoUpload').show();
+				$('#videoThumbnail').show();
 				$('#picUpload').hide();
 		        $('#documentUpload').hide();
 				$('#videoUrl').val(html.file_name);
@@ -355,11 +376,15 @@
 			$('#media_title').val(html.media_title);
 			$('#lbl_file').text(html.file_name);
 			$('#file_name').val(html.file_name);
+			$('#video_thumbnail').val(html.video_thumbnail);
 			$('#media_type').val(html.media_type);
 			$('#media_type option').eq(html.media_type).prop('selected', true);
 			//$('#media_type').prop('disabled', true);
-			var imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/picture/' + html.file_name;
-			$("#img").css("background-image", "url(" + imgUrl + ")");
+			let imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/picture/' + html.file_name;
+			let thumbnailUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/video/' + html.video_thumbnail;
+			//alert(thumbnailUrl);
+			$("#img-pic").css("background-image", "url(" + imgUrl + ")");
+			$("#img-vid").css("background-image", "url(" + thumbnailUrl + ")");
 			//alert(data);
 		})
 	});
@@ -396,6 +421,7 @@
 		 $('#media_folder').val('picture');
 		 $('#picUpload').show();
 		 $('#videoUpload').hide();
+		 $('#videoThumbnail'),hide();
 		 $('#documentUpload').hide();
 		 $('#img_file').prop('required', true);
 		 $('#videoUrl').prop('required', false);
@@ -403,6 +429,7 @@
 	  }else if(changeState == 2){
 		//$('#media_folder').val('video');
 		$('#videoUpload').show();
+		$('#videoThumbnail').show();
 		$('#picUpload').hide();
 		$('#documentUpload').hide();
 		 $('#videoUrl').prop('required', false);
@@ -415,12 +442,15 @@
 		$('#picUpload').hide();
 		$('#document_file').prop('required', true);
 		$('#videoUrl').prop('required', false);
+		$('#videoThumbnail').hide();
 		$('#img_file').prop('required', false);
 	  }
 	});
 
-	var imgUpload = new KTImageInput('img');
+	var imgUpload = new KTImageInput('img-pic');
+	var vidUpload = new KTImageInput('img-vid');
 	imgUpload.on('change', function(imageInput) {});
+	vidUpload.on('change', function(imageInput) {});
 
         $('#btnadd').on('click', function(){
 			$('#action').val('Add');
@@ -442,7 +472,7 @@
 				$('#loader').show();
 			},
 			success: function(data) {
-				//alert(data);
+				alert(data);
 				var response = JSON.parse(data);
 				Swal.fire({
 					title: "Message",

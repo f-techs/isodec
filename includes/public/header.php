@@ -31,8 +31,12 @@
 
   <!-- lightbox-->
   <link href="<?php echo URLROOT ?>/assets/public/css/plugins/lightbox.css" rel="stylesheet">
+
   <!--fancyBox-->
   <link href="<?php echo URLROOT ?>/assets/public/css/plugins/jquery.fancybox.min.css" rel="stylesheet">
+
+  <!--dataTables-->
+  <link href="<?php echo URLROOT ?>/assets/public/css/plugins/dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -93,7 +97,7 @@
               <div class="dropdown-menu main-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Blog</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">News</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/news">News</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -101,7 +105,7 @@
                 Media
               </a>
               <div class="dropdown-menu main-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Documents</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/documents">Documents</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?php echo URLROOT ?>/video-gallery">Videos</a>
                 <div class="dropdown-divider"></div>

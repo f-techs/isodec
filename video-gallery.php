@@ -15,7 +15,7 @@
 
   <!--mission vision-->
   <section id="page-content" style="margin-top:20px;">
-    <div class="photo-gallery">
+   
       <div class="container">
         <div class="intro">
           <h4 class="text-center">VIDEO GALLERY</h4>
@@ -30,7 +30,7 @@
         </div>
       
       </div>
-    </div>
+    
   </section>
 
   <section class="footer">

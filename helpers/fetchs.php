@@ -5,6 +5,7 @@
 $sqlMission=DB::getInstance()->select_query("call pro_selectAbout(1)");
 $missionResults=$sqlMission->results();
 foreach($missionResults as $mission){
+    $missionEntry=$mission->about_id;
     $missionID=$mission->about_type;
     $missionImg=$mission->img;
     $missionImgCaption=$mission->img_description;
@@ -15,6 +16,7 @@ foreach($missionResults as $mission){
 $sqlhistory=DB::getInstance()->select_query("call pro_selectAbout(2)");
 $historyResults=$sqlhistory->results();
 foreach($historyResults as $history){
+    $historyEntry=$history->about_id;
     $historyID=$history->about_type;
     $historyImg=$history->img;
     $historyImgCaption=$history->img_description;
@@ -25,6 +27,7 @@ foreach($historyResults as $history){
 $sqlCollabo=DB::getInstance()->select_query("call pro_selectAbout(3)");
 $collaboResults=$sqlCollabo->results();
 foreach($collaboResults as $collabo){
+    $collaboEntry=$collabo->about_id;
     $collaboID=$collabo->about_type;
     $collaboImg=$collabo->img;
     $collaboImgCaption=$collabo->img_description;
@@ -89,6 +92,7 @@ if(isset($_SESSION['blogID'])){
     $sqlBlog=DB::getInstance()->select_query("SELECT * FROM tbl_blogs WHERE blog_id='$blogID'");
     $sqlBlogResults=$sqlBlog->results();
     foreach($sqlBlogResults as $blogData){
+        $blogID=$blogData->blog_id;
         $blogCode=$blogData->blog_code;
         $blogImg=$blogData->blog_img;
         $blogImgCaption=$blogData->img_description;
@@ -103,6 +107,7 @@ if(isset($_SESSION['newsID'])){
     $sqlNews=DB::getInstance()->select_query("SELECT * FROM tbl_news WHERE news_id='$newsID'");
     $sqlNewsResults=$sqlNews->results();
     foreach($sqlNewsResults as $newsData){
+        $newsID=$newsData->news_id;
         $newsCode=$newsData->news_code;
         $newsImg=$newsData->news_img;
         $newsImgCaption=$newsData->img_description;
@@ -117,6 +122,10 @@ $galleryResults=$sqlGallery->results();
 //fetch vidoeos
 $sqlVideo=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=2 ORDER BY media_id");
 $videoResults=$sqlVideo->results();
+
+//fetch documents
+$sqlDoc=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=3 ORDER BY media_id");
+$docResults=$sqlDoc->results();
 
 
 

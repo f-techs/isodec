@@ -96,7 +96,7 @@
 													<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
 														<i class="fa fa-pen icon-sm text-muted"></i>
 														<div id="file_wrapper">
-															<input type="file" required name="img_file" id="img_file" accept=".png, .jpg, .jpeg" />
+															<input type="file"  name="img_file" id="img_file" accept=".png, .jpg, .jpeg" />
 														</div>
 														<input type="hidden" id="image_remove_name" value="<?php echo (!empty($missionID) && ($missionID == 1)) ? $missionImg : ''; ?>" name="profile_avatar_remove" />
 													</label>
@@ -122,6 +122,7 @@
 										<div class="row">
 											<div class="col-lg-12 text-right">
 												<button type="submit" id="btn_submit" class="btn btn-primary mr-2">Submit</button>
+												<input type="hidden" name="action" id="action" value="add"/>
 												<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 											</div>
 										</div>

@@ -1,4 +1,4 @@
-      <?php require_once('../../init.php') ?>
+      <?php require_once('../../config.php') ?>
 	  <?php include(APPROOT.'/includes/admin/header.php'); ?>
       <div class="d-flex flex-column flex-root">
       	<!--begin::Page-->

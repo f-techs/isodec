@@ -120,6 +120,7 @@
 										<div class="row">
 											<div class="col-lg-12 text-right">
 												<button type="submit" id="btn_submit" class="btn btn-primary mr-2">Submit</button>
+												<input type="hidden" name="action" id="action" value="add"/>
 												<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 											</div>
 										</div>
@@ -222,7 +223,7 @@
 				$('#loader').show();
 			},
 			success: function(data) {
-				//alert(data);
+				alert(data);
 				var response = JSON.parse(data);
 				Swal.fire({
 					title: "Message",

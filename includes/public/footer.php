@@ -16,9 +16,9 @@
           Tel: 233-20-8110447
         </p>
         <ul class="list-inline mt-4">
-          <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-          <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="footer-social fa fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="footer-social fa fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="footer-social fa fa-instagram"></i></a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
@@ -84,6 +84,7 @@ bootstrap.bundle.min.js
 -->
 <script src="<?php echo URLROOT?>/assets/public/js/holder.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/custom-js.js"></script>
+<script src="<?php echo URLROOT?>/assets/public/js/plugin/dataTables.min.js"></script>
 </body>
 
 </html>
