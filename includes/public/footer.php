@@ -59,7 +59,7 @@
     </div><hr>
     <div class="row py-4">
         <div class="col-lg-12 text-right">
-        <p style="font-size:26px;" class="list-inline-item"><a href="<?php echo URLROOT?>/admin/index" target="_blank" title="login"><i class="fa fa-sign-in"></i></p></li>
+        <p style="font-size:26px;" class="list-inline-item"><a href="<?php echo URLROOT?>/admin/index" target="_blank" title="login"><i class="footer-social fa fa-sign-in"></i></p></li>
         </div>
     </div>
   </div>

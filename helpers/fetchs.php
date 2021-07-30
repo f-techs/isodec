@@ -67,6 +67,10 @@ foreach($policyResults as $policy){
 $sqlbloglist=DB::getInstance()->select_query("SELECT * FROM tbl_blogs ORDER BY blog_id DESC");
 $blogListResults=$sqlbloglist->results();
 
+//fetch blog list table --limit
+$sqlblogL=DB::getInstance()->select_query("SELECT * FROM tbl_blogs ORDER BY blog_id DESC LIMIT 3");
+$sqlblogLResults=$sqlblogL->results();
+
 //fetch event list table
 $sqleventlist=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id DESC");
 $eventListResults=$sqleventlist->results();
@@ -83,6 +87,22 @@ $sqlEssentialResults=$sqlEssential->results();
 //fetch media list table
 $sqlMedia=DB::getInstance()->select_query("SELECT * FROM view_media ORDER BY media_id DESC");
 $sqlMediaResults=$sqlMedia->results();
+
+//fetch upcoming events
+$sqlUe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date > CURDATE() and events_status=1 ");
+$sqUeResults=$sqlUe->results();
+
+//fetch upcoming events
+$sqlUe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date > CURDATE() and events_status=1 ");
+$sqlUeResults=$sqlUe->results();
+
+//fetch recent events
+$sqlLe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
+$sqlLeResults=$sqlLe->results();
+
+//fetch recent events
+$sqlAe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
+$sqlLeResults=$sqlAe->results();
 
 
 

@@ -95,7 +95,7 @@
                 Blog & News
               </a>
               <div class="dropdown-menu main-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Blog</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/blogs">Blog</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?php echo URLROOT ?>/news">News</a>
               </div>

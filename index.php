@@ -1,7 +1,7 @@
-<?php require_once('config.php')?>
+<?php require_once('config.php') ?>
 
-<?php include(APPROOT.'/includes/public/header.php'); ?>
-<main role="main">
+<?php include(APPROOT . '/includes/public/header.php'); ?>
+
   <!-- Showcase -->
   <section id="showcase" class="bg-info text-light p-5 p-lg-0 pt-lg-5  text-center text-sm-start">
     <div class="container showcase-items">
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img class="img-fluid w-100 d-none d-sm-block" src="<?php echo URLROOT?>/assets/public/images/freedom.png" alt="" />
+          <img class="img-fluid w-100 d-none d-sm-block" src="<?php echo URLROOT ?>/assets/public/images/freedom.png" alt="" />
         </div>
       </div>
     </div>
@@ -171,21 +171,41 @@
               <!-- Tabs navs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#firstMenu"> LATEST BLOGS</a>
+                  <a class="nav-link active" data-toggle="tab" href="#lastestBlogs"> LATEST BLOGS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#secondmenu"> ALL BLOGS</a>
+                  <a class="nav-link" data-toggle="tab" href="#allBlogs"> ALL BLOGS</a>
                 </li>
               </ul>
               <!-- Tabs Content -->
               <div class="tab-content">
-                <div id="firstMenu" class="tab-pane active">
-                  <h3 class="mt-4">What do you think about HTML5?</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                <div id="lastestBlogs" class="tab-pane active">
+                  <?php foreach ($sqlblogLResults as $b) : ?>
+                    <div class="card my-3" style="width:100%;">
+                      <div class="row ">
+                        <div class="col-md-12 m-3 ">
+                          <div class="card-block px-3 my-3">
+                            <h5 class="card-title"><?= $b->blog_title; ?></h5>
+                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($b->created_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
-                <div id="secondmenu" class="tab-pane">
-                  <h3 class="mt-4">What do you think about WordPress?</h3>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English.</p>
+                <div id="allBlogs" class="tab-pane">
+                  <?php foreach ($blogListResults as $b) : ?>
+                    <div class="card my-3" style="width:100%;">
+                      <div class="row ">
+                        <div class="col-md-12 m-3 ">
+                          <div class="card-block px-3 my-3">
+                            <h5 class="card-title"><?= $b->blog_title; ?></h5>
+                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($b->created_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
               </div>
             </div>
@@ -193,34 +213,54 @@
         </div>
       </div>
       <div class="col-lg-6">
-      <div class="container">
+        <div class="container">
           <div class="row" id="tab-menus">
             <div class="col-12">
               <h2 class="text-center mt-4 mb-5">EVENTS</h2>
               <!-- Tabs navs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#firstMenu"> ALL EVENTS</a>
+                  <a class="nav-link active" data-toggle="tab" href="#upcomingEvents"> UPCOMING EVENTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#secondmenu"> RECENTS EVENTS</a>
+                  <a class="nav-link" data-toggle="tab" href="#recentEvents"> RECENT EVENTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#thirdmenu"> UPCOMING EVENTS</a>
+                  <a class="nav-link" data-toggle="tab" href="#allEvents"> ALL EVENTS</a>
                 </li>
-                
+
               </ul>
               <!-- Tabs Content -->
               <div class="tab-content">
-                <div id="firstMenu" class="tab-pane active">
-                  <h3 class="mt-4">What do you think about HTML5?</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                <div id="upcomingEvents" class="tab-pane active">
+                <?php foreach ($sqlUeResults as $e) : ?>
+                    <div class="card my-3" style="width:100%;">
+                      <div class="row ">
+                        <div class="col-md-12 m-3 ">
+                          <div class="card-block px-3 my-3">
+                            <h5 class="card-title"><?= $e->event_title; ?></h5>
+                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
-                <div id="secondmenu" class="tab-pane">
-                  <h3 class="mt-4">What do you think about WordPress?</h3>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English.</p>
+                <div id="recentEvents" class="tab-pane">
+                <?php foreach ($sqlLeResults as $e) : ?>
+                    <div class="card my-3" style="width:100%;">
+                      <div class="row ">
+                        <div class="col-md-12 m-3 ">
+                          <div class="card-block px-3 my-3">
+                            <h5 class="card-title"><?= $e->event_title; ?></h5>
+                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
-                <div id="thirdmenu" class="tab-pane">
+                <div id="allEvents" class="tab-pane">
                   <h3 class="mt-4">What do you think about Bootstrap?</h3>
                   <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites</p>
                 </div>
@@ -234,6 +274,6 @@
   <section class="footer">
 
   </section>
-    <!-- FOOTER -->
-</main>
-<?php include(APPROOT.'/includes/public/footer.php'); ?>
+  <!-- FOOTER -->
+
+<?php include(APPROOT . '/includes/public/footer.php'); ?>
