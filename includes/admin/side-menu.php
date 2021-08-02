@@ -270,6 +270,19 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
+                            <li class="menu-item" aria-haspopup="true">
+                                <a href="<?php echo URLROOT ?>/admin/pages/event-registration-list" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Events Registration</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="menu-section">
                     <h4 class="menu-text">General</h4>
@@ -371,7 +384,7 @@
             </ul>
             <!--end::Menu Nav-->
         </div>
-        <!--end::Menu Container-->
+        <!--end::Menu Container-- event-registration-list.php>
     </div>
     <!--end::Aside Menu-->
 </div>

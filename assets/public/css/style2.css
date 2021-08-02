@@ -4,9 +4,11 @@
 
 body {
  padding-top: 3rem;
- padding-bottom: 3rem;
  color: #5a5a5a;
+ overflow-x: hidden;
+ height:100%;
 }
+
 
 
 
@@ -93,7 +95,7 @@ display: block;
   margin-top:50px;
 }
 .showcase-items .lead_btn{
-  background-color: #F8A826;
+  background-color: #FBBB07;
   border: 2px solid white;
   color: white;
   padding: 15px 32px;
@@ -105,7 +107,7 @@ display: block;
 }
 
 .showcase-items .lead_btn:hover{
-  background-color: #F86D70;
+  background-color: #FBBB07;
   border: 2px solid white;
   color: white;
   padding: 15px 32px;
@@ -174,7 +176,7 @@ span{
 }
 
 .card-link{
-  background-color: #F8A826;
+  background-color:  #FBBB07;
   border: 2px solid #17A2B8;
   color: white;
   padding: 7px 16px;
@@ -224,10 +226,10 @@ span{
   text-transform: uppercase;
 }
 .tag-teal {
-  background-color: #F8A826;
+  background-color:  #FBBB07;
 }
 .tag-link {
-  color: #F8A826;
+  color:  #FBBB07;
 }
 .tag-purple {
   background-color: #3d1d94;
@@ -289,20 +291,25 @@ span{
 
 /* Footer */
 .myfooter{
-  background-color:#000080;
+  background-color:#17A2B8;
 }
 .list-unstyled a{
   color:white;
 }
 .list-unstyled a:hover{
-  color: #F8A826;
+  color:  #FBBB07;
 }
 #button-addon1 {
-  color: #F8A826;
+  color:  #FBBB07;
 }
 
 .footer-social {
-  color: #F8A826;
+  color:  #fff;
+  font-size: 20px;
+}
+.li-social-media{
+font-weight: bold;
+font-size: 25px;
 }
 
 .form-control::placeholder {
@@ -315,7 +322,8 @@ span{
   box-shadow: none;
 }
 .footer-main-heading{
-  color: #F8A826;
+  color: #FBBB07;
+  height: vh;
 }
 
 /*flat buttons*/
@@ -323,7 +331,7 @@ span{
   min-width: 80px;
   height: 40px;
   border: 1px solid;
-  background: #17A2B8;
+  background: #E19822;
   color: #fff;
   padding: 10px;
   border-radius: 2px;
@@ -341,4 +349,35 @@ a.btn_news{
 }
 i.btn_news{
   color:#fff;
+}
+
+/*flat buttons*/
+.btn_reg{
+  min-width: 80px;
+  height: 50px;
+  border: 1px solid;
+  background: #E19822;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 200ms linear;
+  box-sizing: border-box;
+  outline: 0;
+}
+.btn_reg:hover{
+  background: #c55306;
+}
+a.btn_reg{
+  text-decoration: none;
+  line-height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color:#fff;
+}
+i.btn_reg{
+  color:#fff;
+}
+#badge-label{
+  background-color: #17A2B8;
 }

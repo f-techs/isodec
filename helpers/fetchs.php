@@ -91,11 +91,11 @@ $sqlMediaResults=$sqlMedia->results();
 
 
 //fetch upcoming events
-$sqlUe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date >= CURDATE() and events_status=1 ");
+$sqlUe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date >= CURDATE() ");
 $sqlUeResults=$sqlUe->results();
 
 //fetch recent events
-$sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
+$sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id LIMIT 3");
 $sqlLeResults=$sqlLe->results();
 
 //fetch all events
@@ -144,6 +144,10 @@ $videoResults=$sqlVideo->results();
 //fetch documents
 $sqlDoc=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=3 ORDER BY media_id");
 $docResults=$sqlDoc->results();
+
+//fetch registration
+$sqlRegSumm=DB::getInstance()->select_query("SELECT * FROM view_events_summary");
+$sqlRegSummResults=$sqlRegSumm->results();
 
 
 
@@ -223,11 +227,23 @@ if (isset($_GET['blogid'])) {
     $e=$sqlEventPage->results();
   //var_dump($sqlR);
   foreach($e as $data){
+    $eventID=$data->event_id;
     $eventPageTitle=$data->event_title;
     $eventPageDetails=$data->event_details;
     $eventPageImg=$data->event_img;
-    $eventPageImgCaption=$data->img_description;
+    $eventDate=date('d-M-Y', strtotime($data->event_date));
+    $eventTime=date("g:i A", strtotime($data->event_time));
   }
+  }
+  if(isset($_GET['regid'])){
+      $regId=$_GET['regid'];
+      $sqlreg=DB::getInstance()->get('tbl_events', array('event_id', '=', $regId));
+      $rg=$sqlreg->results();
+      foreach($rg as $data){
+        $eventRegTitle=$data->event_title;
+        $eventRegID=$data->event_id;
+      }
+      
   }
   
 /** for admin contents */

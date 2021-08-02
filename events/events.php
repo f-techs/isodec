@@ -9,7 +9,7 @@
     <div class="container page-heading">
       <div class="row">
         <div class="col-md-12 text-left">
-          <h2 style="font-weight:bold;">EVENT</h2>
+          <h2 style="font-weight:bold;">EVENTS</h2>
         </div>
       </div>
     </div>
@@ -19,8 +19,21 @@
   <section id="page-content">
   <?php if (!empty($eventPageTitle)) : ?>
     <div class="container">
+      <div>
         <h5 class="text-center mt-5"><?= $eventPageTitle; ?></h5>
+  </div>
       <hr>
+      <div class="row mx-2 text-center">
+      <div class="col-md-4 mt-3">
+        <span id="badge-label" class="badge badge-pill badge-primary badge-label"><b>EVENT DATE:</b></span> <?= $eventDate; ?></p>
+        </div>
+        <div class="col-md-3 mt-3">
+        <span id="badge-label" class="badge badge-pill badge-primary badge-label"><b>TIME:</b></span> <?= $eventTime; ?></p>
+        </div>
+        <div class="col-md-5">
+       <a href="<?php echo URLROOT ?>/events/event-registration?regid=<?= $eventID; ?>" class="btn btn_reg mb-3">CLICK HERE TO REGISTER <i class="mdi mdi-chevron-double-right"></i></a>
+        </div>
+      </div><hr>
       <div class="row mx-auto my-3">
           <div class="col-lg-12 col-md-6 col-xs-4">
           <?php echo (!empty($eventPageImg)) ?  '<img class="img-fluid" src="'.URLROOT.'/assets/admin/media/uploadImages/events/'.$eventPageImg.'"/>' : ''; ?>
@@ -28,11 +41,6 @@
           <div class="col-lg-12 col-md-6 col-xs-4">
             <p> <?php echo $eventPageDetails; ?></p>
           </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-        <a href="" class="btn btn_news mb-3">CLICK HERE TO REGISTER<i class="mdi mdi-chevron-double-right"></i></a>
-        </div>
       </div>
     </div>
     <?php else: ?>

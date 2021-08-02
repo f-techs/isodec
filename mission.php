@@ -27,10 +27,6 @@
       <?php endif; ?>
     </div>
   </section>
- 
-  <section class="footer">
-
-  </section>
     <!-- FOOTER -->
 </main>
 <?php include(APPROOT.'/includes/public/footer.php'); ?>

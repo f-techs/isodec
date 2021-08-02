@@ -22,7 +22,7 @@ spl_autoload_register(function($classname) {
 //App Root
 define('APPROOT',dirname(__FILE__));
 //URL Root
-define('URLROOT', 'http://localhost:8080/isodec');
+define('URLROOT', 'http://192.168.8.128:8080/isodec');
 //sITE Name
 define('SITENAME', 'ISODEC - GHANA');
 

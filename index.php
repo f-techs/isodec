@@ -1,7 +1,7 @@
 <?php require_once('config.php') ?>
 
 <?php include(APPROOT . '/includes/public/header.php'); ?>
-
+<main role="main">
   <!-- Showcase -->
   <section id="showcase" class="bg-info text-light p-5 p-lg-0 pt-lg-5  text-center text-sm-start">
     <div class="container showcase-items">
@@ -14,7 +14,7 @@
           </div>
           <div>
             <button class="lead_btn  btn-lg btn-flat">
-              Read More >>>
+              Read More <i class="mdi mdi-chevron-double-right"></i>
             </button>
           </div>
         </div>
@@ -101,8 +101,9 @@
             <span class="tag tag-teal"><?=$e->event_type_name; ?></span>
             <h4><a class="tag-link" href="#"><?= $e->event_title; ?></a></h4>
             <p>
-            <?= txtTruncate($e->event_details, 200); ?>
+            <?= txtTruncate($e->event_details, 50); ?>
             </p>
+            <div class="mt-2 my-2"><a class="btn_news" href="<?php echo URLROOT ?>/events/events?eventid=<?=$e->event_id?>&eventtitle=<?=$e->event_title;?>">READ MORE<i class="mdi mdi-chevron-double-right"></i></a></div>
             <div class="user">
               <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />-->
               <div class="user-info">
@@ -235,9 +236,6 @@
       </div>
     </div>
   </section>
-  <section class="footer">
-
-  </section>
   <!-- FOOTER -->
-
+</main>
 <?php include(APPROOT . '/includes/public/footer.php'); ?>

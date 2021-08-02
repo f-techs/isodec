@@ -45,7 +45,7 @@
   <header>
     <div class="container container-fluid" style="width:100%">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="box-shadow: 10px;">
-        <a class="navbar-brand" href="<?php echo URLROOT ?>/index"><img src="<?php echo URLROOT ?>/assets/public/images/brand_logo.png" /></a>
+        <a class="navbar-brand" href="<?php echo URLROOT ?>/index"><img class="img-fluid" src="<?php echo URLROOT ?>/assets/public/images/brand_logo.png" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -116,10 +116,10 @@
               <a class="nav-link" href="<?php echo URLROOT ?>/event-list">Events</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right mr-auto">
+          <!--<ul class="nav navbar-nav navbar-right mr-auto">
             <li class="nav-item"><a href="#"> <i class="mdi mdi-facebook-box"></i></a></li>
             <li class="nav-item"><a href="#"><i class="mdi mdi-twitter-box"></i></a></li>
-          </ul>
+          </ul>-->
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
