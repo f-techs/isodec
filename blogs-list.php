@@ -7,7 +7,7 @@
         <div class="container page-heading">
             <div class="row">
                 <div class="col-md-12 text-left">
-                    <h2 style="font-weight:bold;">NEWS</h2>
+                    <h2 style="font-weight:bold;">BLOGS</h2>
                 </div>
             </div>
         </div>
@@ -23,19 +23,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($newsListResults as $news): ?>
+                    <?php foreach($blogListResults as $blog): ?>
                     <tr>
                         <td>
                             <div class="card" style="width:100%;">
                                 <div class="row ">
                                     <div class="col-md-4">
-                                        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/news/<?php echo (!empty($news->news_img)) ? $news->news_img:'news.png';?>" style="width:100%; height:100%;"/>
+                                        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/blogs/<?php echo (!empty($blog->blog_img)) ? $blog->blog_img:'news.png';?>" style="width:100%; height:100%;"/>
                                     </div>
                                     <div class="col-md-8 px-3">
                                         <div class="card-block px-3">
-                                            <h4 class="card-title"><?=$news->news_title;?></h4>
-                                            <p><?= txtTruncate($news->news_details, 300); ?></p>
-                                            <a href="#" class="btn btn_news mb-3">READ MORE<i class="mdi mdi-chevron-double-right"></i></a>
+                                            <h4 class="card-title"><?=$blog->blog_title;?></h4>
+                                            <p><?= txtTruncate($blog->blog_details, 300); ?></p>
+                                            <a href="<?php echo URLROOT ?>/blogs/blogs?blogid=<?=$blog->blog_id?>&blogtitle=<?=$blog->blog_title;?>" class="btn btn_news mb-3">READ MORE<i class="mdi mdi-chevron-double-right"></i></a>
                                         </div>
                                     </div>
                                 </div>

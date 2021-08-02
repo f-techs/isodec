@@ -91,74 +91,28 @@
   <!-- Events-->
   <section id="events-cards">
     <div class="row m-5">
+    <?php foreach ($sqlLeResults as $e) : ?>
       <div class="col-lg-4 mb-5">
         <div class="card">
           <div class="card-header">
-            <img src="https://s.aolcdn.com/images/dims?client=fh7w6q744eiognjk&signature=d59d0cf6af1d779a3dca451e0ba259c33bbc6115&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fos%2Fab%2F_cms%2F2019%2F08%2F30142658%2F2020-jeep-wrangler-16.jpg&thumbnail=750%2C422&quality=80" alt="" />
+            <img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/events/<?php echo $e->event_img; ?>" alt="" />
           </div>
           <div class="card-body">
-            <span class="tag tag-teal">NEWS</span>
-            <h4><a class="tag-link" href="#">isodec construct schools for communities...</a></h4>
+            <span class="tag tag-teal"><?=$e->event_type_name; ?></span>
+            <h4><a class="tag-link" href="#"><?= $e->event_title; ?></a></h4>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-              tenetur distinctio neque?
+            <?= txtTruncate($e->event_details, 200); ?>
             </p>
             <div class="user">
               <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />-->
               <div class="user-info">
-                <small>2h ago</small>
+                <small><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> </small>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!---->
-      <div class="col-lg-4 mb-5">
-        <div class="card">
-          <div class="card-header">
-            <img src="https://s.aolcdn.com/images/dims?client=fh7w6q744eiognjk&signature=d59d0cf6af1d779a3dca451e0ba259c33bbc6115&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fos%2Fab%2F_cms%2F2019%2F08%2F30142658%2F2020-jeep-wrangler-16.jpg&thumbnail=750%2C422&quality=80" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="tag tag-teal">WEBINAR</span>
-            <h4>Webinar on</h4>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-              tenetur distinctio neque?
-            </p>
-            <div class="btn btn-primary">Register</div>
-            <div class="user">
-              <!--<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />-->
-              <div class="user-info">
-                <small>2h ago</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!---->
-      <div class="col-lg-4 mb-5">
-        <div class="card">
-          <div class="card-header">
-            <img src="https://s.aolcdn.com/images/dims?client=fh7w6q744eiognjk&signature=d59d0cf6af1d779a3dca451e0ba259c33bbc6115&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fos%2Fab%2F_cms%2F2019%2F08%2F30142658%2F2020-jeep-wrangler-16.jpg&thumbnail=750%2C422&quality=80" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="tag tag-teal">Blog</span>
-            <h4><a class="tag-link" href="#"> Why is the Tesla Cybertruck designed the way it is?</a></h4>
-            <p><a>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
-                tenetur distinctio neque?
-              </a>
-            </p>
-            <div class="user">
-              <!--<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" alt="" />-->
-              <div class="user-info">
-                <small>2h ago</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!---->
+      <?php endforeach; ?>
     </div>
   </section>
   <section id="blogs_events">
@@ -186,7 +140,7 @@
                         <div class="col-md-12 m-3 ">
                           <div class="card-block px-3 my-3">
                             <h5 class="card-title"><?= $b->blog_title; ?></h5>
-                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($b->created_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                            <a class="btn_news" href="<?php echo URLROOT ?>/blogs/blogs?blogid=<?=$b->blog_id?>&blogtitle=<?=$b->blog_title;?>"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($b->created_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
                           </div>
                         </div>
                       </div>
@@ -200,7 +154,7 @@
                         <div class="col-md-12 m-3 ">
                           <div class="card-block px-3 my-3">
                             <h5 class="card-title"><?= $b->blog_title; ?></h5>
-                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($b->created_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                            <a class="btn_news" href="<?php echo URLROOT ?>/blogs/blogs?blogid=<?=$b->blog_id?>&blogtitle=<?=$b->blog_title;?>"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($b->created_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
                           </div>
                         </div>
                       </div>
@@ -239,7 +193,7 @@
                         <div class="col-md-12 m-3 ">
                           <div class="card-block px-3 my-3">
                             <h5 class="card-title"><?= $e->event_title; ?></h5>
-                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                            <a class="btn_news" href="<?php echo URLROOT ?>/events/events?eventid=<?=$e->event_id?>&eventtitle=<?=$e->event_title;?>"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
                           </div>
                         </div>
                       </div>
@@ -253,7 +207,7 @@
                         <div class="col-md-12 m-3 ">
                           <div class="card-block px-3 my-3">
                             <h5 class="card-title"><?= $e->event_title; ?></h5>
-                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                            <a class="btn_news" href="<?php echo URLROOT ?>/events/events?eventid=<?=$e->event_id?>&eventtitle=<?=$e->event_title;?>"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
                           </div>
                         </div>
                       </div>
@@ -267,7 +221,7 @@
                         <div class="col-md-12 m-3 ">
                           <div class="card-block px-3 my-3">
                             <h5 class="card-title"><?= $e->event_title; ?></h5>
-                            <a class="btn_news" href="#"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
+                            <a class="btn_news" href="<?php echo URLROOT ?>/events/events?eventid=<?=$e->event_id?>&eventtitle=<?=$e->event_title;?>"><i class="mdi mdi-calendar-check"></i> <?php echo date('d-M-Y', strtotime($e->event_date));  ?> | READ<i class="mdi mdi-chevron-double-right"></i></a>
                           </div>
                         </div>
                       </div>

@@ -88,20 +88,18 @@ $sqlEssentialResults=$sqlEssential->results();
 $sqlMedia=DB::getInstance()->select_query("SELECT * FROM view_media ORDER BY media_id DESC");
 $sqlMediaResults=$sqlMedia->results();
 
-//fetch upcoming events
-$sqlUe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date > CURDATE() and events_status=1 ");
-$sqUeResults=$sqlUe->results();
+
 
 //fetch upcoming events
-$sqlUe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date > CURDATE() and events_status=1 ");
+$sqlUe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date >= CURDATE() and events_status=1 ");
 $sqlUeResults=$sqlUe->results();
 
 //fetch recent events
-$sqlLe=DB::getInstance()->select_query("SELECT * FROM tbl_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
+$sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date < CURDATE() and events_status=0 LIMIT 3 ");
 $sqlLeResults=$sqlLe->results();
 
 //fetch all events
-$sqlAe=DB::getInstance()->select_query("SELECT * FROM tbl_events");
+$sqlAe=DB::getInstance()->select_query("SELECT * FROM view_events");
 $sqlAeResults=$sqlAe->results();
 
 
@@ -194,8 +192,44 @@ $mediaResults=$sqlSelMedia->results();
 $sqlEvents=DB::getInstance()->select_query("SELECT * FROM event_types");
 $eventResults=$sqlEvents->results();
 
+if (isset($_GET['blogid'])) {
+    $blogPageID = $_GET['blogid'];
+    $sqlBlogPage=DB::getInstance()->get('tbl_blogs', array('blog_id', '=', $blogPageID));
+    $r=$sqlBlogPage->results();
+  //var_dump($sqlR);
+  foreach($r as $data){
+    $blogPageTitle=$data->blog_title;
+    $blogPageDetails=$data->blog_details;
+    $blogPageImg=$data->blog_img;
+    $blogPageImgCaption=$data->img_description;
+  }
+  }
 
-
+  if (isset($_GET['newsid'])) {
+    $newsPageID = $_GET['newsid'];
+    $sqlNewsPage=DB::getInstance()->get('tbl_news', array('news_id', '=', $newsPageID));
+    $n=$sqlNewsPage->results();
+  //var_dump($sqlR);
+  foreach($n as $data){
+    $newsPageTitle=$data->news_title;
+    $newsPageDetails=$data->news_details;
+    $newsPageImg=$data->news_img;
+    $newsPageImgCaption=$data->img_description;
+  }
+  }
+  if (isset($_GET['eventid'])) {
+    $eventPageID = $_GET['eventid'];
+    $sqlEventPage=DB::getInstance()->get('tbl_events', array('event_id', '=', $eventPageID));
+    $e=$sqlEventPage->results();
+  //var_dump($sqlR);
+  foreach($e as $data){
+    $eventPageTitle=$data->event_title;
+    $eventPageDetails=$data->event_details;
+    $eventPageImg=$data->event_img;
+    $eventPageImgCaption=$data->img_description;
+  }
+  }
+  
 /** for admin contents */
 
 /**end for admin contents */

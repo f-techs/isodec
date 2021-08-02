@@ -23,7 +23,7 @@
        
         <div class="row photos">
         <?php foreach($videoResults as $vid): ?>
-          <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="<?php echo $vid->file_name; ?>" data-fancybox="videos" data-caption="<?php echo  $vid->media_title; ?>"><img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/avatars/video_play.png"></a>
+          <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="<?php echo $vid->file_name; ?>" data-fancybox="videos" data-caption="<?php echo  $vid->media_title; ?>"><img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/video/<?php echo $vid->video_thumbnail;?>"></a>
           <p><?php echo $vid->media_title; ?></p>
         </div>  
         <?php endforeach; ?>

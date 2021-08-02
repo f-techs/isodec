@@ -95,9 +95,9 @@
                 Blog & News
               </a>
               <div class="dropdown-menu main-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="<?php echo URLROOT ?>/blogs">Blog</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/blogs-list">Blog</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?php echo URLROOT ?>/news">News</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/news-list">News</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -113,7 +113,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Events</a>
+              <a class="nav-link" href="<?php echo URLROOT ?>/event-list">Events</a>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right mr-auto">

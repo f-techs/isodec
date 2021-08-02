@@ -57,9 +57,7 @@ class DB{
              			$x++;
              		}
              	}
-
              	if($this->_query->execute()){
-             	  //$this->_results=$this->_query->fetchAll(PDO::FETCH_OBJ);
 					$this->_count=$this->_query->rowCount();
              	} else {
              		echo $this->_error=true;
@@ -80,7 +78,8 @@ class DB{
 					 if(in_array($operator, $operators)){
 						 $sql="{$action} FROM {$table} WHERE {$field} {$operator} ? ";
 						 if(!$this->query($sql, array($value))->error()){
-							 return $this;
+							  $this->_results=$this->_query->fetchAll(PDO::FETCH_OBJ);
+							  return $this;
 						 }
 					 }
 				 }
