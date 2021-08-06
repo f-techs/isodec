@@ -40,4 +40,20 @@ if(isset($_POST['blogID'])){
     }else{
         echo 'fail';
     }   
+}elseif(isset($_POST['ourWorkID'])){
+    $delId=$_POST['ourWorkID'];
+    $sql=DB::getInstance()->gen_query("DELETE FROM tbl_our_work WHERE our_work_id='$delId'");
+    if(isset($sql)){
+        echo 'success';
+    }else{
+        echo 'fail';
+    }   
+}elseif(isset($_POST['userID'])){
+    $delId=$_POST['userID'];
+    $sql=DB::getInstance()->gen_query("DELETE FROM tbl_users WHERE user_id='$delId'");
+    if(isset($sql)){
+        echo 'success';
+    }else{
+        echo 'fail';
+    }   
 }

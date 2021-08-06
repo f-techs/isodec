@@ -23,15 +23,7 @@
 					<!--begin::Topbar-->
 					<div class="topbar">
 						<!--begin::User-->
-						<div class="topbar-item">
-							<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
-								<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-								<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
-								<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-									<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-								</span>
-							</div>
-						</div>
+						<?php include(APPROOT.'/includes/admin/topbar-button.php'); ?>
 						<!--end::User-->
 					</div>
 					<!--end::Topbar-->
@@ -80,7 +72,7 @@
 										<th title="Field #2">Event Type</th>
 										<th title="Field #3">Date</th>
 										<th title="Field #4">Time</th>
-                                        <th title="Field #4">No. Registered</th>
+                                        <th title="Field #4">Total Registered</th>
 										<th title="Field #4">Action</th>
 									</tr>
 								</thead>
@@ -88,13 +80,13 @@
 									<?php foreach ($sqlRegSummResults as $data) : ?>
 										<tr>
 											<td><?php echo $data->event_title; ?></td>
-											<td></td>
+											<td><?php echo $data->event_type_name; ?></td>
+											<td><?php echo date('d-M-Y', strtotime($data->event_date)); ?></td>
 											<td><?php echo date("g:i A", strtotime($data->event_time)); ?></td>
-											<td><?php echo date('d-M-Y', strtotime($data->created_date)); ?></td>
-                                            <td><?php echo $data->Count_event_id; ?></td>
+                                            <td><?php echo $data->Count_event_id;?></td>
 											<td>
 												<div class="btn-group" role="group" aria-label="First group">
-													<button type="button" id="<?php echo $data->event_id;?>" class="btn btn-primary  btn-icon edit"><i class="la la-eye"></i></button>
+													<button type="button" id="<?php echo $data->event_id;?>" class="btn btn-primary  btn-icon view"><i class="la la-eye"></i></button>
 												</div>
 											</td>
 										</tr>
@@ -187,33 +179,10 @@
 		/******/
 	})();
 	//# sourceMappingURL=html-table.js.map
-	$(document).on('click', '.edit', function (event) {
-         var eventID = $(this).attr('id');
-		$.post('<?php echo URLROOT ?>/admin/scripts/set_sessions_script.php',{eventID:eventID},function(data){
-			window.location.href="<?php echo URLROOT ?>/admin/pages/view-edit-event";
+	$(document).on('click', '.view', function (event) {
+         var eventRegID = $(this).attr('id');
+		$.post('<?php echo URLROOT ?>/admin/scripts/set_sessions_script.php',{eventRegID:eventRegID},function(data){
+			window.location.href="<?php echo URLROOT ?>/admin/pages/view-events-registration";
 		})
 	});
-	$(document).on('click', '.delete', function (event) {
-         var eventID = $(this).attr('id');
-		 Swal.fire({
-                title: "Are you sure?",
-                text: "This event post will be deleted.",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel!",
-                reverseButtons: true
-            }).then(function(result) {
-                if (result.value) {
-					$.post('<?php echo URLROOT ?>/admin/scripts/delete_entry_script.php',{eventID:eventID},function(data){
-			         if(data === 'success'){
-						 location.reload();
-					 }
-		             });
-                } else if (result.dismiss === "cancel") {
-
-                }
-            });
-		
-	})
 </script>

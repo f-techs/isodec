@@ -18,3 +18,19 @@ function txtTruncate($string, $limit, $break=".", $pad="...")
 
   return $string;
 }
+
+function sessionExpire(){
+  if(isset($_SESSION["userID"]))
+{ 
+ if(time()-$_SESSION["loginTime"]>1800)
+     {
+     $_SESSION["expireTime"]=time()-$_SESSION["loginTime"]>1800;
+     header("location:".URLROOT."/admin/scripts/logout_script.php");
+ }else
+     {
+     $_SESSION["loginTime"]=time();
+     }
+} else {
+    header("location:".URLROOT."/admin/pages/index.php");
+}
+}

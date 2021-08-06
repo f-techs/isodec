@@ -94,6 +94,14 @@
                                     <span class="menu-text">Collaboration</span>
                                 </a>
                             </li>
+                            <li class="menu-item" aria-haspopup="true">
+                                <a href="<?php echo URLROOT ?>/admin/pages/our-work" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Our Work</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -197,51 +205,7 @@
                         <span class="menu-text">Media</span>
                     </a>
                 </li>
-              <!--  <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="javascript:;" class="menu-link menu-toggle">
-                        <span class="svg-icon menu-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                    <path d="M6,5 L18,5 C19.6568542,5 21,6.34314575 21,8 L21,17 C21,18.6568542 19.6568542,20 18,20 L6,20 C4.34314575,20 3,18.6568542 3,17 L3,8 C3,6.34314575 4.34314575,5 6,5 Z M5,17 L14,17 L9.5,11 L5,17 Z M16,14 C17.6568542,14 19,12.6568542 19,11 C19,9.34314575 17.6568542,8 16,8 C14.3431458,8 13,9.34314575 13,11 C13,12.6568542 14.3431458,14 16,14 Z" fill="#000000" />
-                                </g>
-                            </svg>
-                            <!--end::Svg Icon
-                        </span>
-                        <span class="menu-text">Media</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="menu-submenu">
-                        <i class="menu-arrow"></i>
-                        <ul class="menu-subnav">
-
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Documents</span>
-                                </a>
-                            </li>
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Pictures</span>
-                                </a>
-                            </li>
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Videos</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>-->
+              
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="svg-icon menu-icon">
@@ -322,7 +286,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT ?>/admin/pages/board-members" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -340,6 +304,19 @@
                                         <span></span>
                                     </i>
                                     <span class="menu-text">Office Location</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-submenu">
+                        <i class="menu-arrow"></i>
+                        <ul class="menu-subnav">
+                            <li class="menu-item" aria-haspopup="true">
+                                <a href="<?php echo URLROOT ?>/admin/pages/mission-vision" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Mission, Vision, Values</span>
                                 </a>
                             </li>
                         </ul>
@@ -371,7 +348,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo URLROOT ?>/admin/pages/add-user.php" class="menu-link">
+                                <a href="<?php echo URLROOT ?>/admin/pages/add-user" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -384,7 +361,7 @@
             </ul>
             <!--end::Menu Nav-->
         </div>
-        <!--end::Menu Container-- event-registration-list.php>
+        <!--end::Menu Container-->
     </div>
     <!--end::Aside Menu-->
 </div>
@@ -409,8 +386,8 @@
                 <i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">
-                <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">James Jones</a>
-                <div class="text-muted mt-1">Usertype</div>
+                <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"><?php echo $_SESSION['name']; ?></a>
+                <div class="text-muted mt-1">Admin</div>
                 <div class="navi mt-2">
                     <a href="#" class="navi-item">
                         <span class="navi-link p-0 pb-2">
@@ -427,10 +404,10 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </span>
-                            <span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
+                            <span class="navi-text text-muted text-hover-primary"><?php echo $_SESSION['email']; ?></span>
                         </span>
                     </a>
-                    <a href="#" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
+                    <a href="<?php echo URLROOT ?>/admin/scripts/logout_script.php" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Log Out</a>
                 </div>
             </div>
         </div>

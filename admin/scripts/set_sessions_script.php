@@ -9,3 +9,6 @@ if(isset($_POST['newsID'])){
 if(isset($_POST['eventID'])){
     $_SESSION['eventID']=$_POST['eventID'];
 }
+if(isset($_POST['eventRegID'])){
+    $_SESSION['eventRegID']=$_POST['eventRegID'];
+}

@@ -62,6 +62,15 @@ foreach($policyResults as $policy){
     $policyImgCaption=$policy->img_description;
     $policyDetails=$policy->details;
 }
+//fetch mission-vision
+$sqlMissionVission=DB::getInstance()->select_query("SELECT * FROM tbl_welcome_message");
+$missionVisionResults=$sqlMissionVission->results();
+foreach($missionVisionResults as $mv){
+   $messageID=$mv->message_id;
+   $missionMessage=$mv->mission;
+   $visionMessage=$mv->vision;
+   $isodecValues=$mv->isodec_values;
+}
 
 //fetch blog list table
 $sqlbloglist=DB::getInstance()->select_query("SELECT * FROM tbl_blogs ORDER BY blog_id DESC");
@@ -88,11 +97,20 @@ $sqlEssentialResults=$sqlEssential->results();
 $sqlMedia=DB::getInstance()->select_query("SELECT * FROM view_media ORDER BY media_id DESC");
 $sqlMediaResults=$sqlMedia->results();
 
+//fetch users list
+$sqlUsers=DB::getInstance()->select_query("SELECT * FROM tbl_users WHERE user_email <> 'isodec@super' ORDER BY user_id DESC");
+$sqlUsersResults=$sqlUsers->results();
+$countUsers=$sqlUsers->count();
+
 
 
 //fetch upcoming events
 $sqlUe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date >= CURDATE() ");
 $sqlUeResults=$sqlUe->results();
+
+//fetch upcoming events register
+$sqlUpReg=DB::getInstance()->select_query("SELECT * FROM view_event_summary WHERE event_date >= CURDATE() ");
+$sqlUpRegResults=$sqlUpReg->results();
 
 //fetch recent events
 $sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id LIMIT 3");
@@ -101,6 +119,20 @@ $sqlLeResults=$sqlLe->results();
 //fetch all events
 $sqlAe=DB::getInstance()->select_query("SELECT * FROM view_events");
 $sqlAeResults=$sqlAe->results();
+
+//fetch all ourwork
+$sqlOw=DB::getInstance()->select_query("SELECT * FROM tbl_our_work");
+$sqlOwResults=$sqlOw->results();
+
+//fetch events registered list
+if(isset($_SESSION['eventRegID'])){
+    $eventID=$_SESSION['eventRegID'];
+$sqlRegList=DB::getInstance()->select_query("SELECT * FROM view_event_registration where event_id='$eventID'");
+$sqlRegListResults=$sqlRegList->results();
+foreach($sqlRegListResults as $r){
+    $eventRegListTitle=$r->event_title;
+}
+}
 
 
 
@@ -146,9 +178,8 @@ $sqlDoc=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_ty
 $docResults=$sqlDoc->results();
 
 //fetch registration
-$sqlRegSumm=DB::getInstance()->select_query("SELECT * FROM view_events_summary");
+$sqlRegSumm=DB::getInstance()->select_query("SELECT * FROM view_event_summary");
 $sqlRegSummResults=$sqlRegSumm->results();
-
 
 
 //fetch events details

@@ -1,0 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION["expireTime"])){
+session_destroy();
+header("location:../pages/admin-login?session=expired");
+}else{
+  session_destroy();
+  header("location:../pages/admin-login?session=logged-out");
+}

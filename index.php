@@ -228,6 +228,10 @@
                       </div>
                     </div>
                   <?php endforeach; ?>
+                  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTVBW8Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
                 </div>
               </div>
             </div>
@@ -239,3 +243,5 @@
   <!-- FOOTER -->
 </main>
 <?php include(APPROOT . '/includes/public/footer.php'); ?>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBWKQM0CNN"></script>

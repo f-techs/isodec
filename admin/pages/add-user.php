@@ -23,15 +23,7 @@
 					<!--begin::Topbar-->
 					<div class="topbar">
 						<!--begin::User-->
-						<div class="topbar-item">
-							<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
-								<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-								<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
-								<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-									<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-								</span>
-							</div>
-						</div>
+						<?php include(APPROOT.'/includes/admin/topbar-button.php'); ?>
 						<!--end::User-->
 					</div>
 					<!--end::Topbar-->
@@ -48,7 +40,7 @@
 					<div class="card card-custom">
 						<div class="card-header flex-wrap border-0 pt-6 pb-0">
 							<div class="card-title">
-								<h3 class="card-label">Media Uploads</h3>
+								<h3 class="card-label">Admin Users</h3>
 							</div>
 							<div class="card-toolbar">
 								<!--begin::Button-->
@@ -92,30 +84,24 @@
 							<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
 								<thead>
 									<tr>
-										<th title="Field #1">Media Type</th>
-										<th title="Field #2">Caption/Title</th>
+										<th title="Field #1">Firstnames</th>
+										<th title="Field #2">Other Names</th>
+										<th title="Field #1">Email</th>
+										<th title="Field #2">Phone</th>
 										<th title="Field #4">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($sqlMediaResults as $data) : ?>
-										<?php
-										if($data->media_type==1){
-											$url=URLROOT.'/assets/admin/media/uploadImages/picture/'.$data->file_name.'?title='.$data->media_title;
-										}elseif($data->media_type==2){
-										    $url=$data->file_name;
-										}elseif($data->media_type==3){
-											$url=URLROOT.'/assets/admin/media/uploadImages/document/'.$data->file_name.'?title='.$data->media_title;;
-										}
-										?>
+									<?php foreach ($sqlUsersResults as $data) : ?>
 										<tr>
-											<td><?php echo $data->media_name; ?></td>
-											<td><?php echo $data->media_title;?></td>
+											<td><?php echo $data->firstname; ?></td>
+											<td><?php echo $data->othernames;?></td>
+											<td><?php echo $data->user_email;?></td>
+											<td><?php echo $data->phone;?></td>
 											<td>
 												<div class="btn-group" role="group" aria-label="First group">
-													<button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-warning  btn-icon edit"><i class="la la-edit"></i></button>
-													<a target="_blank" href="<?= $url ?>" ><button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-primary  btn-icon view"><i class="la la-eye"></i></button></a>
-													<button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-danger btn-icon delete"><i class="la la-trash"></i></button>
+													<button type="button" id="<?php echo $data->user_id; ?>" class="btn btn-warning  btn-icon edit"><i class="la la-edit"></i></button>
+													<button type="button" id="<?php echo $data->user_id; ?>" class="btn btn-danger btn-icon delete"><i class="la la-trash"></i></button>
 												</div>
 											</td>
 										</tr>
@@ -140,7 +126,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Media Uploads</h5>
+					<h5 class="modal-title" id="exampleModalLabel">System Users</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i aria-hidden="true" class="ki ki-close"></i>
 					</button>
@@ -159,40 +145,39 @@
 											</h3>
 										</div>
 										<!--begin::Form-->
-										<form id="frmMedia" method="Post" enctype="multipart/form-data">
+										<form id="frmUsers" method="Post">
 										<div class="card-body">
 											<div class="form-group row" id="service_div">
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<label>First Name:</label>
-													<input class="form-control" type="text" name="first_name" required />
+													<input class="form-control" type="text" name="first_name" id="first_name" required />
 												</div>
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<label>Other Names:</label>
-													<input class="form-control" type="text" name="other_names" required />
+													<input class="form-control" type="text" name="other_names" id="other_names" required />
 												</div>
 											</div>
 											<div class="form-group row" id="service_div">
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<label>Email:</label>
-													<input class="form-control" type="email" name="email" required />
+													<input class="form-control" type="email" name="email" id="email" required />
 												</div>
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<label>Phone:</label>
-													<input class="form-control" type="text" name="phone" required />
+													<input class="form-control" maxlength="10" minlength="10" type="text" name="phone" id="phone" required />
 												</div>
 											</div>
 											<div class="form-group row" id="service_div">
-												<div class="col-lg-12 col-md-12 col-sm-12">
-													<label>Password:</label>
-													<input class="form-control" type="password" name="first_name" required />
-												</div>
+													<label>Pls Note: Default password:admin@123</label>
 											</div>
 										</div>
 											<div class="card-footer">
 												<div class="row">
 													<div class="col-lg-12 text-right">
 														<button type="submit" id="btn_submit" class="btn btn-primary mr-2">Submit</button>
-														<input type="hidden" name="media_folder" id="media_folder"/>
+														<input type="hidden" name="action" id="action" value="" />
+														<input type="hidden" name="id" id="id" value="" />
+														<input type="hidden" name="usersCount" id="usersCount" value="<?php echo $countUsers; ?>" />
 														<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 													</div>
 												</div>
@@ -289,57 +274,26 @@
 	//edit
 	$(document).on('click', '.edit', function(event) {
 		var ID = $(this).attr('id');
-		$('#media_id').val(ID);
+		$('#id').val(ID);
 		$('#action').val('Update');
-		$.get('<?php echo URLROOT ?>/admin/scripts/get_media_upload_script.php', {
+		$.get('<?php echo URLROOT ?>/admin/scripts/get_user_details_script.php', {
 			ID: ID
 		}, function(data) {
 			//alert(data);
 			var html = JSON.parse(data);
-			if (html.media_type==1) {
-				$('#picUpload').show();
-				$('#videoUpload').hide();
-				$('#videoThumbnail').hide();
-		        $('#documentUpload').hide();
-				$('#videoUrl').prop('required', false);
-		        $('#document_file').prop('required', false);
-				$('#videoUrl').val('');
-			}else if(html.media_type==2){
-				$('#videoUpload').show();
-				$('#videoThumbnail').show();
-				$('#picUpload').hide();
-		        $('#documentUpload').hide();
-				$('#videoUrl').val(html.file_name);
-				$('#img_file').prop('required', false);
-		        $('#document_file').prop('required', false);
-			}else if(html.media_type==3){
-				$('#documentUpload').show();
-				$('#videoUpload').hide();
-		        $('#picUpload').hide();
-				$('#videoUrl').prop('required', false);
-		        $('#img_file').prop('required', false);
-				$('#videoUrl').val('');
-			}
-			var file_name=html.file_name;
-			if(file_name!='');{
-				$('#img_file').prop('required', false);
-			}
-		    $('#addMediaModal').modal('show');
-			$('#media_title').val(html.media_title);
-			$('#lbl_file').text(html.file_name);
-			$('#file_name').val(html.file_name);
-			$('#video_thumbnail').val(html.video_thumbnail);
-			$('#media_type').val(html.media_type);
-			$('#media_type option').eq(html.media_type).prop('selected', true);
-			//$('#media_type').prop('disabled', true);
-			let imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/picture/' + html.file_name;
-			let thumbnailUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/video/' + html.video_thumbnail;
-			//alert(thumbnailUrl);
-			$("#img-pic").css("background-image", "url(" + imgUrl + ")");
-			$("#img-vid").css("background-image", "url(" + thumbnailUrl + ")");
-			//alert(data);
+		    $('#addUser').modal('show');
+			$('#first_name').val(html.firstname);
+			$('#other_names').val(html.othernames);
+			$('#phone').val(html.phone);
+			$('#email').val(html.user_email);
 		})
 	});
+
+	//check users before delete
+	let userCount=$('#usersCount').val();
+	if(userCount < 2){
+		$('.delete').prop('disabled', true);
+	}
 	$(document).on('click', '.delete', function(event) {
 		var ID = $(this).attr('id');
 		Swal.fire({
@@ -353,7 +307,7 @@
 		}).then(function(result) {
 			if (result.value) {
 				$.post('<?php echo URLROOT ?>/admin/scripts/delete_entry_script.php', {
-					docID: ID
+					userID: ID
 				}, function(data) {
 					if (data === 'success') {
 						location.reload();
@@ -365,56 +319,17 @@
 		});
 	});
 
-	//display media type
-	$('#media_type').on('change', function(){
-      let changeState=$(this).val();
-	 // alert(changeState);
-	  if(changeState == 1){
-		 $('#media_folder').val('picture');
-		 $('#picUpload').show();
-		 $('#videoUpload').hide();
-		 $('#videoThumbnail'),hide();
-		 $('#documentUpload').hide();
-		 $('#img_file').prop('required', true);
-		 $('#videoUrl').prop('required', false);
-		 $('#document_file').prop('required', false);
-	  }else if(changeState == 2){
-		//$('#media_folder').val('video');
-		$('#videoUpload').show();
-		$('#videoThumbnail').show();
-		$('#picUpload').hide();
-		$('#documentUpload').hide();
-		 $('#videoUrl').prop('required', false);
-		$('#img_file').prop('required', false);
-		$('#document_file').prop('required', false);
-	  }else if(changeState == 3){
-		$('#media_folder').val('document');
-		$('#documentUpload').show();
-		$('#videoUpload').hide();
-		$('#picUpload').hide();
-		$('#document_file').prop('required', true);
-		$('#videoUrl').prop('required', false);
-		$('#videoThumbnail').hide();
-		$('#img_file').prop('required', false);
-	  }
-	});
-
-	var imgUpload = new KTImageInput('img-pic');
-	var vidUpload = new KTImageInput('img-vid');
-	imgUpload.on('change', function(imageInput) {});
-	vidUpload.on('change', function(imageInput) {});
-
         $('#btnadd').on('click', function(){
 			$('#action').val('Add');
 		});
 	
 	//Form Subnission
-	$('#frmMedia').on('submit', function(e) {
+	$('#frmUsers').on('submit', function(e) {
 		e.preventDefault();
 		//get summernote details befor post
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo URLROOT ?>/admin/scripts/media_upload_script.php',
+			url: '<?php echo URLROOT ?>/admin/scripts/add_users_script.php',
 			data: new FormData(this),
 			contentType: false,
 			cache: false,
@@ -424,7 +339,7 @@
 				$('#loader').show();
 			},
 			success: function(data) {
-				alert(data);
+				//alert(data);
 				var response = JSON.parse(data);
 				Swal.fire({
 					title: "Message",

@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+<?php sessionExpire();  ?>
 	<head><base href="">
 		<meta charset="utf-8" />
 		<title><?php echo SITENAME; ?></title>
