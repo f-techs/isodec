@@ -99,7 +99,7 @@
           </div>
           <div class="card-body">
             <span class="tag tag-teal"><?=$e->event_type_name; ?></span>
-            <h4><a class="tag-link" href="#"><?= $e->event_title; ?></a></h4>
+            <h4><a class="tag-link" href="<?php echo URLROOT ?>/events/events?eventid=<?=$e->event_id?>&eventtitle=<?=$e->event_title;?>"><?= $e->event_title; ?></a></h4>
             <p>
             <?= txtTruncate($e->event_details, 50); ?>
             </p>

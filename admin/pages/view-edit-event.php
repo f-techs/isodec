@@ -86,6 +86,12 @@
 												<input id="webinar_url"  name="webinar_url" value="<?php echo (!empty($eventWebinar)) ? $eventWebinar : ''; ?>" name="profile_avatar_remove" class="form-control"/>
 											</div>
 										</div>
+                                        <div class="form-group row" id="locationDisplay" style="display:none;">
+											<label class="col-form-label text-right col-lg-2 col-sm-12">Location:</label>
+											<div class="col-lg-10 col-md-10 col-sm-12">
+												<input id="location" type="text"  name="location" value="<?php echo (!empty($eventlocation)) ? $eventlocation : ''; ?>" class="form-control"/>
+											</div>
+										</div>
                                         <div class="form-group row">
                                             <label class="col-form-label text-right col-lg-2 col-sm-12">Event Title:</label>
                                             <div class="col-lg-10 col-md-10 col-sm-12">
@@ -146,6 +152,8 @@
                                             <div class="row">
                                                 <div class="col-lg-12 text-right">
                                                     <button type="submit" id="btn_submit" class="btn btn-primary mr-2">Update</button>
+                                                    <input type="hidden" name="action" value="Update"/>
+                                                    <input type="hidden" name="ID" value="<?php echo $eventID; ?>"/>
                                                     <div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
                                                 </div>
                                             </div>
@@ -263,16 +271,28 @@
             }
         };
     }();
-
+     
+   let selOpt=$('#event_type').val();
+   if(selOpt==2){
+    $('#webinarUrl').show(); 
+    $('#locationDisplay').hide();  
+   }else if(selOpt==1){
+    $('#locationDisplay').show(); 
+    $('#webinarUrl').hide();   
+   }
     //event type state
 	$('#event_type').on('change', function(){
     let changeID=$(this).val();
 	//alert(changeID);
 	if(changeID==2){
 		$('#webinarUrl').show();
+		$('#locationDisplay').hide();
 		$('webinar_url').prop('required', true);
-	}else{
+		$('#location').prop('required', false);
+	}else if(changeID==1){
 		$('#webinarUrl').hide();
+		$('#locationDisplay').show();
+		$('#location').prop('required', true);
 		$('webinar_url').prop('required', false);
 	}
 	});
@@ -312,7 +332,7 @@
                 $('#loader').show();
             },
             success: function(data) {
-                //alert(data);
+                alert(data);
                 var response = JSON.parse(data);
                 Swal.fire({
                     title: "Message",

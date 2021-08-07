@@ -68,10 +68,10 @@
 								<form id="frmevent" method="Post" enctype="multipart/form-data">
 									<div class="card-body">
 										<div class="form-group row" id="service_div">
-											<label class="col-form-label text-right col-lg-2 col-sm-12">Service Type:</label>
+											<label class="col-form-label text-right col-lg-2 col-sm-12">Event Type:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
 												<select class="form-control" name="event_type" id="event_type" required>
-													<option value="" selected disabled>SELECT SERVICE TYPE</option>
+													<option value="" selected disabled>SELECT EVENT TYPE</option>
 													<?php foreach ($eventResults as $option) : ?>
 														<option value="<?= $option->event_type_id; ?>"><?= $option->event_type_name; ?></option>
 													<?php endforeach; ?>
@@ -81,7 +81,13 @@
 										<div class="form-group row" id="webinarUrl" style="display:none;">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Webinar Url:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
-												<input id="webinar_url"  name="webinar_url" class="form-control"/>
+												<input id="webinar_url"  name="webinar_url" type="url" class="form-control"/>
+											</div>
+										</div>
+										<div class="form-group row" id="locationDisplay" style="display:none;">
+											<label class="col-form-label text-right col-lg-2 col-sm-12">Location:</label>
+											<div class="col-lg-10 col-md-10 col-sm-12">
+												<input id="location" type="text"  name="location" class="form-control"/>
 											</div>
 										</div>
 										<div class="form-group row">
@@ -135,6 +141,7 @@
 										<div class="row">
 											<div class="col-lg-12 text-right">
 												<button type="submit" id="btn_submit" class="btn btn-primary mr-2">Submit</button>
+												<input type="hidden" name="action" value="Add"/>
 												<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 											</div>
 										</div>
@@ -201,9 +208,13 @@
 	//alert(changeID);
 	if(changeID==2){
 		$('#webinarUrl').show();
+		$('#locationDisplay').hide();
 		$('webinar_url').prop('required', true);
-	}else{
+		$('#location').prop('required', false);
+	}else if(changeID==1){
 		$('#webinarUrl').hide();
+		$('#locationDisplay').show();
+		$('#location').prop('required', true);
 		$('webinar_url').prop('required', false);
 	}
 	});

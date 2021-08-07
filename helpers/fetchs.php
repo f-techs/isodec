@@ -111,13 +111,14 @@ $sqlUeResults=$sqlUe->results();
 //fetch upcoming events register
 $sqlUpReg=DB::getInstance()->select_query("SELECT * FROM view_event_summary WHERE event_date >= CURDATE() ");
 $sqlUpRegResults=$sqlUpReg->results();
+$countUpcoming=$sqlUpReg->count();
 
 //fetch recent events
-$sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id LIMIT 3");
+$sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id DESC LIMIT 3");
 $sqlLeResults=$sqlLe->results();
 
 //fetch all events
-$sqlAe=DB::getInstance()->select_query("SELECT * FROM view_events");
+$sqlAe=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id DESC");
 $sqlAeResults=$sqlAe->results();
 
 //fetch all ourwork
@@ -188,6 +189,8 @@ if(isset($_SESSION['eventID'])){
     $sqlEvent=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_id='$eventID'");
     $sqlEventResults=$sqlEvent->results();
     foreach($sqlEventResults as $eventData){
+        $eventID=$eventData->event_id;
+        $eventlocation=$eventData->location;
         $eventCode=$eventData->event_code;
         $eventImg=$eventData->event_img;
         $eventTitle=$eventData->event_title;
@@ -258,6 +261,8 @@ if (isset($_GET['blogid'])) {
     $e=$sqlEventPage->results();
   //var_dump($sqlR);
   foreach($e as $data){
+    $eventType=$data->event_type;
+    $webinarUrl=$data->webinar_url;
     $eventID=$data->event_id;
     $eventPageTitle=$data->event_title;
     $eventPageDetails=$data->event_details;
