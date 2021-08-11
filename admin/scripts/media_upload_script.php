@@ -16,7 +16,7 @@ if($action=='Add'){
         $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));
         $thumbname = random_code(10). '.' . $image_ext;
         $image_old_location = $_FILES['vid_file']['tmp_name'];
-        $image_new_location = APPROOT.'/assets/admin/media/uploadImages/video/'. $thumbname;
+        $image_new_location = APPROOT.'/assets/admin/media/uploads/video/'. $thumbname;
         $img_upload= move_uploaded_file($image_old_location, $image_new_location); 
     }
    // $sql=DB::getInstance()->gen_query("call pro_insertMedia('$media_type', '$media_title', '$videoUrl', 1)"); //todo:add user id
@@ -39,7 +39,7 @@ if($action=='Add'){
         $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));
         $imgname = random_code(10). '.' . $image_ext;
         $image_old_location = $_FILES['img_file']['tmp_name'];
-        $image_new_location = APPROOT.'/assets/admin/media/uploadImages/picture/'. $imgname;
+        $image_new_location = APPROOT.'/assets/admin/media/uploads/picture/'. $imgname;
         $img_upload= move_uploaded_file($image_old_location, $image_new_location);
     }
     if(isset($img_upload)){
@@ -64,7 +64,7 @@ if($action=='Add'){
         $doc_ext =strtolower(pathinfo($Doc, PATHINFO_EXTENSION));
         $docname = $getDocName. '.' . $doc_ext;
         $doc_old_location = $_FILES['document_file']['tmp_name'];
-        $doc_new_location = APPROOT.'/assets/admin/media/uploadImages/document/'. $docname;
+        $doc_new_location = APPROOT.'/assets/admin/media/uploads/document/'. $docname;
         $doc_upload= move_uploaded_file($doc_old_location, $doc_new_location);
     }
     if($doc_upload){
@@ -78,6 +78,32 @@ if($action=='Add'){
         $response['message']='Failed to saved url';
       }
       echo json_encode($response);
+
+}elseif($mediaType==4){
+  $media_title=$_POST['media_title'];
+  $getAudioFileName=str_replace(' ', '-', $media_title);
+//  $media_type=$_POST['media_type'];
+  $docfile=$_FILES['audio-file'];
+  $medialFolder=$_POST['media_folder'];
+  if(!empty($docfile)){
+      $audioFile = $_FILES['audio-file']['name'];
+      $file_ext =strtolower(pathinfo($audioFile, PATHINFO_EXTENSION));
+      $audioname = $getAudioFileName. '.' . $file_ext;
+      $doc_old_location = $_FILES['audio-file']['tmp_name'];
+      $doc_new_location = APPROOT.'/assets/admin/media/uploads/audio/'. $audioname;
+      $doc_upload= move_uploaded_file($doc_old_location, $doc_new_location);
+  }
+  if($doc_upload){
+    $sql=DB::getInstance()->insert('tbl_media', array('media_type'=>$mediaType, 'media_title'=>$media_title, 'file_name'=>$audioname, 'video_thumbnail'=>'', 'created_by'=>1, 'created_date'=>$date, 'modified_by'=>1, 'modified_date'=>$date));
+  }
+    if(isset($sql)){
+      $response['status']='success';
+      $response['message']='Document saved successfully'; 
+    }else{
+      $response['status']='fail';
+      $response['message']='Failed to saved url';
+    }
+    echo json_encode($response);
 
 }
 }elseif($action=="Update"){
@@ -94,7 +120,7 @@ if($action=='Add'){
       $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));
       $thumbname = random_code(10). '.' . $image_ext;
       $image_old_location = $_FILES['vid_file']['tmp_name'];
-      $image_new_location = APPROOT.'/assets/admin/media/uploadImages/video/'. $thumbname;
+      $image_new_location = APPROOT.'/assets/admin/media/uploads/video/'. $thumbname;
       $img_upload= move_uploaded_file($image_old_location, $image_new_location); 
     }
     //$sql=DB::getInstance()->gen_query("call pro_updateMedia( '$media_title', '$videoUrl', 1, '$media_id')"); //todo:add user id
@@ -120,7 +146,7 @@ if($action=='Add'){
         $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));
         $imgname = random_code(10). '.' . $image_ext;
         $image_old_location = $_FILES['img_file']['tmp_name'];
-        $image_new_location = APPROOT.'/assets/admin/media/uploadImages/picture/'. $imgname;
+        $image_new_location = APPROOT.'/assets/admin/media/uploads/picture/'. $imgname;
         $img_upload= move_uploaded_file($image_old_location, $image_new_location);
     }
    
@@ -145,9 +171,9 @@ if($action=='Add'){
     }else{
         $Doc = $_FILES['document_file']['name'];
         $doc_ext =strtolower(pathinfo($Doc, PATHINFO_EXTENSION));
-        $docname = random_code(10). '.' . $doc_ext;
+        $docname = str_replace(' ', '-', $media_title). '.' . $doc_ext;
         $doc_old_location = $_FILES['document_file']['tmp_name'];
-        $doc_new_location = APPROOT.'/assets/admin/media/uploadImages/document/'. $docname;
+        $doc_new_location = APPROOT.'/assets/admin/media/uploads/document/'. $docname;
         $doc_upload= move_uploaded_file($doc_old_location, $doc_new_location);
     }
   
@@ -161,6 +187,34 @@ if($action=='Add'){
         $response['message']='Failed to saved url';
       }
       echo json_encode($response);
+
+}elseif($mediaType==4){
+  $media_title=$_POST['media_title'];
+ // $media_type=$_POST['media_type'];
+  $docfile=$_FILES['audio_file'];
+  $medialFolder=$_POST['media_folder'];
+  $media_id=$_POST['media_id'];
+  if(($_FILES['audio_file']['size']==0)){
+    $audioname=$_POST['file_name'];
+  }else{
+      $audioFile = $_FILES['audio_file']['name'];
+      $file_ext =strtolower(pathinfo($audioFile, PATHINFO_EXTENSION));
+      $audioname =str_replace(' ', '-', $media_title). '.' . $file_ext;
+      $doc_old_location = $_FILES['audio_file']['tmp_name'];
+      $doc_new_location = APPROOT.'/assets/admin/media/uploads/audio/'. $audioname;
+      $doc_upload= move_uploaded_file($doc_old_location, $doc_new_location);
+  }
+
+  $sql=DB::getInstance()->update('tbl_media', $media_id , 'media_id', array('media_type'=>$media_type, 'media_title'=>$media_title, 'file_name'=>$audioname, 'video_thumbnail'=>'', 'modified_by'=>1, 'modified_date'=>$date));
+  
+    if(isset($sql)){
+      $response['status']='success';
+      $response['message']='Audio saved successfully'; 
+    }else{
+      $response['status']='fail';
+      $response['message']='Failed to saved audio';
+    }
+    echo json_encode($response);
 
 }
 

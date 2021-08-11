@@ -66675,7 +66675,7 @@ tinymce.IconManager.add('default', {
           'data-mce-src': src
         });
       };
-      var uploadImages = function (callback) {
+      var uploads = function (callback) {
         if (!uploader) {
           uploader = Uploader(uploadStatus, {
             url: getImageUploadUrl(editor),
@@ -66732,9 +66732,9 @@ tinymce.IconManager.add('default', {
           }));
         }));
       };
-      var uploadImagesAuto = function (callback) {
+      var uploadsAuto = function (callback) {
         if (isAutomaticUploadsEnabled(editor)) {
-          return uploadImages(callback);
+          return uploads(callback);
         }
       };
       var isValidDataUriImage = function (imgElm) {
@@ -66798,7 +66798,7 @@ tinymce.IconManager.add('default', {
       };
       editor.on('SetContent', function () {
         if (isAutomaticUploadsEnabled(editor)) {
-          uploadImagesAuto();
+          uploadsAuto();
         } else {
           scanForImages();
         }
@@ -66829,8 +66829,8 @@ tinymce.IconManager.add('default', {
       return {
         blobCache: blobCache,
         addFilter: addFilter,
-        uploadImages: uploadImages,
-        uploadImagesAuto: uploadImagesAuto,
+        uploads: uploads,
+        uploadsAuto: uploadsAuto,
         scanForImages: scanForImages,
         destroy: destroy
       };
@@ -74907,8 +74907,8 @@ tinymce.IconManager.add('default', {
       Editor.prototype.destroy = function (automatic) {
         destroy(this, automatic);
       };
-      Editor.prototype.uploadImages = function (callback) {
-        return this.editorUpload.uploadImages(callback);
+      Editor.prototype.uploads = function (callback) {
+        return this.editorUpload.uploads(callback);
       };
       Editor.prototype._scanForImages = function () {
         return this.editorUpload.scanForImages();

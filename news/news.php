@@ -23,7 +23,7 @@
       <div class="row mx-auto my-3">
         <?php if (!empty($newsPageID)) : ?>
           <div class="col-lg-12 col-md-6 col-xs-4">
-            <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/news/<?php echo $newsPageImg; ?>"/>
+            <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploads/news/<?php echo $newsPageImg; ?>"/>
             <p style="color:#39A8E8; font-weight: bold;"><?php echo $newsPageImgCaption; ?></p>
           </div>
           <div class="col-lg-12 col-md-6 col-xs-4">

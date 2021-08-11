@@ -1527,7 +1527,7 @@
         return function (api) {
           var data = deepMerge(fromImageData(info.image), api.getData());
           editor.execCommand('mceUpdateImage', false, toImageData(data, info.hasAccessibilityOptions));
-          editor.editorUpload.uploadImagesAuto();
+          editor.editorUpload.uploadsAuto();
           api.close();
         };
       };

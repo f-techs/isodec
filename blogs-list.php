@@ -29,7 +29,7 @@
                             <div class="card" style="width:100%;">
                                 <div class="row ">
                                     <div class="col-md-4">
-                                        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/blogs/<?php echo (!empty($blog->blog_img)) ? $blog->blog_img:'news.png';?>" style="width:100%; height:100%;"/>
+                                        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploads/blogs/<?php echo (!empty($blog->blog_img)) ? $blog->blog_img:'news.png';?>" style="width:100%; height:100%;"/>
                                     </div>
                                     <div class="col-md-8 px-3">
                                         <div class="card-block px-3">

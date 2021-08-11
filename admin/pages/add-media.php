@@ -23,7 +23,7 @@
 					<!--begin::Topbar-->
 					<div class="topbar">
 						<!--begin::User-->
-						<?php include(APPROOT.'/includes/admin/topbar-button.php'); ?>
+						<?php include(APPROOT . '/includes/admin/topbar-button.php'); ?>
 						<!--end::User-->
 					</div>
 					<!--end::Topbar-->
@@ -92,21 +92,23 @@
 								<tbody>
 									<?php foreach ($sqlMediaResults as $data) : ?>
 										<?php
-										if($data->media_type==1){
-											$url=URLROOT.'/assets/admin/media/uploadImages/picture/'.$data->file_name.'?title='.$data->media_title;
-										}elseif($data->media_type==2){
-										    $url=$data->file_name;
-										}elseif($data->media_type==3){
-											$url=URLROOT.'/assets/admin/media/uploadImages/document/'.$data->file_name.'?title='.$data->media_title;;
+										if ($data->media_type == 1) {
+											$url = URLROOT . '/assets/admin/media/uploads/picture/' . $data->file_name . '?title=' . $data->media_title;
+										} elseif ($data->media_type == 2) {
+											$url = $data->file_name;
+										} elseif ($data->media_type == 3) {
+											$url = URLROOT . '/assets/admin/media/uploads/document/' . $data->file_name . '?title=' . $data->media_title;;
+										}elseif ($data->media_type == 4) {
+											$url = URLROOT . '/assets/admin/media/uploads/audio/' . $data->file_name . '?title=' . $data->media_title;;
 										}
 										?>
 										<tr>
 											<td><?php echo $data->media_name; ?></td>
-											<td><?php echo $data->media_title;?></td>
+											<td><?php echo $data->media_title; ?></td>
 											<td>
 												<div class="btn-group" role="group" aria-label="First group">
 													<button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-warning  btn-icon edit"><i class="la la-edit"></i></button>
-													<a target="_blank" href="<?= $url ?>" ><button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-primary  btn-icon view"><i class="la la-eye"></i></button></a>
+													<a target="_blank" href="<?= $url ?>"><button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-primary  btn-icon view"><i class="la la-eye"></i></button></a>
 													<button type="button" id="<?php echo $data->media_id; ?>" class="btn btn-danger btn-icon delete"><i class="la la-trash"></i></button>
 												</div>
 											</td>
@@ -179,12 +181,12 @@
 												<div class="form-group row" id="videoThumbnail" style="display:none;">
 													<label class="col-form-label text-right col-lg-2 col-sm-12">Video Thumbnail:</label>
 													<div class="col-lg-10 col-md-10 col-sm-12">
-													<div class="image-input image-input-outline" id="img-vid" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
+														<div class="image-input image-input-outline" id="img-vid" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
 															<div class="image-input-wrapper"></div>
 															<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
 																<i class="fa fa-pen icon-sm text-muted"></i>
 																<div id="file_wrapper">
-																	<input type="file"  name="vid_file" id="vid_file" accept=".png, .jpg, .jpeg" />
+																	<input type="file" name="vid_file" id="vid_file" accept=".png, .jpg, .jpeg" />
 																</div>
 																<input type="hidden" id="image_remove_name" value=" " />
 															</label>
@@ -218,8 +220,18 @@
 													<label class="col-form-label text-right col-lg-2 col-sm-12">Upload Document:</label>
 													<div class="col-lg-10 col-md-10 col-sm-12">
 														<div class="custom-file">
-															<input type="file" class="custom-file-input"  name="document_file" id="document-file" />
-															<label id="lbl_file" class="custom-file-label" for="customFile">Choose file</label>
+															<input type="file" class="custom-file-input" name="document_file" id="document_file" />
+															<label id="lbl_file" class="custom-file-label" for="customFile">Choose file; pdf, doc, docx, xlsx</label>
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group row" id="audioUpload" style="display:none;">
+													<label class="col-form-label text-right col-lg-2 col-sm-12">Upload Audio:</label>
+													<div class="col-lg-10 col-md-10 col-sm-12">
+														<div class="custom-file">
+															<input type="file" class="custom-file-input" name="audio-file" id="audio-file" />
+															<label id="lbl_file" class="custom-file-label" for="customFile">Choose file; mp3</label>
 														</div>
 													</div>
 												</div>
@@ -228,11 +240,11 @@
 												<div class="row">
 													<div class="col-lg-12 text-right">
 														<button type="submit" id="btn_submit" class="btn btn-primary mr-2">Submit</button>
-														<input type="hidden" name="media_folder" id="media_folder"/>
-														<input type="hidden" name="action" id="action"/>
-														<input type="hidden" name="media_id" id="media_id"/>
-														<input type="hidden" name="file_name" id="file_name"/>
-														<input type="hidden" name="video_thumbnail" id="video_thumbnail"/>
+														<input type="hidden" name="media_folder" id="media_folder" />
+														<input type="hidden" name="action" id="action" />
+														<input type="hidden" name="media_id" id="media_id" />
+														<input type="hidden" name="file_name" id="file_name" />
+														<input type="hidden" name="video_thumbnail" id="video_thumbnail" />
 														<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 													</div>
 												</div>
@@ -336,35 +348,51 @@
 		}, function(data) {
 			//alert(data);
 			var html = JSON.parse(data);
-			if (html.media_type==1) {
+			if (html.media_type == 1) {
 				$('#picUpload').show();
 				$('#videoUpload').hide();
 				$('#videoThumbnail').hide();
-		        $('#documentUpload').hide();
+				$('#documentUpload').hide();
+				$('#audioUpload').hide();
 				$('#videoUrl').prop('required', false);
-		        $('#document_file').prop('required', false);
+				$('#document_file').prop('required', false);
+				$('#audio_file').prop('required', false);
 				$('#videoUrl').val('');
-			}else if(html.media_type==2){
+			} else if (html.media_type == 2) {
 				$('#videoUpload').show();
 				$('#videoThumbnail').show();
 				$('#picUpload').hide();
-		        $('#documentUpload').hide();
+				$('#audioUpload').hide();
+				$('#documentUpload').hide();
 				$('#videoUrl').val(html.file_name);
 				$('#img_file').prop('required', false);
-		        $('#document_file').prop('required', false);
-			}else if(html.media_type==3){
+				$('#document_file').prop('required', false);
+				$('#audio_file').prop('required', false);
+			} else if (html.media_type == 3) {
 				$('#documentUpload').show();
 				$('#videoUpload').hide();
-		        $('#picUpload').hide();
+				$('#picUpload').hide();
+				$('#videoThumbnail').hide();
+				$('#audioUpload').hide();
 				$('#videoUrl').prop('required', false);
-		        $('#img_file').prop('required', false);
+				$('#img_file').prop('required', false);
+				$('#audio_file').prop('required', false);
 				$('#videoUrl').val('');
+			} else if (html.media_type == 4) {
+				$('#media_folder').val('document');
+				$('#audioUpload').show();
+				$('#videoUpload').hide();
+				$('#picUpload').hide();
+				$('#videoThumbnail').hide();
+				$('#videoUrl').prop('required', false);
+				$('#img_file').prop('required', false);
+				$('#document_file').prop('required', false);
 			}
-			var file_name=html.file_name;
-			if(file_name!='');{
+			var file_name = html.file_name;
+			if (file_name != ''); {
 				$('#img_file').prop('required', false);
 			}
-		    $('#addMediaModal').modal('show');
+			$('#addMediaModal').modal('show');
 			$('#media_title').val(html.media_title);
 			$('#lbl_file').text(html.file_name);
 			$('#file_name').val(html.file_name);
@@ -372,8 +400,8 @@
 			$('#media_type').val(html.media_type);
 			$('#media_type option').eq(html.media_type).prop('selected', true);
 			//$('#media_type').prop('disabled', true);
-			let imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/picture/' + html.file_name;
-			let thumbnailUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/video/' + html.video_thumbnail;
+			let imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploads/picture/' + html.file_name;
+			let thumbnailUrl = '<?php echo URLROOT ?>/assets/admin/media/uploads/video/' + html.video_thumbnail;
 			//alert(thumbnailUrl);
 			$("#img-pic").css("background-image", "url(" + imgUrl + ")");
 			$("#img-vid").css("background-image", "url(" + thumbnailUrl + ")");
@@ -406,37 +434,52 @@
 	});
 
 	//display media type
-	$('#media_type').on('change', function(){
-      let changeState=$(this).val();
-	 // alert(changeState);
-	  if(changeState == 1){
-		 $('#media_folder').val('picture');
-		 $('#picUpload').show();
-		 $('#videoUpload').hide();
-		 $('#videoThumbnail'),hide();
-		 $('#documentUpload').hide();
-		 $('#img_file').prop('required', true);
-		 $('#videoUrl').prop('required', false);
-		 $('#document_file').prop('required', false);
-	  }else if(changeState == 2){
-		//$('#media_folder').val('video');
-		$('#videoUpload').show();
-		$('#videoThumbnail').show();
-		$('#picUpload').hide();
-		$('#documentUpload').hide();
-		 $('#videoUrl').prop('required', false);
-		$('#img_file').prop('required', false);
-		$('#document_file').prop('required', false);
-	  }else if(changeState == 3){
-		$('#media_folder').val('document');
-		$('#documentUpload').show();
-		$('#videoUpload').hide();
-		$('#picUpload').hide();
-		$('#document_file').prop('required', true);
-		$('#videoUrl').prop('required', false);
-		$('#videoThumbnail').hide();
-		$('#img_file').prop('required', false);
-	  }
+	$('#media_type').on('change', function() {
+		let changeState = $(this).val();
+		// alert(changeState);
+		if (changeState == 1) {
+			$('#media_folder').val('picture');
+			$('#picUpload').show();
+			$('#videoUpload').hide();
+			$('#videoThumbnail'), hide();
+			$('#audioUpload').hide();
+			$('#documentUpload').hide();
+			$('#img_file').prop('required', true);
+			$('#videoUrl').prop('required', false);
+			$('#document_file').prop('required', false);
+			$('#audio-file').prop('required', false);
+		} else if (changeState == 2) {
+			//$('#media_folder').val('video');
+			$('#videoUpload').show();
+			$('#videoThumbnail').show();
+			$('#picUpload').hide();
+			$('#audioUpload').hide();
+			$('#documentUpload').hide();
+			$('#videoUrl').prop('required', false);
+			$('#img_file').prop('required', false);
+			$('#document_file').prop('required', false);
+			$('#audio-file').prop('required', false);
+		} else if (changeState == 3) {
+			$('#media_folder').val('document');
+			$('#audioUpload').hide();
+			$('#documentUpload').show();
+			$('#videoUpload').hide();
+			$('#picUpload').hide();
+			$('#document_file').prop('required', true);
+			$('#audio-file').prop('required', false);
+			$('#videoUrl').prop('required', false);
+			$('#videoThumbnail').hide();
+			$('#img_file').prop('required', false);
+		} else if (changeState == 4) {
+			$('#media_folder').val('document');
+			$('#audioUpload').show();
+			$('#videoUpload').hide();
+			$('#picUpload').hide();
+			$('#audio-file').prop('required', true);
+			$('#videoUrl').prop('required', false);
+			$('#videoThumbnail').hide();
+			$('#img_file').prop('required', false);
+		}
 	});
 
 	var imgUpload = new KTImageInput('img-pic');
@@ -444,10 +487,10 @@
 	imgUpload.on('change', function(imageInput) {});
 	vidUpload.on('change', function(imageInput) {});
 
-        $('#btnadd').on('click', function(){
-			$('#action').val('Add');
-		});
-	
+	$('#btnadd').on('click', function() {
+		$('#action').val('Add');
+	});
+
 	//Form Subnission
 	$('#frmMedia').on('submit', function(e) {
 		e.preventDefault();
@@ -483,4 +526,73 @@
 			}
 		});
 	});
-	</script>
+
+	//check audio file
+	$('#audio-file').bind('change', function() {
+    var file_ext=$('#audio-file').val().split('.').pop().toLowerCase();
+    var file_size=(this.files[0].size);
+    if(file_size > 5000000){
+     swal.fire({
+         title:"Large file size",
+         icon:"info",
+         text:"Please file size should not be more than 5MB",
+         confirmButtonClass:"btn-danger"
+     });
+      $('#audio-file').val('');
+    }else if($.inArray(file_ext, ['mp3']) === -1) {
+    swal.fire({
+         title:"Invalid File Type",
+         icon:"info",
+         text:"Please file type should be mp3",
+         confirmButtonClass:"btn-danger"
+     });
+    $('#audio-file').val('');
+}
+  });
+
+  //check picture
+	$('#img-file').bind('change', function() {
+    var file_ext=$('#img-file').val().split('.').pop().toLowerCase();
+    var file_size=(this.files[0].size);
+    if(file_size > 3000000){
+     swal.fire({
+         title:"Large file size",
+         type:"error",
+         text:"Please file size should not be more than 3MB",
+         confirmButtonClass:"btn-danger"
+     });
+      $('#img-file').val('');
+    }else if($.inArray(file_ext, ['jpeg', 'jpg', 'png']) === -1) {
+    swal.fire({
+         title:"Invalid File Type",
+         type:"error",
+         text:"Please file file type should be jpeg, jpg, png",
+         confirmButtonClass:"btn-danger"
+     });
+    $('#img-file').val('');
+}
+  });
+
+  //check picture
+	$('#document_file').bind('change', function() {
+    var file_ext=$('#document_file').val().split('.').pop().toLowerCase();
+    var file_size=(this.files[0].size);
+    if(file_size > 3000000){
+     swal.fire({
+         title:"Large file size",
+         icon:"info",
+         text:"Please file size should not be more than 3MB",
+         confirmButtonClass:"btn-danger"
+     });
+      $('#document_file').val('');
+    }else if($.inArray(file_ext, ['docx', 'doc', 'xlsx', 'pdf']) === -1) {
+    swal.fire({
+         title:"Invalid File Type",
+         icon:"info",
+         text:"Please file file type should be jpeg, jpg, png",
+         confirmButtonClass:"btn-danger"
+     });
+    $('#document_file').val('');
+}
+  });
+</script>

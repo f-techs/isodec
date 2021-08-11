@@ -93,6 +93,18 @@ $newsListResults=$sqlNewslist->results();
 $sqlEssential=DB::getInstance()->select_query("SELECT * FROM view_essentialservices ORDER BY post_id DESC");
 $sqlEssentialResults=$sqlEssential->results();
 
+//fetch services education
+$sqlEducation=DB::getInstance()->select_query("SELECT * FROM view_essentialservices WHERE post_type=1 ORDER BY post_id DESC");
+$sqlEducationResults=$sqlEducation->results();
+
+//fetch services health
+$sqlHealth=DB::getInstance()->select_query("SELECT * FROM view_essentialservices WHERE post_type=2 ORDER BY post_id DESC");
+$sqlHealthResults=$sqlHealth->results();
+
+//fetch services water
+$sqlWater=DB::getInstance()->select_query("SELECT * FROM view_essentialservices WHERE post_type=3 ORDER BY post_id DESC");
+$sqlWaterResults=$sqlWater->results();
+
 //fetch media list table
 $sqlMedia=DB::getInstance()->select_query("SELECT * FROM view_media ORDER BY media_id DESC");
 $sqlMediaResults=$sqlMedia->results();
@@ -107,11 +119,12 @@ $countUsers=$sqlUsers->count();
 //fetch upcoming events
 $sqlUe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date >= CURDATE() ");
 $sqlUeResults=$sqlUe->results();
+$countUpcoming=$sqlUe->count();
 
 //fetch upcoming events register
 $sqlUpReg=DB::getInstance()->select_query("SELECT * FROM view_event_summary WHERE event_date >= CURDATE() ");
 $sqlUpRegResults=$sqlUpReg->results();
-$countUpcoming=$sqlUpReg->count();
+
 
 //fetch recent events
 $sqlLe=DB::getInstance()->select_query("SELECT * FROM view_events ORDER BY event_id DESC LIMIT 3");
@@ -178,6 +191,10 @@ $videoResults=$sqlVideo->results();
 $sqlDoc=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=3 ORDER BY media_id");
 $docResults=$sqlDoc->results();
 
+//fetch documents
+$sqlAudio=DB::getInstance()->select_query("SELECT * FROM view_media WHERE media_type=4 ORDER BY media_id");
+$audioResults=$sqlAudio->results();
+
 //fetch registration
 $sqlRegSumm=DB::getInstance()->select_query("SELECT * FROM view_event_summary");
 $sqlRegSummResults=$sqlRegSumm->results();
@@ -208,11 +225,13 @@ if(isset($_SESSION['eventID'])){
 $sqlSocial=DB::getInstance()->select_query("SELECT * FROM tbl_social_media");
 $socialResults=$sqlSocial->results();
 foreach($socialResults as $data){
+    $socialID=$data->social_media_id;
     $facebook=$data->facebook_url;
     $twitter=$data->twitter_url;
     $instagram=$data->instagram_url;
     $skype=$data->skype_url;
     $linkedIn=$data->linkedIn_url;
+    $youtube=$data->youtube_url;
     $entryCode=$data->entry_code;
 }
 /**end for website contents */
@@ -226,10 +245,16 @@ $sqlSelectResults=$sqlSelect->results();
 $sqlSelMedia=DB::getInstance()->select_query("SELECT * FROM media_types");
 $mediaResults=$sqlSelMedia->results();
 
+//location
+$sqlLocationtType=DB::getInstance()->select_query("SELECT * FROM location_type");
+$locationTypeResults=$sqlLocationtType->results();
+
+
 //events
 $sqlEvents=DB::getInstance()->select_query("SELECT * FROM event_types");
 $eventResults=$sqlEvents->results();
 
+//blogs website
 if (isset($_GET['blogid'])) {
     $blogPageID = $_GET['blogid'];
     $sqlBlogPage=DB::getInstance()->get('tbl_blogs', array('blog_id', '=', $blogPageID));
@@ -243,6 +268,7 @@ if (isset($_GET['blogid'])) {
   }
   }
 
+  //news website
   if (isset($_GET['newsid'])) {
     $newsPageID = $_GET['newsid'];
     $sqlNewsPage=DB::getInstance()->get('tbl_news', array('news_id', '=', $newsPageID));
@@ -255,6 +281,7 @@ if (isset($_GET['blogid'])) {
     $newsPageImgCaption=$data->img_description;
   }
   }
+  //events website
   if (isset($_GET['eventid'])) {
     $eventPageID = $_GET['eventid'];
     $sqlEventPage=DB::getInstance()->get('tbl_events', array('event_id', '=', $eventPageID));
@@ -267,10 +294,12 @@ if (isset($_GET['blogid'])) {
     $eventPageTitle=$data->event_title;
     $eventPageDetails=$data->event_details;
     $eventPageImg=$data->event_img;
+    $eventlocation=$data->location;
     $eventDate=date('d-M-Y', strtotime($data->event_date));
     $eventTime=date("g:i A", strtotime($data->event_time));
   }
   }
+  //registration website
   if(isset($_GET['regid'])){
       $regId=$_GET['regid'];
       $sqlreg=DB::getInstance()->get('tbl_events', array('event_id', '=', $regId));
@@ -282,6 +311,10 @@ if (isset($_GET['blogid'])) {
       
   }
   
+  //locations & maps
+  $sqlLocations=DB::getInstance()->select_query("SELECT * FROM  view_office_project_maps");
+  $locationsResults=$sqlLocations->results();
+  $checkRow=$sqlLocations->count();
 /** for admin contents */
 
 /**end for admin contents */

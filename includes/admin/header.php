@@ -17,6 +17,7 @@
 		<link href="<?php echo URLROOT?>/assets/admin/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo URLROOT?>/assets/admin/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo URLROOT?>/assets/admin/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo URLROOT?>/assets/admin/css/mapstyle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Theme Styles-->
 		<!--begin::Layout Themes(used by all pages)-->
 		<link href="<?php echo URLROOT?>/assets/admin/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />

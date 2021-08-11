@@ -95,7 +95,7 @@
 									<?php foreach ($blogListResults as $data) : ?>
 										<tr>
 											<td><?php echo $data->blog_title; ?></td>
-											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/blogs/<?php echo (!empty($data->blog_img)) ? $data->blog_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
+											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/blogs/<?php echo (!empty($data->blog_img)) ? $data->blog_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
 											<td><?php echo txtTruncate($data->blog_details, 100); ?></td>
 											<td><?php echo date('d-M-Y', strtotime($data->created_date)); ?></td>
 											<td>

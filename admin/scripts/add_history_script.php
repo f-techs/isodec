@@ -15,7 +15,7 @@ if($_FILES['img_file'] && isset($_POST['history_content']) && isset($_POST['img_
         $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));
         $imgname = uniqid(). '.' . $image_ext;
         $image_old_location = $_FILES['img_file']['tmp_name'];
-        $image_new_location = APPROOT.'/assets/admin/media/uploadImages/'. $imgname;
+        $image_new_location = APPROOT.'/assets/admin/media/uploads/'. $imgname;
         $img_upload= move_uploaded_file($image_old_location, $image_new_location);
 }
     if(!empty($historyEntry)){

@@ -18,7 +18,7 @@
     <div class="row container mx-auto my-3">
     <?php if(!empty($missionID)): ?>
       <div class="col-lg-12 col-md-6 col-xs-4">
-        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo $missionImg ?>" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;" height="100%" width="100%"/>
+        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploads/<?php echo $missionImg ?>" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;" height="100%" width="100%"/>
         <p style="color:#39A8E8; font-weight: bold;"><?php echo $missionImgCaption;?></p>
       </div>
       <div class="col-lg-12 col-md-6 col-xs-4">

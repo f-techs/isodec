@@ -23,7 +23,7 @@
        
         <div class="row photos">
         <?php foreach($galleryResults as $pic): ?>
-          <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-fancybox="images" data-caption="<?php echo $pic->media_title; ?>" href="<?php echo URLROOT ?>/assets/admin/media/uploadImages/picture/<?php echo (!empty($pic->file_name)) ? $pic->file_name : ''; ?>" data-lightbox="photos"><img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/picture/<?php echo (!empty($pic->file_name)) ? $pic->file_name : ''; ?>"></a>
+          <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-fancybox="images" data-caption="<?php echo $pic->media_title; ?>" href="<?php echo URLROOT ?>/assets/admin/media/uploads/picture/<?php echo (!empty($pic->file_name)) ? $pic->file_name : ''; ?>" data-lightbox="photos"><img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploads/picture/<?php echo (!empty($pic->file_name)) ? $pic->file_name : ''; ?>"></a>
           <p><?php echo $pic->media_title; ?></p>
         </div>  
         <?php endforeach; ?>

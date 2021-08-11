@@ -78,16 +78,16 @@
                     Essential Services
                   </a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Education</a>
+                    <a class="dropdown-item" href="<?php echo URLROOT ?>/service-education">Education</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Water</a>
+                    <a class="dropdown-item" href="<?php echo URLROOT ?>/service-water">Water</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Health</a>
+                    <a class="dropdown-item" href="<?php echo URLROOT ?>/service-health">Health</a>
                   </div>
                 </div>
                 <!-- <a class="dropdown-item" href="#">Essential Services</a>-->
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Policy Support</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/policy-support">Policy Support</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -110,6 +110,7 @@
                 <a class="dropdown-item" href="<?php echo URLROOT ?>/video-gallery">Videos</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?php echo URLROOT ?>/picture-gallery">Pictures</a>
+                <a class="dropdown-item" href="<?php echo URLROOT ?>/audios">Audios</a>
               </div>
             </li>
             <li class="nav-item">

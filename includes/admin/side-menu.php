@@ -299,7 +299,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/general/fluid-content.html" class="menu-link">
+                                <a href="<?php echo URLROOT ?>/admin/pages/office-project-location-setup" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

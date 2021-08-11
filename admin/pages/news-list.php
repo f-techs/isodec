@@ -95,7 +95,7 @@
 									<?php foreach ($newsListResults as $data) : ?>
 										<tr>
 											<td><?php echo $data->news_title; ?></td>
-											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/news/<?php echo (!empty($data->news_img)) ? $data->news_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
+											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/news/<?php echo (!empty($data->news_img)) ? $data->news_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
 											<td><?php echo txtTruncate($data->news_details, 100); ?></td>
 											<td><?php echo date('d-M-Y', strtotime($data->created_date)); ?></td>
 											<td>

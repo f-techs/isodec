@@ -190,7 +190,7 @@ if (isset($_GET['session'])) {
 	}else if(session=='expired'){
 		Swal.fire({
 			title: "Message",
-			text: "The system was idle for 30mins. You have been logged out. Log again",
+			text: "The system was idle for 30mins. You have been logged out. Login again",
 			icon: "info",
 			confirmButtonText: "OK"
 		});	

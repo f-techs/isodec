@@ -16,31 +16,45 @@
           Tel: 233-20-8110447
         </p><hr>
         <ul class="list-inline mt-4">
-          <li class="list-inline-item li-social-media" ><a href="#" target="_blank" title="facebook"><i class="footer-social fa fa-facebook"></i></a></li>
-          <li class="list-inline-item li-social-media"><a href="#" target="_blank" title="youtube"><i class="footer-social fa fa-youtube"></i></a></li>
-          <li class="list-inline-item li-social-media"><a href="#" target="_blank" title="instagram"><i class="footer-social fa fa-instagram"></i></a></li>
-          <li class="list-inline-item li-social-media"><a href="#" target="_blank" title="twitter"><i class="footer-social fa fa-twitter"></i></a></li>
+          <?php if(!empty($facebook)): ?>
+          <li class="list-inline-item li-social-media" ><a href="<?php echo $facebook; ?>" target="_blank" title="facebook"><i class="footer-social fa fa-facebook"></i></a></li>
+          <?php endif; ?>
+          <?php if(!empty($youtube)): ?>
+          <li class="list-inline-item li-social-media"><a href="<?php echo $youtube; ?>" target="_blank" title="youtube"><i class="footer-social fa fa-youtube"></i></a></li>
+          <?php endif; ?>
+          <?php if(!empty($instagram)): ?>
+          <li class="list-inline-item li-social-media"><a href="<?php echo $instagram; ?>" target="_blank" title="instagram"><i class="footer-social fa fa-instagram"></i></a></li>
+          <?php endif; ?>
+          <?php if(!empty($twitter)): ?>
+          <li class="list-inline-item li-social-media"><a href="<?php echo $twitter; ?>" target="_blank" title="twitter"><i class="footer-social fa fa-twitter"></i></a></li>
+          <?php endif; ?>
+          <?php if(!empty($skype)): ?>
+          <li class="list-inline-item li-social-media"><a href="<?php echo $skype; ?>" target="_blank" title="twitter"><i class="footer-social fa fa-skype"></i></a></li>
+          <?php endif; ?>
+          <?php if(!empty($linkedIn)): ?>
+          <li class="list-inline-item li-social-media"><a href="<?php echo $linkedIn; ?>" target="_blank" title="twitter"><i class="footer-social fa fa-linkedin"></i></a></li>
+          <?php endif; ?>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
         <h6 class="text-uppercase font-weight-bold mb-4 footer-main-heading">ABOUT</h6>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a href="#">Home</a></li>
-          <li class="mb-2"><a href="#">Our Mission</a></li>
-          <li class="mb-2"><a href="#">History</a></li>
-          <li class="mb-2"><a href="#">Collaboration</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/index">Home</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/mission">Our Mission</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/history">History</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/collaboration">Collaboration</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
         <h6 class="text-uppercase font-weight-bold mb-4 footer-main-heading">PROGRAMMES</h6>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a href="#">Economic Justice</a></li>
-          <li class="mb-2"><a href="#">Policy Support</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/economic-justice">Economic Justice</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/policy-support">Policy Support</a></li>
           <li class="mb-2" style="color:white;">Essential Services
          <ul class="list-styled mb-0" style="color:white;">
-         <li class="mb-2"><a href="#">Education</a></li>
-         <li class="mb-2"><a href="#">Health</a></li>
-         <li class="mb-2"><a href="#">Water</a></li>
+         <li class="mb-2"><a href="<?php echo URLROOT ?>/service-education">Education</a></li>
+         <li class="mb-2"><a href="<?php echo URLROOT ?>/service-water">Health</a></li>
+         <li class="mb-2"><a href="<?php echo URLROOT ?>/service-health">Water</a></li>
          </ul>
         </li>
         </ul>
@@ -48,13 +62,14 @@
       <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
         <h6 class="text-uppercase font-weight-bold mb-4 footer-main-heading">OTHERS</h6>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a href="#">News</a></li>
-          <li class="mb-2"><a href="#">Blogs</a></li>
-          <li class="mb-2"><a href="#">Documents</a></li>
-          <li class="mb-2"><a href="#">Pictures</a></li>
-          <li class="mb-2"><a href="#">Videos</a></li>
-          <li class="mb-2"><a href="#">Board</a></li>
-          <li class="mb-2"><a href="#">Donate</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/news-list">News</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/blogs-list">Blogs</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/documents">Documents</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/picture-gallery">Pictures</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/video-gallery">Videos</a></li>
+          <li class="mb-2"><a href="<?php echo URLROOT ?>/audios">Audios</a></li>
+        <!--  <li class="mb-2"><a href="#">Board</a></li>-->
+       <!--   <li class="mb-2"><a href="#">Donate</a></li>-->
         </ul>
       </div>
     </div>
@@ -73,16 +88,15 @@
 </footer>
 <!-- Scripts -->
 <script src="<?php echo URLROOT?>/assets/public/js/jquery.js"></script>
-<!--<script src="<?php echo URLROOT?>/assets/public/js/plugin/lightbox.js"></script>-->
 <script src="<?php echo URLROOT?>/assets/public/js/plugin/jquery.fancybox.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/popper.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/bootstrap.min.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo URLROOT?>/assets/public/js/counter.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line!
 bootstrap.bundle.min.js
 -->
 <script src="<?php echo URLROOT?>/assets/public/js/holder.min.js"></script>
-<script src="<?php echo URLROOT?>/assets/public/js/custom-js.js"></script>
 <script src="<?php echo URLROOT?>/assets/public/js/plugin/dataTables.min.js"></script>
 </body>
 </html>

@@ -6,13 +6,6 @@ $GLOBALS['config'] = array(
         'username' => 'root',
         'password' => '',
         'db' => 'db_isodec'
-    ),
-    'cookie' => array(
-        'cookie_name' => 'cookie_hash',
-        'cookie_expiry' => 3600
-    ),
-    'session' => array(
-        'session_name' => 'user'
     )
 );
 spl_autoload_register(function($classname) {
@@ -29,3 +22,5 @@ define('SITENAME', 'ISODEC - GHANA');
 //other requires
 require_once(APPROOT.'/helpers/fetchs.php');
 require_once(APPROOT.'/helpers/functions.php');
+require_once(APPROOT.'/helpers/pageCount.php');
+require_once(APPROOT.'/helpers/geolocation.php');

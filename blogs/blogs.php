@@ -23,7 +23,7 @@
       <hr>
       <div class="row mx-auto my-3">
           <div class="col-lg-12 col-md-6 col-xs-4">
-            <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/blogs/<?php echo $blogPageImg; ?>"/>
+            <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploads/blogs/<?php echo $blogPageImg; ?>"/>
             <p style="color:#39A8E8; font-weight: bold;"><?php echo $blogPageImgCaption; ?></p>
           </div>
           <div class="col-lg-12 col-md-6 col-xs-4">

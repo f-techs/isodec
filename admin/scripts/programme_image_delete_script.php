@@ -2,7 +2,7 @@
 require_once('../../config.php');
 if(isset($_POST['imgname_econs'])){
    $imgname=$_POST['imgname_econs'];
-   $imgpath= APPROOT.'/assets/admin/media/uploadImages/'. $imgname;
+   $imgpath= APPROOT.'/assets/admin/media/uploads/'. $imgname;
    if(isset($imgname)){
        $sql=DB::getInstance()->gen_query("UPDATE tbl_programmes set img='' WHERE programme_type=1");
    }
@@ -14,7 +14,7 @@ if(isset($_POST['imgname_econs'])){
    }
 }elseif(isset($_POST['imgname_essential'])){
     $imgname=$_POST['imgname_essential'];
-    $imgpath= APPROOT.'/assets/admin/media/uploadImages/'. $imgname;
+    $imgpath= APPROOT.'/assets/admin/media/uploads/'. $imgname;
     if(isset($imgname)){
         $sql=DB::getInstance()->gen_query("UPDATE tbl_programmes set img='' WHERE programme_type=2");
     }
@@ -26,7 +26,7 @@ if(isset($_POST['imgname_econs'])){
     } 
 }elseif(isset($_POST['imgname_policy'])){
     $imgname=$_POST['imgname_policy'];
-    $imgpath= APPROOT.'/assets/admin/media/uploadImages/'. $imgname;
+    $imgpath= APPROOT.'/assets/admin/media/uploads/'. $imgname;
     if(isset($imgname)){
         $sql=DB::getInstance()->gen_query("UPDATE tbl_programmes set img='' WHERE programme_type=3");
     }

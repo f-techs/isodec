@@ -29,7 +29,7 @@
             <td>
               <h6><?= $doc->media_title; ?></h6>
             </td>
-            <td><a href="<?php echo URLROOT ?>/assets/admin/media/uploadImages/document/<?=$doc->file_name?>" class="btn btn-info" role="button" aria-pressed="true">View/Download</a></td>
+            <td><a href="<?php echo URLROOT ?>/assets/admin/media/uploads/document/<?=$doc->file_name?>" class="btn btn-info" role="button" aria-pressed="true">View/Download</a></td>
           </tr>
           <?php endforeach; ?>
         </tbody>

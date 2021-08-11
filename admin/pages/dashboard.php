@@ -55,7 +55,7 @@
       										</svg>
       										<!--end::Svg Icon-->
       									</span>
-      									<span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">2,044</span>
+      									<span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block"><?php echo $totalVisitors; ?></span>
       									<span class="font-weight-bold text-muted font-size-sm">Total Website Visitors</span>
       								</div>
       								<!--end::Body-->
@@ -80,7 +80,7 @@
       										<!--end::Svg Icon-->
       									</span>
       									<span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block"><?php echo $countUpcoming; ?></span>
-      									<span class="font-weight-bold text-muted font-size-sm">Upcoming Events. <a href="<?php echo URLROOT ?>/admin/pages/event-registration-upcoming">Click Here to View</a></span>
+      									<span class="font-weight-bold text-muted font-size-sm">Upcoming Events. <a href="<?php echo URLROOT ?>/admin/pages/event-registration-upcoming">Click Here to View Registration List</a></span>
       								</div>
       								<!--end::Body-->
       							</div>
@@ -114,3 +114,4 @@
       </div>
       <!--end::Main-->
       <?php include(APPROOT.'/includes/admin/footer.php'); ?>
+	  

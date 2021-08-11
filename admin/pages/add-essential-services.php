@@ -96,7 +96,7 @@
 										<tr>
 											<td><?php echo $data->service_name; ?></td>
 											<td>
-												<center><img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/services/<?php echo (!empty($data->post_img)) ? $data->post_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center>
+												<center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/services/<?php echo (!empty($data->post_img)) ? $data->post_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center>
 											</td>
 											<td><?php echo $data->post_title; ?></td>
 											<td><?php echo txtTruncate($data->post_details, 100); ?></td>
@@ -400,7 +400,7 @@
 			$('#service_div').hide();
 			$('#post_title').val(htmlData.post_title);
 			$("#post_content").summernote("code", htmlData.post_details);
-			var imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploadImages/services/' + htmlData.post_img;
+			var imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploads/services/' + htmlData.post_img;
 			$("#img").css("background-image", "url(" + imgUrl + ")");
 			$('#img_caption').val(htmlData.img_description);
 			//alert(data);

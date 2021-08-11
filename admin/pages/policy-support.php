@@ -59,7 +59,7 @@
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Upload Image Here:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
 												<div class="image-input image-input-outline" id="img" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/avatars/image.png)">
-													<div class="image-input-wrapper" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo (!empty($policyID)) ? $policyImg : ''; ?>)"></div>
+													<div class="image-input-wrapper" style="background-image: url(<?php echo URLROOT ?>/assets/admin/media/uploads/<?php echo (!empty($policyID)) ? $policyImg : ''; ?>)"></div>
 
 													<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change image">
 														<i class="fa fa-pen icon-sm text-muted"></i>
@@ -117,7 +117,7 @@
 												</button>
 											</div>
 											<div class="modal-body">
-												<img src="<?php echo URLROOT ?>/assets/admin/media/uploadImages/<?php echo (!empty($policyID)) ? $policyImg : ''; ?>" style="width:100%;height:100%; display:block;" />
+												<img src="<?php echo URLROOT ?>/assets/admin/media/uploads/<?php echo (!empty($policyID)) ? $policyImg : ''; ?>" style="width:100%;height:100%; display:block;" />
 											</div>
 										</div>
 									</div>

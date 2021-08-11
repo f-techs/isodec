@@ -1032,7 +1032,7 @@
     };
     var startTimedUpload = function (editor, imageUploadTimerState) {
       var imageUploadTimer = global$2.setEditorTimeout(editor, function () {
-        editor.editorUpload.uploadImagesAuto();
+        editor.editorUpload.uploadsAuto();
       }, getUploadTimeout(editor));
       imageUploadTimerState.set(imageUploadTimer);
     };
@@ -1070,7 +1070,7 @@
             editor.$(selectedImage).off('load', imageLoadedHandler);
             editor.nodeChanged();
             if (uploadImmediately) {
-              editor.editorUpload.uploadImagesAuto();
+              editor.editorUpload.uploadsAuto();
             } else {
               cancelTimedUpload(imageUploadTimerState);
               startTimedUpload(editor, imageUploadTimerState);
@@ -1251,7 +1251,7 @@
             return lastSelectedImage.src === img.src;
           })) {
           cancelTimedUpload(imageUploadTimerState);
-          editor.editorUpload.uploadImagesAuto();
+          editor.editorUpload.uploadsAuto();
           lastSelectedImageState.set(null);
         }
         selectedImage.each(lastSelectedImageState.set);

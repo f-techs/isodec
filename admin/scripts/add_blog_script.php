@@ -20,7 +20,7 @@ if(isset($_POST['action'])){
         $image_ext =strtolower(pathinfo($Img, PATHINFO_EXTENSION));
         $imgname = uniqid(). '.' . $image_ext;
         $image_old_location = $_FILES['img_file']['tmp_name'];
-        $image_new_location = APPROOT.'/assets/admin/media/uploadImages/blogs/'. $imgname;
+        $image_new_location = APPROOT.'/assets/admin/media/uploads/blogs/'. $imgname;
         $img_upload= move_uploaded_file($image_old_location, $image_new_location);
 }
      if($_POST['action']=='add'){

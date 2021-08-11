@@ -81,13 +81,19 @@
 												<input id="linkedIn" type="url" value="<?php echo (!empty($linkedIn)) ? $linkedIn : ''; ?>" name="linkedIn" class="form-control"/>
 											</div>
 										</div>
+										<div class="form-group row">
+											<label class="col-form-label text-right col-lg-2 col-sm-12">Youtube: <i class="fab fa-youtube text-danger mr-5"></i></label>
+											<div class="col-lg-10 col-md-10 col-sm-12">
+												<input id="linkedIn" type="url" value="<?php echo (!empty($youtube)) ? $youtube : ''; ?>" name="youtube" class="form-control"/>
+											</div>
+										</div>
 									</div>
 									<div class="card-footer">
 										<div class="row">
 											<div class="col-lg-12 text-right">
 												<button type="submit" id="btn_submit" class="btn btn-primary mr-2">Submit</button>
-												<input type="hidden" id="action" name="action" />
-												<input type="hidden" value="<?php echo (!empty($entryCode)) ? $entryCode : ''; ?>" id="entry_code" name="entry_code" />
+												<input type="hidden" name="ID" value="<?php echo $socialID; ?>"/>
+												<input type="hidden" name="action" value="<?php echo (!empty($entryCode)) ? 'Update' : 'Add'; ?>" id="entry_code" name="entry_code" />
 												<div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
 											</div>
 										</div>
