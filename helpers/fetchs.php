@@ -234,6 +234,13 @@ foreach($socialResults as $data){
     $youtube=$data->youtube_url;
     $entryCode=$data->entry_code;
 }
+
+//office locations
+$sqlOff=DB::getInstance()->select_query("SELECT * FROM view_office_project_maps");
+$sqlOffResults=$sqlOff->results();
+
+
+
 /**end for website contents */
 
 /**select box fetch */

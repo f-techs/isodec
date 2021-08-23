@@ -42,7 +42,7 @@
 					<div class="card card-custom">
 						<div class="card-header flex-wrap border-0 pt-6 pb-0">
 							<div class="card-title">
-								<h3 class="card-label"><?php echo $eventRegListTitle; ?> : Registered list</h3>
+								<h3 class="card-label"><?php echo $eventRegListTitle; ?> : Registered List</h3>
 							</div>
 							<div class="card-toolbar">
 								<a target="_blank" data-toggle="modal" data-target="#modalMessage" class="btn btn-success font-weight-bolder m-3">
@@ -51,7 +51,7 @@
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 												<rect x="0" y="0" width="24" height="24" />
-												<path d="M3,13.5 L19,12 L3,10.5 L3,3.7732928 C3,3.70255344 3.01501031,3.63261921 3.04403925,3.56811047 C3.15735832,3.3162903 3.45336217,3.20401298 3.70518234,3.31733205 L21.9867539,11.5440392 C22.098181,11.5941815 22.1873901,11.6833905 22.2375323,11.7948177 C22.3508514,12.0466378 22.2385741,12.3426417 21.9867539,12.4559608 L3.70518234,20.6826679 C3.64067359,20.7116969 3.57073936,20.7267072 3.5,20.7267072 C3.22385763,20.7267072 3,20.5028496 3,20.2267072 L3,13.5 Z" fill="#000000"/>
+												<path d="M3,13.5 L19,12 L3,10.5 L3,3.7732928 C3,3.70255344 3.01501031,3.63261921 3.04403925,3.56811047 C3.15735832,3.3162903 3.45336217,3.20401298 3.70518234,3.31733205 L21.9867539,11.5440392 C22.098181,11.5941815 22.1873901,11.6833905 22.2375323,11.7948177 C22.3508514,12.0466378 22.2385741,12.3426417 21.9867539,12.4559608 L3.70518234,20.6826679 C3.64067359,20.7116969 3.57073936,20.7267072 3.5,20.7267072 C3.22385763,20.7267072 3,20.5028496 3,20.2267072 L3,13.5 Z" fill="#000000" />
 												<rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1" />
 												<rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1" />
 											</g>
@@ -159,23 +159,36 @@
 											</h3>
 										</div>
 										<!--begin::Form-->
-										<form id="frmMessage" method="Post">
-										<div class="card-body">
-											<div class="form-group row" id="service_div">
-												<div class="col-lg-12 col-md-12 col-sm-12 m-5">
-													<label>Message Type:</label>
-													<select id="messageType" name="messageType" class="form-control" >
-														<option value="" selected disabled>Select Message Type</option>
-														<option value="1" >SMS</option>
-														<option value="2" >EMAIL</option>
-													</select>
-												</div>
-												<div class="col-lg-12 col-md-12 col-sm-12 m-5">
-													<label>Message Content:</label>
-													<textarea name="messageContent" rows="4" class="form-control" placeholder="Type message content here"></textarea>
+										<form id="frmMessage" method="Post" enctype="multipart/form-data">
+											<div class="card-body">
+												<div class="form-group row" id="service_div">
+													<div class="col-lg-12 col-md-12 col-sm-12 m-5">
+														<label>Message Type:</label>
+														<select required id="messageType" name="messageType" class="form-control">
+															<option value="" selected disabled>Select Message Type</option>
+															<option value="1">SMS</option>
+															<option value="2">EMAIL</option>
+														</select>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 m-5 emailArea" id="" style="display:none;">
+														<label>Subject:</label>
+														<textarea name="subject" id="subject" rows="2" class="form-control" placeholder="Type  subject here"></textarea>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 m-5">
+														<label>Message Content:</label>
+														<textarea required name="messageContent" id="messageContent" rows="4" class="form-control" placeholder="Type message content here"></textarea>
+													</div>
+													<div class="col-lg-12 col-md-12 col-sm-12 m-5 emailArea" id="" style="display:none;">
+														<label>Attach a file:</label>
+														<div class="col-lg-10 col-md-10 col-sm-12">
+														<div class="custom-file">
+															<input type="file" class="custom-file-input" name="attach-file" id="attach-file" />
+															<label id="lbl_file" class="custom-file-label" for="customFile">all file types</label>
+														</div>
+													</div>
+													</div>
 												</div>
 											</div>
-										</div>
 											<div class="card-footer">
 												<div class="row">
 													<div class="col-lg-12 text-right">
@@ -275,33 +288,181 @@
 		/******/
 	})();
 	//# sourceMappingURL=html-table.js.map
+	var MessageNote = function() {
+		// Private functions
+		var messageEditor = function() {
+			$('#messageContent').summernote({
+				height: 150
+			});
+		}
 
-	//send message form
-	$('#frmMessage').on('submit', function(e){
-		e.preventDefault();
-		let messageType=$('#messageType').val();
-		if(messageType==1){
-			alert('sms');
-		}else if(messageType==2){
-            alert('email');
+		return {
+			// public functions
+			init: function() {
+				messageEditor();
+			}
+		};
+	}();
+  // Initialization
+	jQuery(document).ready(function() {
+		MessageNote.init();   
+	});
+
+	//check summernote content
+	$('#btn_submit').on('click', function(e) {
+		// get summernote details and make textarea required
+		let messagecontent = '';
+		if ($('#messageContent').summernote('isEmpty')) {
+			mission_content = $('#messageContent').val('');
+			$('#messageContent').prop('require', true);
+			e.preventDefault();
+			Swal.fire("Note!", "Message Content cannot be empty", "warning");
+		} else {
+			messagecontent = $('#mission_content').val();
+			$('#messageContent').prop('require', false);
 		}
 	})
 
-	function send_sms(contacts, message){
-	let	postdata={
-			'send':true,
-			'contact':contacts,
-			message:message
+	//toggle sms and email
+	$('#messageType').on('change', function() {
+		let msgType = $(this).val();
+		//alert(msgType);
+		if (msgType == 2) {
+			$('.emailArea').show();
+			$('#subject').prop('required', true);
+		} else {
+			$('.emailArea').hide();
+			$('#subject').prop('required', false);
 		}
-		$.post('<?php echo URLROOT ?>/admin/scripts/send_sms_script',postdata, function(results)){
-			let msg=result.JSON.parse(results);
-			if(msg.success){
-             $('#btn_Submit').prop('disabled', true);
-			}else{
-				$('#btn_Submit').prop('disabled', false);
+	})
+
+	//send message form
+	$('#frmMessage').on('submit', function(e) {
+		e.preventDefault();
+		//let messageType=$('#messageType').val();
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo URLROOT ?>/admin/scripts/message_data_script.php',
+			data: new FormData(this),
+			contentType: false,
+			cache: false,
+			processData: false,
+			success: function(data) {
+				console.log(data);
+				let response = JSON.parse(data);
+				if (response.status == 'success') {
+					//alert(response.contacts.length);
+					$('#btn_submit').text('Sending Message. Will take some time...');
+					$('#btn_submit').addClass('spinner spinner-white spinner-right');
+					$('#btn_submit').prop('disabled', true);
+					var file= $('#attach-file').prop('files')[0]; 
+					if (response.type == 1) {
+						send_sms(response.contacts, response.msg, response.contacts.length);
+					} else if (response.type == 2) {
+						send_email(response.email, response.subject, response.file, response.msg, response.email.length);
+					}
+
+				} else if (response.status == 'fail') {
+
+				}
 			}
+		});
+
+	})
+
+
+
+	function send_sms(contacts, message, total) {
+		let postdata = {
+			'send': true,
+			'contacts': contacts,
+			message: message
 		}
+		$.post('<?php echo URLROOT ?>/admin/scripts/send_sms_script', postdata, function(results) {
+			console.log(results);
+			let msg = JSON.parse(results);
+			if (msg.status == 'success') {
+				$('#btn_submit').text('Submit');
+				$('#btn_submit').removeClass('spinner spinner-white spinner-right');
+				//$('#btn_submit').addClass('');
+				$('#btn_submit').prop('disabled', false);
+				Swal.fire({
+					title: "SMS Sent Successfully",
+					text: "Total SMS sent: " + total,
+					icon: "success",
+					confirmButtonText: "OK"
+				});
+			} else {
+				$('#btn_submit').text('Submit');
+				$('#btn_submit').removeClass('spinner spinner-white spinner-right');
+				//$('#btn_submit').addClass('');
+				$('#btn_submit').prop('disabled', false);
+				Swal.fire({
+					title: "Oops!",
+					text: "Sorry something went wrong. Can be connection problem. Try again",
+					icon: "error",
+					confirmButtonText: "OK"
+				});
+			}
+		})
 	}
-		
-	
+
+	function send_email(email, subject, file, message, total) {
+		let postdata = {
+			'send': true,
+			'email': email,
+			message: message,
+			subject: subject,
+			file:file
+		}
+		$.post('<?php echo URLROOT ?>/admin/scripts/send_email_script.php', postdata, function(results) {
+			//console.log(results);
+			//alert(results);
+			//let msg = JSON.parse(results);
+			if (results == 'success') {
+				$('#btn_submit').text('Submit');
+				$('#btn_submit').removeClass('spinner spinner-white spinner-right');
+				$('#btn_submit').prop('disabled', false);
+				Swal.fire({
+					title: "Email Sent Successfully",
+					text: "Total email sent: " + total,
+					icon: "success",
+					confirmButtonText: "OK"
+				});
+			} else {
+				$('#btn_submit').text('Submit');
+				$('#btn_submit').removeClass('spinner spinner-white spinner-right');
+				//$('#btn_submit').addClass('');
+				$('#btn_submit').prop('disabled', false);
+				Swal.fire({
+					title: "Oops!",
+					text: "Sorry something went wrong",
+					icon: "error",
+					confirmButtonText: "OK"
+				});
+			}
+		})
+	}
+
+	$('#attach-file').bind('change', function() {
+    var file_ext=$('#attach-file').val().split('.').pop().toLowerCase();
+    var file_size=(this.files[0].size);
+    if(file_size > 2000000){
+     swal.fire({
+         title:"Large file size",
+         icon:"info",
+         text:"Please file size should not be more than 2MB",
+         confirmButtonClass:"btn-danger"
+     });
+      $('#attach-file').val('');
+    }else if($.inArray(file_ext, ['docx', 'doc', 'xlsx', 'pdf', 'mp3', 'jpeg', 'jpg', 'mp4']) === -1) {
+    swal.fire({
+         title:"Invalid File Type",
+         icon:"info",
+         text:"Please file file type should be jpeg, jpg, png",
+         confirmButtonClass:"btn-danger"
+     });
+    $('#attach-file').val('');
+}
+  });
 </script>

@@ -47,13 +47,15 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Email:</label>
-                                                    <input type="email" name="email" required class="form-control">
+                                                    <input type="email" id="email" name="email" required class="form-control">
+                                                    <span id="email-error" class="text-danger" style="font-size:smaller; display:none;">Wrong email format. Please check again.</span>
                                                 </div>
 
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Phone:</label>
-                                                <input type="text" name="phone" required class="form-control">
+                                                <input type="text" minlength="10" maxlength="10" name="phone" id="phone" required class="form-control inputForm  has-warning">
+                                                <span id="phone-error" class="text-danger" style="font-size:smaller; display:none;">Phone Number should only be numbers.</span>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -75,7 +77,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 text-right">
                                             <button type="submit" id="btn_submit" class="btn mr-2" style="background-color:#E19822; color:#fff;">REGISTER</button>
-                                            <input type="hidden" name="eventID" value="<?= $eventRegID; ?>"/>
+                                            <input type="hidden" name="eventID" value="<?= $eventRegID; ?>" />
                                             <div id="loader" style="display:none;"><img src='<?php echo URLROOT ?>/assets/admin/media/svg/spinners/spinner.gif' /> Please Wait...</div>
                                         </div>
                                     </div>
@@ -100,6 +102,23 @@
 </main>
 <?php include(APPROOT . '/includes/public/footer.php'); ?>
 <script type="text/javascript">
+
+
+    $('#phone').on('input propertychange paste', function() {
+        let phone = $(this).val();
+        $.post('<?php echo URLROOT ?>/admin/scripts/event_registration_error_check.php', {
+            phone: phone
+        }, function(error) {
+           if(error=='error'){
+               $('#phone-error').show();
+               $('#btn_submit').prop('disabled', true);
+           }else{
+            $('#btn_submit').prop('disabled', false);  
+            $('#phone-error').hide();
+           }
+        });
+    });
+
 
     $('#frmReg').on('submit', function(e) {
         e.preventDefault();

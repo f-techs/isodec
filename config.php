@@ -22,5 +22,4 @@ define('SITENAME', 'ISODEC - GHANA');
 //other requires
 require_once(APPROOT.'/helpers/fetchs.php');
 require_once(APPROOT.'/helpers/functions.php');
-require_once(APPROOT.'/helpers/pageCount.php');
 require_once(APPROOT.'/helpers/geolocation.php');

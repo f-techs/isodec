@@ -1,4 +1,5 @@
 <?php require_once('config.php') ?>
+<?php require_once(APPROOT.'/helpers/pageCount.php'); ?>
 
 <?php include(APPROOT . '/includes/public/header.php'); ?>
 <main role="main">
@@ -32,7 +33,7 @@
               </td>
               <td>
                 <audio controls>
-                  <source src="<?php echo URLROOT ?>/assets/admin/media/uploads/audio/<?=$audio->file_name?>" type="audio/mpeg">
+                  <source src="<?php echo URLROOT ?>/assets/admin/media/uploads/audio/<?=$audio->file_name?>" type="audio/mpeg" >
                 </audio>
               </td>
               <td><a href="<?php echo URLROOT ?>/assets/admin/media/uploads/audio/<?=$audio->file_name?>" target="_blank" class="btn btn-warning btn_download" role="button" aria-pressed="true" download>Download</a></td>

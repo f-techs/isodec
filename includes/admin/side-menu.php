@@ -3,8 +3,8 @@
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
-        <a href="index.html" class="brand-logo">
-            <!--<img alt="Logo" src="assets/media/logos/logo-light.png" />-->ISODEC
+        <a href="<?php echo URLROOT?>/admin/pages/admin-login" class="brand-logo">
+            <img alt="Logo" src="<?php echo URLROOT ?>/assets/public/images/favicon.png" />
         </a>
         <!--end::Logo-->
         <!--begin::Toggle-->
@@ -372,7 +372,7 @@
     <!--begin::Header-->
     <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
         <h3 class="font-weight-bold m-0">User Profile</h3>
-        <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
+        <a href="" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
             <i class="ki ki-close icon-xs text-muted"></i>
         </a>
     </div>
@@ -418,7 +418,7 @@
         <!--begin::Nav-->
         <div class="navi navi-spacer-x-0 p-0">
             <!--begin::Item-->
-            <a href="custom/apps/user/profile-1/personal-information.html" class="navi-item">
+            <a href="<?php echo URLROOT ?>/admin/pages/user_profile" class="navi-item">
                 <div class="navi-link">
                     <div class="symbol symbol-40 bg-light mr-3">
                         <div class="symbol-label">
@@ -437,7 +437,7 @@
                     </div>
                     <div class="navi-text">
                         <div class="font-weight-bold">My Profile</div>
-                        <div class="text-muted">Account settings and more
+                        <div class="text-muted">Profile Edit and Password Change
                             <span class="label label-light-danger label-inline font-weight-bold">update</span>
                         </div>
                     </div>

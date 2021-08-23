@@ -25,23 +25,27 @@ nav {
 .navbar .nav-item a{
   color:black !important;
   font-size: 1.3em;
-  margin: 5px;
+  margin: 2px;
 }
 .navbar-nav > .active > a {
   color: #39A8E8 !important;
 }
 .navbar .dropdown-menu{
-  background-color: #FFFFFF;
+  background-color: #F0F0F4;
   margin:auto;
+  width:auto;
 }
 .navbar .dropdown-menu:hover{
-  background-color: #FFFFFF
+  background-color: #F0F0F4;
+}
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #F0F0F4;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
 width:auto;
 }
 .navbar .navbar-right .nav-item i{
-  color: #39A8E8 !important;
+  color: #17A2B8!important;
 }
 .dropright:hover>.dropdown-menu{
 display: block;
@@ -81,7 +85,7 @@ display: block;
 /* other pages*/
 #page-title-section{
   position: relative;
-  margin-top: 5%;
+  margin-top: 3%;
   height: 100px;
 }
 
@@ -412,9 +416,64 @@ i.btn_reg{
   color:#fff;
 }
 
-.fa-2x {
-  margin: 0 auto;
-  float: none;
-  display: table;
-  color: #fff;
-}
+
+/*Search Page*/
+#search {
+  position:relative;
+  padding:0;
+ }
+ #search #ssep_inp:focus {
+  background:#eeeefe;
+ }
+ #src_sugest {
+  position:absolute;
+  left:-.5em;
+  margin:1px 0 0 2px;
+  max-width:15em;
+  max-height:30em;
+  background:#eee;
+  text-align:left;
+  padding:0;
+  font-size:.9em;
+  font-family:"Calibri",sans-serif;
+  z-index:9990;
+  overflow-Y:auto;
+  overflow-X:hidden;
+  -moz-border-radius:.5em;
+  -webkit-border-radius:.5em;
+  -khtml-border-radius:.5em;
+  border-radius:.5em;
+ }
+ #src_sugest h4 {
+  margin:3px 2px;
+  border-bottom:1px dashed #0001bb;
+  padding:1px;
+  font-weight:600;
+  cursor:pointer;
+ }
+ #src_sugest h4:hover {
+  background:#fefefe;
+ }
+ #src_sugest .hglw {
+  background:#fbfbbb;
+  font-weight:700;
+  font-style:oblique;
+ }
+ #src_sugest div {
+  position:absolute;
+  top:0;  right:0;
+  border:1px solid #fe0000;
+  background:#fbfbfb;
+  padding:1px 3px;
+  font-size:1em;
+  font-weight:700;
+  color:#fb0001;
+  cursor:pointer;
+  -moz-border-radius:.4em;
+  -webkit-border-radius:.4em;
+  -khtml-border-radius:.4em;
+  border-radius:.4em;
+ }
+ #src_sugest div:hover {
+  background:#fbfb00;
+ }

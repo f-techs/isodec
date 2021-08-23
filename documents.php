@@ -1,5 +1,4 @@
 <?php require_once('config.php') ?>
-
 <?php include(APPROOT . '/includes/public/header.php'); ?>
 <main role="main">
   <!-- Showcase -->
@@ -48,7 +47,8 @@
     $('#tbl_documents').DataTable({
       "paging": false,
       "ordering": false,
-       "info": false
+       "info": false,
+       responsive: true
     });
   });
 </script>

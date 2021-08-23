@@ -1,4 +1,5 @@
 <?php
+/*
 function get_client_ip() {
     $ipaddress = '';
     if (getenv('HTTP_CLIENT_IP'))
@@ -18,7 +19,7 @@ function get_client_ip() {
     return $ipaddress;
 }
 $userIP=get_client_ip();
-/*
+
 $pageName=basename($_SERVER['PHP_SELF']);
 $ch = curl_init('http://ipwhois.app/json/'.$userIP);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -38,10 +39,18 @@ if(!empty($apiData['ip']) &&  $apiData['success']=='true'){
 }
 
 */
-$chkIP=DB::getInstance()->select_query("SELECT * FROM tbl_visitors WHERE userip='$userIP'");
+$_SESSION['visitors']='';
+if($_SESSION['visitor']==''){
+$_SESSION['visitor']=random_code(20);
+}else{
+    $_SESSION['visitors']=$_SESSION['visitors'];
+}
+
+$userSession=$_SESSION['visitor'];
+$chkIP=DB::getInstance()->select_query("SELECT * FROM tbl_visitors WHERE session_value='$userSession'");
 $row=$chkIP->count();
 if($row < 1){
-   $insertIP=DB::getInstance()->insert('tbl_visitors', array('userip'=>$userIP));
+   $insertIP=DB::getInstance()->insert('tbl_visitors', array('session_value'=>$_SESSION['visitor']));
 }else{
   
 }

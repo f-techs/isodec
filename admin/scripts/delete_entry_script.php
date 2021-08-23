@@ -56,4 +56,12 @@ if(isset($_POST['blogID'])){
     }else{
         echo 'fail';
     }   
+}elseif(isset($_POST['locationID'])){
+    $delId=$_POST['locationID'];
+    $sql=DB::getInstance()->gen_query("DELETE FROM tbl_office_projects WHERE off_proj_id='$delId'");
+    if(isset($sql)){
+        echo 'success';
+    }else{
+        echo 'fail';
+    }   
 }

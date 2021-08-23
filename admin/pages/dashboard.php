@@ -1,5 +1,6 @@
       <?php require_once('../../config.php') ?>
 	  <?php include(APPROOT.'/includes/admin/header.php'); ?>
+	  <?php require_once(APPROOT.'/helpers/pageCount.php'); ?>
       <div class="d-flex flex-column flex-root">
       	<!--begin::Page-->
       	<div class="d-flex flex-row flex-column-fluid page">

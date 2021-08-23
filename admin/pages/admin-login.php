@@ -99,7 +99,7 @@ if (isset($_GET['session'])) {
 							<input class="form-control" type="password" id="password" name="password" placeholder="Password" required />
 						</div>
 						<div class="form-group d-flex flex-wrap justify-content-between align-items-center">
-							<a href="javascript:;" id="kt_login_forgot" class="text-muted text-hover-primary">Forget Password ?</a>
+							<a href="<?php echo URLROOT?>/admin/pages/forgot-password" id="kt_login_forgot" class="text-muted text-hover-primary">Forget Password ?</a>
 						</div>
 						<button id="kt_login_signin_submit" class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">Login</button>
 					</form>
@@ -213,7 +213,7 @@ if (isset($_GET['session'])) {
 			email: email,
 			userpassword: userpassword
 		}, function(data) {
-			alert(data);
+			//alert(data);
 			let response = JSON.parse(data);
 			if (response.status == 'default') {
 				$('#changePass').modal('show');

@@ -167,7 +167,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-form-label text-right col-lg-2 col-sm-12">Title:</label>
+													<label class="col-form-label text-right col-lg-2 col-sm-12">Title/Description:</label>
 													<div class="col-lg-10 col-md-10 col-sm-12">
 														<textarea id="media_title" required name="media_title" class="form-control"></textarea>
 													</div>
@@ -380,6 +380,7 @@
 				$('#videoUrl').val('');
 			} else if (html.media_type == 4) {
 				$('#media_folder').val('document');
+				$('#documentUpload').hide();
 				$('#audioUpload').show();
 				$('#videoUpload').hide();
 				$('#picUpload').hide();
@@ -473,6 +474,7 @@
 		} else if (changeState == 4) {
 			$('#media_folder').val('document');
 			$('#audioUpload').show();
+			$('#documentUpload').hide();
 			$('#videoUpload').hide();
 			$('#picUpload').hide();
 			$('#audio-file').prop('required', true);
@@ -585,7 +587,7 @@
          confirmButtonClass:"btn-danger"
      });
       $('#document_file').val('');
-    }else if($.inArray(file_ext, ['docx', 'doc', 'xlsx', 'pdf']) === -1) {
+    }else if($.inArray(file_ext, ['docx', 'doc', 'xlsx', 'pdf', 'pptx', 'ppt']) === -1) {
     swal.fire({
          title:"Invalid File Type",
          icon:"info",
