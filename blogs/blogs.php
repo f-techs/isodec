@@ -27,7 +27,8 @@
             <p style="color:#39A8E8; font-weight: bold;"><?php echo $blogPageImgCaption; ?></p>
           </div>
           <div class="col-lg-12 col-md-6 col-xs-4">
-            <p> <?php echo $blogPageDetails; ?></p>
+            <p> <?php echo $blogPageDetails; ?></p><hr>
+            <p> Posted By:<span class="text-muted"> <?php echo $postedBy; ?></span>  |  Posted On:<span class="text-muted"><?php echo $postedDate; ?></span></p>
           </div>
         <?php else: ?>
        <div><h5 class="text-center"><?php die('Sorry No Blog Details to display.'); ?> </h5> </div>

@@ -117,6 +117,9 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo URLROOT ?>/event-list">Events</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo URLROOT ?>/board-members.php">Board</a>
+            </li>
           </ul>
           <!--<ul class="nav navbar-nav navbar-right mr-auto">
             <li class="nav-item"><a href="#"> <i class="mdi mdi-facebook-box"></i></a></li>

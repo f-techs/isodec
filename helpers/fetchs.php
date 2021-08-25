@@ -116,6 +116,24 @@ $countUsers=$sqlUsers->count();
 
 
 
+//fetch title
+$sqlTitle=DB::getInstance()->select_query("SELECT * FROM titles");
+$sqlTitleResults=$sqlTitle->results();
+
+//fetch position
+$sqlPosition=DB::getInstance()->select_query("SELECT * FROM position");
+$sqlPositionResults=$sqlPosition->results();
+
+
+//fetch board members
+$sqlBoard=DB::getInstance()->select_query("SELECT * FROM view_board ORDER BY board_member_id DESC");
+$boardResults=$sqlBoard->results();
+
+
+
+
+
+
 //fetch upcoming events
 $sqlUe=DB::getInstance()->select_query("SELECT * FROM view_events WHERE event_date >= CURDATE() ");
 $sqlUeResults=$sqlUe->results();
@@ -153,7 +171,7 @@ foreach($sqlRegListResults as $r){
 //fetch blog details
 if(isset($_SESSION['blogID'])){
     $blogID=$_SESSION['blogID'];
-    $sqlBlog=DB::getInstance()->select_query("SELECT * FROM tbl_blogs WHERE blog_id='$blogID'");
+    $sqlBlog=DB::getInstance()->select_query("SELECT * FROM view_blogs WHERE blog_id='$blogID'");
     $sqlBlogResults=$sqlBlog->results();
     foreach($sqlBlogResults as $blogData){
         $blogID=$blogData->blog_id;
@@ -177,6 +195,7 @@ if(isset($_SESSION['newsID'])){
         $newsImgCaption=$newsData->img_description;
         $newsTitle=$newsData->news_title;
         $newsDetails=$newsData->news_details;
+        $newsSource=$newsData->news_source;
     }
 }
 //fetch pictures
@@ -264,7 +283,7 @@ $eventResults=$sqlEvents->results();
 //blogs website
 if (isset($_GET['blogid'])) {
     $blogPageID = $_GET['blogid'];
-    $sqlBlogPage=DB::getInstance()->get('tbl_blogs', array('blog_id', '=', $blogPageID));
+    $sqlBlogPage=DB::getInstance()->get('view_blogs', array('blog_id', '=', $blogPageID));
     $r=$sqlBlogPage->results();
   //var_dump($sqlR);
   foreach($r as $data){
@@ -272,13 +291,15 @@ if (isset($_GET['blogid'])) {
     $blogPageDetails=$data->blog_details;
     $blogPageImg=$data->blog_img;
     $blogPageImgCaption=$data->img_description;
+    $postedBy=$data->firstname. ' '. $data->othernames;
+    $postedDate=$data->created_date;
   }
   }
 
   //news website
   if (isset($_GET['newsid'])) {
     $newsPageID = $_GET['newsid'];
-    $sqlNewsPage=DB::getInstance()->get('tbl_news', array('news_id', '=', $newsPageID));
+    $sqlNewsPage=DB::getInstance()->get('view_news', array('news_id', '=', $newsPageID));
     $n=$sqlNewsPage->results();
   //var_dump($sqlR);
   foreach($n as $data){
@@ -286,6 +307,9 @@ if (isset($_GET['blogid'])) {
     $newsPageDetails=$data->news_details;
     $newsPageImg=$data->news_img;
     $newsPageImgCaption=$data->img_description;
+    $postedBy=$data->firstname.' '. $data->othernames;
+    $postedDate=$data->created_date;
+    $source=$data->news_source;
   }
   }
   //events website

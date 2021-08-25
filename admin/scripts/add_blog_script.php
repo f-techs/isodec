@@ -25,7 +25,7 @@ if(isset($_POST['action'])){
 }
      if($_POST['action']=='add'){
         //$sql=DB::getInstance()->gen_query("call pro_insertBlog('$code', '$details', '$imgname', '$imgcaption', '$title', 1)");// todo:use session
-        $sql=DB::getInstance()->insert('tbl_blogs', array('blog_code'=>$code, 'blog_details'=>$details, 'blog_title'=>$title, 'blog_img'=>$imgname, 'img_description'=>$imgcaption, 'created_by'=>1, 'created_date'=>$date, 'modified_by'=>1, 'modified_date'=>$date));
+        $sql=DB::getInstance()->insert('tbl_blogs', array('blog_code'=>$code, 'blog_details'=>$details, 'blog_title'=>$title, 'blog_img'=>$imgname, 'img_description'=>$imgcaption, 'created_by'=>$_SESSION['userID'], 'created_date'=>$date, 'modified_by'=>$_SESSION['userID'], 'modified_date'=>$date));
         if(isset($sql)){
             //$response['error']=0;
             $response['status']='success';
@@ -39,7 +39,7 @@ if(isset($_POST['action'])){
     }elseif($_POST['action']=='update'){
         //$sql=DB::getInstance()->gen_query("call pro_insertBlog('$code', '$details', '$imgname', '$imgcaption', '$title', 1)");// todo:use session
         $ID=$_POST['blog_id'];
-        $sql=DB::getInstance()->update('tbl_blogs', $ID, 'blog_id',  array('blog_details'=>$details, 'blog_title'=>$title, 'blog_img'=>$imgname, 'img_description'=>$imgcaption, 'modified_by'=>1, 'modified_date'=>$date));
+        $sql=DB::getInstance()->update('tbl_blogs', $ID, 'blog_id',  array('blog_details'=>$details, 'blog_title'=>$title, 'blog_img'=>$imgname, 'img_description'=>$imgcaption, 'modified_by'=>$_SESSION['userID'], 'modified_date'=>$date));
         if(isset($sql)){
             //$response['error']=0;
             $response['status']='success';

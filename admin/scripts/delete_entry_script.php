@@ -64,4 +64,12 @@ if(isset($_POST['blogID'])){
     }else{
         echo 'fail';
     }   
+}elseif(isset($_POST['boardID'])){
+    $delId=$_POST['boardID'];
+    $sql=DB::getInstance()->gen_query("DELETE FROM tbl_board_members WHERE board_member_ID='$delId'");
+    if(isset($sql)){
+        echo 'success';
+    }else{
+        echo 'fail';
+    }   
 }

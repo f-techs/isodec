@@ -27,7 +27,10 @@
             <p style="color:#39A8E8; font-weight: bold;"><?php echo $newsPageImgCaption; ?></p>
           </div>
           <div class="col-lg-12 col-md-6 col-xs-4">
-            <p> <?php echo $newsPageDetails; ?></p>
+            <p> <?php echo $newsPageDetails; ?></p><hr>
+            <p> Posted By: <span class="text-muted"><?php echo $postedBy; ?></span> </p>
+            <p>  Posted On: <span class="text-muted"><?php echo $postedDate; ?></span> </p>
+            <p>  Source: <?php echo $source; ?></p>
           </div>
         <?php endif; ?>
       </div>

@@ -74,6 +74,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label class="col-form-label text-right col-lg-2 col-sm-12">News Source:</label>
+											<div class="col-lg-10 col-md-10 col-sm-12">
+												<input type="text" name="source" id="source" class="form-control"/>
+											</div>
+										</div>
+										<div class="form-group row">
 											<label class="col-form-label text-right col-lg-2 col-sm-12">Type Content Here:</label>
 											<div class="col-lg-10 col-md-10 col-sm-12">
 												<textarea id="news_content" name="news_content" class="form-control" ></textarea>
@@ -217,7 +223,7 @@
 				$('#loader').show();
 			},
 			success: function(data) {
-				alert(data);
+				//alert(data);
 				var response = JSON.parse(data);
 				Swal.fire({
 					title: "Message",

@@ -9,7 +9,7 @@ if(isset($_POST['action'])){
     $isodecValues=$_POST['values_content'];
     $date=date("Y-m-d");
     if($action=='Add'){
-        $sql=DB::getInstance()->insert('tbl_welcome_message', array('mission'=>$mission, 'vision'=>$vision, 'isodec_values'=>$isodecValues, 'created_by'=>1, 'created_date'=>$date, 'modified_by'=>1, 'modified_date'=>$date));// todo:use session  
+        $sql=DB::getInstance()->insert('tbl_welcome_message', array('mission'=>$mission, 'vision'=>$vision, 'isodec_values'=>$isodecValues, 'created_by'=>$_SESSION['userID'], 'created_date'=>$date, 'modified_by'=>$_SESSION['userID'], 'modified_date'=>$date));// todo:use session  
         if(isset($sql)){
         $response['status']='success';
        $response['message']='Detaisl saved successfully';
@@ -19,7 +19,7 @@ if(isset($_POST['action'])){
         }
         echo json_encode($response);
     }elseif($action=='Update'){
-        $sql=DB::getInstance()->update('tbl_welcome_message', $ID, 'message_id',  array('mission'=>$mission, 'vision'=>$vision, 'isodec_values'=>$isodecValues, 'modified_by'=>1, 'modified_date'=>$date));// todo:use session  
+        $sql=DB::getInstance()->update('tbl_welcome_message', $ID, 'message_id',  array('mission'=>$mission, 'vision'=>$vision, 'isodec_values'=>$isodecValues, 'modified_by'=>$_SESSION['userID'], 'modified_date'=>$date));// todo:use session  
         if(isset($sql)){
             $response['status']='success';
             $response['message']='Detaisl saved successfully';

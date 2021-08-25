@@ -4,7 +4,7 @@
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
         <a href="<?php echo URLROOT?>/admin/pages/admin-login" class="brand-logo">
-            <img alt="Logo" src="<?php echo URLROOT ?>/assets/public/images/favicon.png" />
+            <img alt="Logo" src="<?php echo URLROOT ?>/assets/public/images/admin_logo.png" />
         </a>
         <!--end::Logo-->
         <!--begin::Toggle-->
@@ -286,7 +286,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo URLROOT ?>/admin/pages/board-members" class="menu-link">
+                                <a href="<?php echo URLROOT ?>/admin/pages/add-board-members" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

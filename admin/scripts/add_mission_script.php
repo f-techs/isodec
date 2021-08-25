@@ -20,9 +20,9 @@ if($_FILES['img_file'] && isset($_POST['mission_content']) && isset($_POST['img_
 }
     if(!empty($missionEntry)){
        // $sql=DB::getInstance()->insert("call pro_insertAbout(1, '$imgname', '$imgcaption', '$details', 1)");// todo:use session
-       $sql=DB::getInstance()->update('tbl_about', 1 ,'about_type', array('img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details, 'modified_by'=>1, 'modified_date'=>$date));
+       $sql=DB::getInstance()->update('tbl_about', 1 ,'about_type', array('img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details, 'modified_by'=>$_SESSION['userID']));
     }else{
-        $sql=DB::getInstance()->insert('tbl_about', array('about_type'=>1, 'img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details,  'created_by'=>1, 'created_date'=>$date, 'modified_by'=>1, 'modified_date'=>$date));// todo:use session  
+        $sql=DB::getInstance()->insert('tbl_about', array('about_type'=>1, 'img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details,  'created_by'=>$_SESSION['userID'], 'modified_by'=>1, 'modified_date'=>$date));// todo:use session  
     }
     if(isset($sql)){
         //$response['error']=0;

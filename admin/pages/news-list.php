@@ -87,6 +87,7 @@
 										<th title="Field #1">News Title</th>
 										<th title="Field #2">News Image</th>
 										<th title="Field #3">News Details</th>
+										<th title="Field #3">News Source</th>
 										<th title="Field #4">Post Date</th>
 										<th title="Field #4">Action</th>
 									</tr>
@@ -97,6 +98,7 @@
 											<td><?php echo $data->news_title; ?></td>
 											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/news/<?php echo (!empty($data->news_img)) ? $data->news_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
 											<td><?php echo txtTruncate($data->news_details, 100); ?></td>
+											<td><?php echo $data->news_source; ?></td>
 											<td><?php echo date('d-M-Y', strtotime($data->created_date)); ?></td>
 											<td>
 												<div class="btn-group" role="group" aria-label="First group">

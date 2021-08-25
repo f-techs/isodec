@@ -20,9 +20,9 @@ if($_FILES['img_file'] && isset($_POST['collaboration_content']) && isset($_POST
 }
     if(!empty($collaboEntry)){
        // $sql=DB::getInstance()->gen_query("call pro_insertAbout(3, '$imgname', '$imgcaption', '$details', 1)");// todo:use session
-       $sql=DB::getInstance()->update('tbl_about', 3 ,'about_type', array('img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details, 'modified_by'=>1, 'modified_date'=>$date));
+       $sql=DB::getInstance()->update('tbl_about', 3 ,'about_type', array('img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details, 'modified_by'=>$_SESSION['userID'], 'modified_date'=>$date));
     }else{
-        $sql=DB::getInstance()->insert('tbl_about', array('about_type'=>3, 'img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details,  'created_by'=>1, 'created_date'=>$date, 'modified_by'=>1, 'modified_date'=>$date));// todo:use session  
+        $sql=DB::getInstance()->insert('tbl_about', array('about_type'=>3, 'img'=>$imgname, 'img_description'=>$imgcaption, 'details'=>$details,  'created_by'=>$_SESSION['userID'], 'created_date'=>$date, 'modified_by'=>1, 'modified_date'=>$date));// todo:use session  
     }
     if(isset($sql)){
         //$response['error']=0;
