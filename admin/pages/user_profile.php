@@ -278,7 +278,7 @@ function showPass() {
 			oldPass: oldPass,
 			newPass: newPass
 		}, function(data) {
-            alert(data);
+           // alert(data);
 			let response = JSON.parse(data);
 			if (response.status == 'success') {
 				$('#changePass').modal('hide');

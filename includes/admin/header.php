@@ -29,17 +29,17 @@
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading ">
 		<!--begin::Main-->
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			<a href="index.html">
-				<!--<img alt="Logo" src="assets/media/logos/logo-light.png" /> MOBILE-->ISODEC WEB-ADMIN
+			<a href="<?php echo URLROOT?>/admin/pages/index.php">
+				<img alt="Logo" src="<?php echo URLROOT ?>/assets/public/images/admin_logo.png" /> 
 			</a>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->
-			<div class="d-flex align-items-center">
+			<div class="d-flex align-items-center" >
 				<!--begin::Aside Mobile Toggle-->
 				<button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
 					<span></span>

@@ -37,7 +37,7 @@
             <?php if ($eventType == 1) : ?>
               <a href="<?php echo URLROOT ?>/events/event-registration?regid=<?= $eventID; ?>" class="btn btn_reg mb-3">CLICK HERE TO REGISTER <i class="mdi mdi-chevron-double-right"></i></a>
             <?php elseif ($eventType == 2) : ?>
-              <a href="<?php echo $webinarUrl; ?>" target="_blank" class="btn btn_reg mb-3">CLICK HERE TO REGISTER <i class="mdi mdi-chevron-double-right"></i></a>
+              <a href="<?php echo $webinarUrl; ?>" target="_blank" class="btn btn_reg mb-3" disabled>CLICK HERE TO REGISTER <i class="mdi mdi-chevron-double-right"></i></a>
             <?php endif; ?>
           </div>
         </div>

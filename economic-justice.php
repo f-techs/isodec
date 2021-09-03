@@ -16,17 +16,24 @@
 
   <!--mission vision-->
   <section id="about-content">
-    <div class="row container mx-auto my-3">
-    <?php if(!empty($econJusticeID)): ?>
+  <?php foreach($econsJusticeResults as $data): ?>
+    <div class="container mx-auto my-3">
+      <div class="row">
       <div class="col-lg-12 col-md-6 col-xs-4">
-        <img class="img-fluid" src="<?php echo URLROOT ?>/assets/admin/media/uploads/<?php echo $econJusticeImg ?>" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;" height="100%" width="100%"/>
-        <p style="color:#39A8E8;font-weight: bold;"><?php echo $econJusticeImgCaption;?></p>
+        <h4 style="font-weight:bold; color: #17A2B8;"><?php echo (!empty($data->title)) ? $data->title:''; ?></h4>
       </div>
       <div class="col-lg-12 col-md-6 col-xs-4">
-      <p> <?php echo $econJusticeDetails;?></p>
+        <?php if(!empty($data->img)):?>
+        <img class="img-fluid" src="<?php echo (!empty($data->img)) ?  URLROOT.'/assets/admin/media/uploads/economic_justice/'.$data->img : ' ' ?> " style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;" height="100%" width="100%"/>
+        <?php endif; ?>
+        <p style="color:#39A8E8;font-weight: bold;"><?php echo (!empty($data->img_description)) ? $data->img_description : ''; ?></p>
       </div>
-      <?php endif; ?>
-    </div>
+      <div class="col-lg-12 col-md-6 col-xs-4">
+      <p> <?php echo (!empty($data->details)) ? $data->details : ' ';?></p>
+      </div>
+    </div><hr>
+      </div>
+    <?php endforeach; ?>
   </section>
  
   <section class="footer">

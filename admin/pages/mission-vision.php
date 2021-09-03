@@ -43,7 +43,7 @@
 							<div class="card card-custom">
 								<div class="card-header">
 									<h3 class="card-title">
-										Describe Mission Page:
+										Describe Mission, Vision & Values Page:
 									</h3>
 								</div>
 								<!--begin::Form-->
@@ -204,7 +204,7 @@
 				$('#loader').show();
 			},
 			success: function(data) {
-				 alert(data);
+				// alert(data);
 				var response = JSON.parse(data);
 				Swal.fire({
 					title: "Message",

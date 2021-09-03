@@ -95,7 +95,7 @@
 									<?php foreach ($eventListResults as $data) : ?>
 										<tr>
 											<td><?php echo $data->event_title; ?></td>
-											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/events/<?php echo (!empty($data->event_img)) ? $data->event_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
+											<td><center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/events/<?php echo (!empty($data->event_img)) ? $data->event_img : 'no-image.png'; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center> </td>
 											<td><?php echo txtTruncate($data->event_details, 100); ?></td>
 											<td><?php echo date('d-M-Y', strtotime($data->created_date)); ?></td>
 											<td>

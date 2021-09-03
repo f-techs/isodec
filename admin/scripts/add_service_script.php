@@ -19,7 +19,8 @@ if(isset($_POST['action'])){
             $img_upload= move_uploaded_file($image_old_location, $image_new_location);
     
         if(isset($img_upload) || isset($imgname)){
-            $sql=DB::getInstance()->gen_query("call pro_insertEssentials('$serviceType', '$postTitle', '$code', '$details', '$imgname', '$imgcaption', 1)");// todo:use session
+            //$sql=DB::getInstance()->gen_query("call pro_insertEssentials('$serviceType', '$postTitle', '$code', '$details', '$imgname', '$imgcaption', 1)");// todo:use session
+            $sql=DB::getInstance()->insert('tbl_essentials', array('post_type'=>$serviceType, 'post_code'=>$code, 'post_title'=>$postTitle, 'post_img'=>$imgname, 'img_description'=>$imgcaption, 'post_details'=>$details));
         }
         if(isset($sql)){
             //$response['error']=0;
@@ -37,7 +38,7 @@ if(isset($_POST['action'])){
 }elseif($action=='Update'){
     if(isset($_POST['post_content']) && isset($_POST['img_caption']) && isset($_POST['post_title'])){
         $response=array('error'=>1, 'status'=>'', 'message'=>'');
-       // $serviceType=$_POST['service_type'];
+        $serviceType=$_POST['service_type'];
         $postTitle=$_POST['post_title'];
         $details=$_POST['post_content'];
         $imgcaption=$_POST['img_caption'];
@@ -53,7 +54,8 @@ if(isset($_POST['action'])){
             $image_new_location = APPROOT.'/assets/admin/media/uploads/services/'. $imgname;
             $img_upload= move_uploaded_file($image_old_location, $image_new_location);
         }
-           $sql=DB::getInstance()->gen_query("call pro_updateEssentials('$postTitle', '$postID', '$details', '$imgname', '$imgcaption', 1)"); 
+          // $sql=DB::getInstance()->gen_query("call pro_updateEssentials('$postTitle', '$postID', '$details', '$imgname', '$imgcaption', 1)"); 
+          $sql=DB::getInstance()->update('tbl_essentials', $postID, 'post_id', array('post_type'=>$serviceType,  'post_title'=>$postTitle, 'post_img'=>$imgname, 'img_description'=>$imgcaption, 'post_details'=>$details)); 
            if(isset($sql)){
             //$response['error']=0;
             $response['status']='success';

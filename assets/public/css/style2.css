@@ -43,6 +43,7 @@ nav {
 }
 .navbar .dropdown-menu .dropdown-item:hover {
 width:auto;
+background-color: #F0F0F4;
 }
 .navbar .navbar-right .nav-item i{
   color: #17A2B8!important;

@@ -34,15 +34,21 @@ foreach($collaboResults as $collabo){
     $collaboDetails=$collabo->details;
 }
 
-//fetch economic justice
-$sqlEconsJustice=DB::getInstance()->select_query("call pro_selectProgramme(1)");
+//fetch economic justice 
+$sqlEconsJustice=DB::getInstance()->select_query("SELECT * FROM tbl_economic_justice");
 $econsJusticeResults=$sqlEconsJustice->results();
+
+//fetch policy support 
+$sqlpocily=DB::getInstance()->select_query("SELECT * FROM tbl_policy_support");
+$policyResults=$sqlpocily->results();
+/*
 foreach($econsJusticeResults as $econJustice){
     $econJusticeID=$econJustice->programme_type;
     $econJusticeImg=$econJustice->img;
     $econJusticeImgCaption=$econJustice->img_description;
     $econJusticeDetails=$econJustice->details;
 }
+*/
 //fetch essentials
 $sqlEssential=DB::getInstance()->select_query("call pro_selectProgramme(2)");
 $essentialResults=$sqlEssential->results();
@@ -53,7 +59,7 @@ foreach($essentialResults as $essentials){
     $essentialsDetails=$essentials->details;
 }
 
-//fetch economic justice
+/*fetch economic justice 
 $sqlpocily=DB::getInstance()->select_query("call pro_selectProgramme(3)");
 $policyResults=$sqlpocily->results();
 foreach($policyResults as $policy){
@@ -62,6 +68,7 @@ foreach($policyResults as $policy){
     $policyImgCaption=$policy->img_description;
     $policyDetails=$policy->details;
 }
+*/
 //fetch mission-vision
 $sqlMissionVission=DB::getInstance()->select_query("SELECT * FROM tbl_welcome_message");
 $missionVisionResults=$sqlMissionVission->results();
@@ -341,6 +348,18 @@ if (isset($_GET['blogid'])) {
       }
       
   }
+
+  //our-work
+  if(isset($_GET['q'])){
+    $wrkId=$_GET['q'];
+    $sqlwrk=DB::getInstance()->get('tbl_our_work', array('our_work_id ', '=', $wrkId));
+    $ourwrk=$sqlwrk->results();
+    foreach($ourwrk as $data){
+      $wrkTitle=$data->our_work_title;
+      $wrkDescription=$data->our_work_description;
+    }
+    
+}
   
   //locations & maps
   $sqlLocations=DB::getInstance()->select_query("SELECT * FROM  view_office_project_maps");

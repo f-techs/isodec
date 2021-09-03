@@ -1,6 +1,7 @@
 <?php require_once('config.php') ?>
 <?php require_once(APPROOT.'/helpers/pageCount.php'); ?>
 
+
 <?php include(APPROOT . '/includes/public/header.php'); ?>
 <main role="main">
     <!-- Showcase -->

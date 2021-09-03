@@ -22,7 +22,7 @@
       					</div>
       					<!--end::Header Menu Wrapper-->
       					<!--begin::Topbar-->
-      					<div class="topbar">
+      					<div class="topbar mb-5">
       						<!--begin::User-->
       						<?php include(APPROOT.'/includes/admin/topbar-button.php'); ?>
       						<!--end::User-->
@@ -36,7 +36,7 @@
       			<!--begin::Entry-->
       			<div class="d-flex flex-column-fluid">
       				<!--begin::Container-->
-      				<div class="container">
+      				<div class="container" style="margin-top:5px;">
       					<!--begin::stats-->
       					<div class="row stats">
       						<!--col-->

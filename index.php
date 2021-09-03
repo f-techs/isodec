@@ -14,9 +14,9 @@
             </p>
           </div>
           <div>
-            <button class="lead_btn  btn-lg btn-flat">
+           <a href="<?php echo URLROOT ?>/mission"> <button class="lead_btn  btn-lg btn-flat">
               Read More <i class="mdi mdi-chevron-double-right"></i>
-            </button>
+            </button></a>
           </div>
         </div>
         <div class="col-md-6">
@@ -33,34 +33,34 @@
         <?php if (!empty($messageID)) : ?>
           <div class="col-lg-4 border-right animate-header p-5">
             <h2 class="h2">Our Mission</h2>
-            <div class="animate__animated animate__fadeInLeft"><?php echo $missionMessage; ?></div>
+            <div class="animate__animated animate__fadeInLeft"><p><?php echo $missionMessage; ?></p></div>
           </div>
           <div class="col-lg-4 border-right animate-header p-5">
             <h2 class="h2">Our Vision</h2>
-            <div class="animate__animated animate__fadeInUp"><?php echo $visionMessage; ?></div>
+            <div class="animate__animated animate__fadeInUp"><p><?php echo $visionMessage; ?></p></div>
           </div>
           <div class="col-lg-4 animate-header p-5">
             <h2 class="h2">Our Values</h2>
-            <div class="animate__animated animate__fadeInRight"><?php echo $isodecValues; ?></div>
+            <div class="animate__animated animate__fadeInRight"><p><?php echo $isodecValues; ?></p></div>
           </div>
         <?php endif; ?>
       </div>
     </div>
   </section>
   <div class="m-3 text-center">
-    <h4>Our Work</h4>
+    <h4 style="font-weight:bold; color: #17A2B8;">Our Work</h4>
   </div>
   <!-- our work-->
   <section id="our-work">
     <div class="row m-5">
       <?php foreach ($sqlOwResults as $data) : ?>
         <div class="col-lg-4">
-          <div class="box-part text-center">
-            <div class="title">
-              <h4><?php echo $data->our_work_title; ?></h4>
+          <div class="box-part">
+            <div class="title mx-3" >
+              <h4 style="font-weight:bold; color: #17A2B8;"><?php echo ucwords($data->our_work_title); ?></h4>
             </div>
-            <div class="text">
-              <span><?php echo $data->our_work_description; ?></span>
+            <div class="text mx-3">
+              <span><?php echo txtTruncate($data->our_work_description, 200); ?> <a href="<?php echo URLROOT ?>/our-work?q=<?php echo $data->our_work_id; ?>" style="color:#E19822;">Read More</a></span>
             </div>
             <!--<a href="#" class="card-link btn">Read More</a>-->
           </div>
@@ -69,7 +69,7 @@
     </div>
   </section>
   <div class="m-3 text-center">
-    <h4>Latest Events</h4>
+    <h4 style="font-weight:bold; color: #17A2B8;">Latest Events</h4>
   </div>
   <!-- Events-->
   <section id="events-cards">
@@ -105,7 +105,7 @@
         <div class="container">
           <div class="row" id="tab-menus">
             <div class="col-12">
-              <h2 class="text-center mt-4 mb-5">BLOGS</h2>
+              <h2 class="text-center mt-4 mb-5" style="font-weight:bold; color: #17A2B8;">BLOGS</h2>
               <!-- Tabs navs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
@@ -154,7 +154,7 @@
         <div class="container">
           <div class="row" id="tab-menus">
             <div class="col-12">
-              <h2 class="text-center mt-4 mb-5">EVENTS</h2>
+              <h2 class="text-center mt-4 mb-5" style="font-weight:bold; color: #17A2B8;">EVENTS</h2>
               <!-- Tabs navs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
@@ -220,7 +220,7 @@
     </div>
   </section>
   <div class="m-3 text-center">
-    <h4>OFFICES AND PROJECTS LOCATIONS</h4>
+    <h4 style="font-weight:bold; color: #17A2B8;">OFFICES AND PROJECTS LOCATIONS</h4>
   </div>
   <hr>
   <section>

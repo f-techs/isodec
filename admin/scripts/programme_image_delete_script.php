@@ -2,9 +2,9 @@
 require_once('../../config.php');
 if(isset($_POST['imgname_econs'])){
    $imgname=$_POST['imgname_econs'];
-   $imgpath= APPROOT.'/assets/admin/media/uploads/'. $imgname;
+   $imgpath= APPROOT.'/assets/admin/media/uploads/economic_justice/'. $imgname;
    if(isset($imgname)){
-       $sql=DB::getInstance()->gen_query("UPDATE tbl_programmes set img='' WHERE programme_type=1");
+       $sql=DB::getInstance()->gen_query("UPDATE tbl_economic_justice set img='' WHERE img='$imgname'");
    }
    if(isset($sql)){
        unlink($imgpath);
@@ -26,9 +26,9 @@ if(isset($_POST['imgname_econs'])){
     } 
 }elseif(isset($_POST['imgname_policy'])){
     $imgname=$_POST['imgname_policy'];
-    $imgpath= APPROOT.'/assets/admin/media/uploads/'. $imgname;
+    $imgpath= APPROOT.'/assets/admin/media/uploads/policy_support/'. $imgname;
     if(isset($imgname)){
-        $sql=DB::getInstance()->gen_query("UPDATE tbl_programmes set img='' WHERE programme_type=3");
+        $sql=DB::getInstance()->gen_query("UPDATE tbl_policy_support set img='' WHERE img='$imgname'");
     }
     if(isset($sql)){
         unlink($imgpath);

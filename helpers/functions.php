@@ -24,7 +24,7 @@ function sessionExpire(){
 { 
  if(time()-$_SESSION["loginTime"]>1800)
      {
-     $_SESSION["expireTime"]=time()-$_SESSION["loginTime"]>1800;
+     $_SESSION["expireTime"]=time()-$_SESSION["loginTime"]>3600;
      header("location:".URLROOT."/admin/scripts/logout_script.php");
  }else
      {

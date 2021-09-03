@@ -320,6 +320,7 @@
 
 		/******/
 	})();
+	
 	//# sourceMappingURL=html-table.js.map
 	$(document).on('click', '.edit', function(event) {
 		$('#action').val('Update');

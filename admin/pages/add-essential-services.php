@@ -96,7 +96,7 @@
 										<tr>
 											<td><?php echo $data->service_name; ?></td>
 											<td>
-												<center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/services/<?php echo (!empty($data->post_img)) ? $data->post_img : ''; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center>
+												<center><img src="<?php echo URLROOT ?>/assets/admin/media/uploads/services/<?php echo (!empty($data->post_img)) ? $data->post_img : 'no-image.png'; ?>" style=" border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 70px; height:70px;"></center>
 											</td>
 											<td><?php echo $data->post_title; ?></td>
 											<td><?php echo txtTruncate($data->post_details, 100); ?></td>
@@ -331,6 +331,10 @@
 		});
 	});
 
+	$('#addServicesModal').on('hidden.bs.modal', function() {
+		location.reload();
+	});
+
 	(() => {
 		var KTDatatableHtmlTableDemo = function() {
 			// Private functions
@@ -397,7 +401,7 @@
 			$('#service_type').prop('required', false);
 			$('#postID').val(htmlData.post_id);
 			$('#addServicesModal').modal('show');
-			$('#service_div').hide();
+			$('#service_type option').eq(htmlData.post_type).prop('selected', true);
 			$('#post_title').val(htmlData.post_title);
 			$("#post_content").summernote("code", htmlData.post_details);
 			var imgUrl = '<?php echo URLROOT ?>/assets/admin/media/uploads/services/' + htmlData.post_img;
@@ -470,6 +474,7 @@
 				}
 			});
 		}
-
 	});
+
+	
 </script>

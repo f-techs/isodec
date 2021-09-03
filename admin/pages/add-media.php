@@ -529,6 +529,10 @@
 		});
 	});
 
+	$('#addMediaModal').on('hidden.bs.modal', function() {
+		location.reload();
+	});
+
 	//check audio file
 	$('#audio-file').bind('change', function() {
     var file_ext=$('#audio-file').val().split('.').pop().toLowerCase();

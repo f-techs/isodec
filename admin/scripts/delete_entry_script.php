@@ -72,4 +72,23 @@ if(isset($_POST['blogID'])){
     }else{
         echo 'fail';
     }   
+}elseif(isset($_POST['econsID'])){
+    $delId=$_POST['econsID'];
+    $sql=DB::getInstance()->gen_query("DELETE FROM tbl_economic_justice WHERE economic_justice_id='$delId'");
+    if(isset($sql)){
+        echo 'success';
+    }else{
+        echo 'fail';
+    }   
+}elseif(isset($_POST['policyID'])){
+    $delId=$_POST['policyID'];
+    $sql=DB::getInstance()->gen_query("DELETE FROM tbl_policy_support WHERE policy_support_id='$delId'");
+    if(isset($sql)){
+        echo 'success';
+    }else{
+        echo 'fail';
+    }   
 }
+
+//econsID
+

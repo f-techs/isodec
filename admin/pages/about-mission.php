@@ -251,7 +251,7 @@
 				$('#loader').show();
 			},
 			success: function(data) {
-				 alert(data);
+				// alert(data);
 				var response = JSON.parse(data);
 				Swal.fire({
 					title: "Message",
